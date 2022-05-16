@@ -118,3 +118,332 @@ f0156b83954c: Pull complete
 Digest: sha256:2c72b42c3679c1c819d46296c4e79e69b2616fa28bea92e61d358980e18c9751
 Status: Downloaded newer image for nginx:latest
 docker.io/library/nginx:latest
+
+root@nilesh:~# docker run ubuntu
+Unable to find image 'ubuntu:latest' locally
+doclatest: Pulling from library/ubuntu
+125a6e411906: Pull complete 
+Digest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+Status: Downloaded newer image for ubuntu:latest
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE             COMMAND          CREATED          STATUS                      PORTS     NAMES
+6fbeedbde555   ubuntu            "bash"           47 seconds ago   Exited (0) 46 seconds ago             wonderful_cray
+1cabc68cc8c8   docker/whalesay   "cowsay Hello"   2 days ago       Exited (0) 2 days ago                 musing_hellman
+
+root@nilesh:~# docker run ubuntu sleep 5
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE             COMMAND          CREATED              STATUS                          PORTS     NAMES
+e69fec60b70a   ubuntu            "sleep 5"        22 seconds ago       Exited (0) 16 seconds ago                 compassionate_lumiere
+6fbeedbde555   ubuntu            "bash"           About a minute ago   Exited (0) About a minute ago             wonderful_cray
+1cabc68cc8c8   docker/whalesay   "cowsay Hello"   2 days ago           Exited (0) 2 days ago                     musing_hellman
+
+root@nilesh:~# docker run ubuntu sleep 100
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE             COMMAND          CREATED              STATUS                              PORTS     NAMES
+38ba1798945c   ubuntu            "sleep 100"      About a minute ago   Exited (0) Less than a second ago             condescending_agnesi
+e69fec60b70a   ubuntu            "sleep 5"        2 minutes ago        Exited (0) 2 minutes ago                      compassionate_lumiere
+6fbeedbde555   ubuntu            "bash"           3 minutes ago        Exited (0) 3 minutes ago                      wonderful_cray
+1cabc68cc8c8   docker/whalesay   "cowsay Hello"   2 days ago           Exited (0) 2 days ago                         musing_hellman
+
+root@nilesh:~# docker exec condescending_agnesi cat /etc/hosts
+Error response from daemon: Container 38ba1798945c4240be99ddd9718fe88b0aff3cf9ecba2b1d1d5bcde4733bb99e is not running
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE             COMMAND          CREATED         STATUS                      PORTS     NAMES
+4c00da421797   ubuntu            "sleep 50"       4 seconds ago   Up 3 seconds                          crazy_mayer
+38ba1798945c   ubuntu            "sleep 100"      2 minutes ago   Exited (0) 55 seconds ago             condescending_agnesi
+e69fec60b70a   ubuntu            "sleep 5"        3 minutes ago   Exited (0) 3 minutes ago              compassionate_lumiere
+6fbeedbde555   ubuntu            "bash"           4 minutes ago   Exited (0) 4 minutes ago              wonderful_cray
+1cabc68cc8c8   docker/whalesay   "cowsay Hello"   2 days ago      Exited (0) 2 days ago                 musing_hellman
+
+root@nilesh:~# docker exec condescending_agnesi cat /etc/hosts
+Error response from daemon: Container 38ba1798945c4240be99ddd9718fe88b0aff3cf9ecba2b1d1d5bcde4733bb99e is not running
+
+root@nilesh:~# docker exec crazy_mayer cat /etc/hosts
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+172.17.0.2      4c00da421797
+
+root@nilesh:~# docker run kodekloud/simple-webapp
+Unable to find image 'kodekloud/simple-webapp:latest' locally
+latest: Pulling from kodekloud/simple-webapp
+4fe2ade4980c: Pull complete 
+7cf6a1d62200: Pull complete 
+f0d690b9e495: Pull complete 
+fac5d45ad062: Pull complete 
+dd9b067ef6fd: Pull complete 
+7454877e71d0: Pull complete 
+e337be014a61: Pull complete 
+Digest: sha256:e5355b4c7804f453d79de75d6659ee702eeebbe30c02d9f1ce6602a96b576e57
+Status: Downloaded newer image for kodekloud/simple-webapp:latest
+ This is a sample web application that displays a colored background. 
+ A color can be specified in two ways. 
+
+ 1. As a command line argument with --color as the argument. Accepts one of red,green,blue,blue2,pink,darkblue 
+ 2. As an Environment variable APP_COLOR. Accepts one of red,green,blue,blue2,pink,darkblue 
+ 3. If none of the above then a random color is picked from the above list. 
+ Note: Command line argument precedes over environment variable.
+
+
+No command line argument or environment variable. Picking a Random Color =blue2
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+
+^Croot@nilesh:~# docker run -d kodekloud/simple-webapp
+25de88283bbbe554112300bb6e529271a31ad5487def95e313a08e3a239c0802
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE                     COMMAND           CREATED         STATUS         PORTS      NAMES
+25de88283bbb   kodekloud/simple-webapp   "python app.py"   5 seconds ago   Up 4 seconds   8080/tcp   stoic_ardinghelli
+
+root@nilesh:~# docker attach stoic_ardinghelli
+
+root@nilesh:~# docker images
+REPOSITORY                TAG       IMAGE ID       CREATED       SIZE
+nginx                     latest    7425d3a7c478   5 days ago    142MB
+ubuntu                    latest    d2e4e1f51132   2 weeks ago   77.8MB
+kodekloud/simple-webapp   latest    c6e3cd9aae36   3 years ago   84.8MB
+docker/whalesay           latest    6b362a9f73eb   6 years ago   247MB
+
+root@nilesh:~# docker rm -a
+unknown shorthand flag: 'a' in -a
+See 'docker rm --help'.
+
+root@nilesh:~# docker rm docker rmi ubuntu
+Error: No such container: docker
+Error: No such container: rmi
+Error: No such container: ubuntu
+
+root@nilesh:~# docker rmi ubuntu
+Error response from daemon: conflict: unable to remove repository reference "ubuntu" (must force) - container e69fec60b70a is using its referenced image d2e4e1f51132
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE                     COMMAND           CREATED          STATUS                      PORTS     NAMES
+25de88283bbb   kodekloud/simple-webapp   "python app.py"   6 minutes ago    Exited (0) 5 minutes ago              stoic_ardinghelli
+bd4be1a5f5e7   kodekloud/simple-webapp   "python app.py"   6 minutes ago    Exited (0) 6 minutes ago              vigorous_napier
+4c00da421797   ubuntu                    "sleep 50"        8 minutes ago    Exited (0) 7 minutes ago              crazy_mayer
+38ba1798945c   ubuntu                    "sleep 100"       10 minutes ago   Exited (0) 8 minutes ago              condescending_agnesi
+e69fec60b70a   ubuntu                    "sleep 5"         11 minutes ago   Exited (0) 11 minutes ago             compassionate_lumiere
+6fbeedbde555   ubuntu                    "bash"            12 minutes ago   Exited (0) 12 minutes ago             wonderful_cray
+1cabc68cc8c8   docker/whalesay           "cowsay Hello"    2 days ago       Exited (0) 2 days ago                 musing_hellman
+
+root@nilesh:~# docker rm ^C
+
+root@nilesh:~# docker rm stoic_ardinghelli vigorous_napier
+stoic_ardinghelli
+vigorous_napier
+
+root@nilesh:~# docker rm crazy_mayer condescending_agnesi compassionate_lumiere wonderful_cray musing_hellman
+crazy_mayer
+condescending_agnesi
+compassionate_lumiere
+wonderful_cray
+musing_hellman
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+root@nilesh:~# docker images
+REPOSITORY                TAG       IMAGE ID       CREATED       SIZE
+nginx                     latest    7425d3a7c478   5 days ago    142MB
+ubuntu                    latest    d2e4e1f51132   2 weeks ago   77.8MB
+kodekloud/simple-webapp   latest    c6e3cd9aae36   3 years ago   84.8MB
+docker/whalesay           latest    6b362a9f73eb   6 years ago   247MB
+
+root@nilesh:~# docker rmi nginx ubuntu docker/whalesay
+Untagged: nginx:latest
+Untagged: nginx@sha256:2c72b42c3679c1c819d46296c4e79e69b2616fa28bea92e61d358980e18c9751
+Deleted: sha256:7425d3a7c478efbeb75f0937060117343a9a510f72f5f7ad9f14b1501a36940c
+Deleted: sha256:c263493a5dc62ebefab0486e0019affdd5f663aad79cb5cf67f1ef21b2aba3c4
+Deleted: sha256:c0a19d1cdcd1bebfd81765ad4971708d177b06a1cb0eaf0bb721745fd8d7f055
+Deleted: sha256:c953b0422ec13844d8700eaf0159a800fba90fa6321f6ce1adc57f7f8566a0f1
+Deleted: sha256:f121c2b08c669e9bb8e37bdc4ca0f32047d1b37f3ca3e3e302d9d1350301ad0b
+Deleted: sha256:138bdf299d05c844ac8833a0a2227499678214d264c3f6dde62cd4c9fb134932
+Deleted: sha256:fd95118eade99a75b949f634a0994e0f0732ff18c2573fabdfc8d4f95b092f0e
+Untagged: ubuntu:latest
+Untagged: ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+Deleted: sha256:d2e4e1f511320dfb2d0baff2468fcf0526998b73fe10c8890b4684bb7ef8290f
+Deleted: sha256:e59fc94956120a6c7629f085027578e6357b48061d45714107e79f04a81a6f0c
+Untagged: docker/whalesay:latest
+Untagged: docker/whalesay@sha256:178598e51a26abbc958b8a2e48825c90bc22e641de3d31e18aaf55f3258ba93b
+Deleted: sha256:6b362a9f73eb8c33b48c95f4fcce1b6637fc25646728cf7fb0679b2da273c3f4
+Deleted: sha256:34dd66b3cb4467517d0c5c7dbe320b84539fbb58bc21702d2f749a5c932b3a38
+Deleted: sha256:52f57e48814ed1bb08a651ef7f91f191db3680212a96b7f318bff0904fed2e65
+Deleted: sha256:72915b616c0db6345e52a2c536de38e29208d945889eecef01d0fef0ed207ce8
+Deleted: sha256:4ee0c1e90444c9b56880381aff6455f149c92c9a29c3774919632ded4f728d6b
+Deleted: sha256:86ac1c0970bf5ea1bf482edb0ba83dbc88fefb1ac431d3020f134691d749d9a6
+Deleted: sha256:5c4ac45a28f91f851b66af332a452cba25bd74a811f7e3884ed8723570ad6bc8
+Deleted: sha256:088f9eb16f16713e449903f7edb4016084de8234d73a45b1882cf29b1f753a5a
+Deleted: sha256:799115b9fdd1511e8af8a8a3c8b450d81aa842bbf3c9f88e9126d264b232c598
+Deleted: sha256:3549adbf614379d5c33ef0c5c6486a0d3f577ba3341f573be91b4ba1d8c60ce4
+Deleted: sha256:1154ba695078d29ea6c4e1adb55c463959cd77509adf09710e2315827d66271a
+
+root@nilesh:~# docker images
+REPOSITORY                TAG       IMAGE ID       CREATED       SIZE
+kodekloud/simple-webapp   latest    c6e3cd9aae36   3 years ago   84.8MB
+
+root@nilesh:~# docker rmi kodekloud/simple-webapp
+Untagged: kodekloud/simple-webapp:latest
+Untagged: kodekloud/simple-webapp@sha256:e5355b4c7804f453d79de75d6659ee702eeebbe30c02d9f1ce6602a96b576e57
+Deleted: sha256:c6e3cd9aae3645a98dd69c15b048614603efce6cda26c60f5f7e867ef68f729f
+Deleted: sha256:33833b97952fc68d999bc3bccaad23687ea6a939724e0130c151dc973ba8f2d3
+Deleted: sha256:a3dd002bb33a1cdb83aface983ea0d268be1b4ffda0e42ce72aa5c22ced6701f
+Deleted: sha256:12e8c893d121075ced84d32b967f6de75ff67e1cf7c9b66b63636bdf630ac12c
+Deleted: sha256:4785d1dd03a24d6b30c9342db24ac2254d01362e7f3b3f28f55a00e4858f85e5
+Deleted: sha256:9de207c08e3d729c3b9c451d87e109144cdc6e2e71f4fcad80c9cbf99879d8bb
+Deleted: sha256:0a2679c979afc5eb30764613ae1fa22199b872610f709f556b9f35bc0717e3f1
+Deleted: sha256:df64d3292fd6194b7865d7326af5255db6d81e9df29f48adde61a918fbd8c332
+
+root@nilesh:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+root@nilesh:~# docker run centos
+Unable to find image 'centos:latest' locally
+latest: Pulling from library/centos
+a1d0c7532777: Pull complete 
+Digest: sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177
+Status: Downloaded newer image for centos:latest
+
+root@nilesh:~# docker run -it centos bash
+[root@72770176ee90 /]# cat /etc/*release*
+CentOS Linux release 8.4.2105
+Derived from Red Hat Enterprise Linux 8.4
+NAME="CentOS Linux"
+VERSION="8"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="8"
+PLATFORM_ID="platform:el8"
+PRETTY_NAME="CentOS Linux 8"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:8"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+CENTOS_MANTISBT_PROJECT="CentOS-8"
+CENTOS_MANTISBT_PROJECT_VERSION="8"
+CentOS Linux release 8.4.2105
+CentOS Linux release 8.4.2105
+cpe:/o:centos:centos:8
+[root@72770176ee90 /]# exit
+exit
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                      PORTS     NAMES
+72770176ee90   centos    "bash"        31 seconds ago   Exited (0) 14 seconds ago             naughty_archimedes
+55797f2db9a6   centos    "/bin/bash"   41 seconds ago   Exited (0) 40 seconds ago             gallant_spence
+
+root@nilesh:~# docker run -d centos sleep 20
+e610fb44c31ddc71fd28acad498e9d14cc109458a773145dcb826a340b2561d6
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE     COMMAND      CREATED         STATUS         PORTS     NAMES
+e610fb44c31d   centos    "sleep 20"   3 seconds ago   Up 2 seconds             thirsty_mayer
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED              STATUS                          PORTS     NAMES
+e610fb44c31d   centos    "sleep 20"    53 seconds ago       Exited (0) 32 seconds ago                 thirsty_mayer
+72770176ee90   centos    "bash"        About a minute ago   Exited (0) About a minute ago             naughty_archimedes
+55797f2db9a6   centos    "/bin/bash"   2 minutes ago        Exited (0) 2 minutes ago                  gallant_spence
+
+root@nilesh:~# docker run -d centos sleep 2000
+8551d1ea905c88fa33a6a16282979684b9cbabe61174d87253fad57c93d24390
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE     COMMAND        CREATED          STATUS          PORTS     NAMES
+8551d1ea905c   centos    "sleep 2000"   12 seconds ago   Up 11 seconds             naughty_easley
+
+root@nilesh:~# docker stop naughty_easley
+naughty_easley
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND        CREATED          STATUS                          PORTS     NAMES
+8551d1ea905c   centos    "sleep 2000"   40 seconds ago   Exited (137) 8 seconds ago                naughty_easley
+e610fb44c31d   centos    "sleep 20"     2 minutes ago    Exited (0) About a minute ago             thirsty_mayer
+72770176ee90   centos    "bash"         3 minutes ago    Exited (0) 3 minutes ago                  naughty_archimedes
+55797f2db9a6   centos    "/bin/bash"    3 minutes ago    Exited (0) 3 minutes ago                  gallant_spence
+
+root@nilesh:~# docker rm naughty_easley
+llant_spencenaughty_easley
+
+root@nilesh:~# thirsty_mayer
+thirsty_mayer: command not found
+
+root@nilesh:~# naughty_archimedes
+naughty_archimedes: command not found
+
+root@nilesh:~# docker rm 85 e6 72 55
+e6
+72
+55
+Error: No such container: 85
+
+root@nilesh:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+root@nilesh:~# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+centos       latest    5d0da3dc9764   8 months ago   231MB
+
+root@nilesh:~# docker rmi centos
+Untagged: centos:latest
+Untagged: centos@sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177
+Deleted: sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6
+Deleted: sha256:74ddd0ec08fa43d09f32636ba91a0a3053b02cb4627c35051aff89f853606b59
+
+root@nilesh:~# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+root@nilesh:~# docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+125a6e411906: Pull complete 
+Digest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+
+root@nilesh:~# docker run -d ubuntu sleep 500
+c2fa7fae5c91d9afd2b7a88d8e8bc033eda7d076aa6d2b69a3b6de7bafd0f88a
+
+root@nilesh:~# docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS          PORTS     NAMES
+c2fa7fae5c91   ubuntu    "sleep 500"   12 seconds ago   Up 11 seconds             pensive_ganguly
+
+root@nilesh:~# docker exec c2fa cat /etc/*release*
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04 LTS"
+PRETTY_NAME="Ubuntu 22.04 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
