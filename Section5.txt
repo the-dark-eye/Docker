@@ -1,0 +1,1675 @@
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=redis redis
+e48c676b018f530a28d3bc1c8628c50435cbd532e91126c7e9c696f9511f1558
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=db postgres
+Unable to find image 'postgres:latest' locally
+latest: Pulling from library/postgres
+42c077c10790: Pull complete 
+3c2843bc3122: Pull complete 
+12e1d6a2dd60: Pull complete 
+9ae1101c4068: Pull complete 
+fb05d2fd4701: Pull complete 
+9785a964a677: Pull complete 
+16fc798b0e72: Pull complete 
+f1a0bfa2327a: Pull complete 
+fd2d68720749: Pull complete 
+83b23beac012: Pull complete 
+7962517582d4: Pull complete 
+6b4a569b8013: Pull complete 
+ad029fbc8984: Pull complete 
+Digest: sha256:2d1e636f07781d4799b3f2edbff78a0a5494f24c4512cb56a83ebfd0e04ec074
+Status: Downloaded newer image for postgres:latest
+c47cadf40496946f4a5cb3cd2ab9c927f1d9b73a45bef417fd606255eaf42a33
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=vote -p 5000:80 voting-app
+Unable to find image 'voting-app:latest' locally
+docker: Error response from daemon: pull access denied for voting-app, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=vote -p 5000:80 eespirit/voting-app-vote
+Unable to find image 'eespirit/voting-app-vote:latest' locally
+^C
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=vote -p 5000:80 eesprit/voting-app-vote
+Unable to find image 'eesprit/voting-app-vote:latest' locally
+latest: Pulling from eesprit/voting-app-vote
+e110a4a17941: Pull complete 
+4b8a645b1f9e: Pull complete 
+c09556af9686: Pull complete 
+82c6bbd1874e: Pull complete 
+0d438c13cd3e: Pull complete 
+39455fc8cfa3: Pull complete 
+507a9e034ff9: Pull complete 
+Digest: sha256:7ebd71f1333b56f1ebea5e07ccdd3eb2c547eb6dfc0fe2f2da9282e38e71ba47
+Status: Downloaded newer image for eesprit/voting-app-vote:latest
+108f7e2f9ef6662455026ba81757e61b49d210ea08a5948bea075e63947a4caa
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=result -p 5001:80 result-app
+Unable to find image 'result-app:latest' locally
+docker: Error response from daemon: pull access denied for result-app, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=result -p 5001:80 eesprit/voting-app-result
+Unable to find image 'eesprit/voting-app-result:latest' locally
+latest: Pulling from eesprit/voting-app-result
+8b87079b7a06: Pull complete 
+a3ed95caeb02: Pull complete 
+1bb8eaf3d643: Pull complete 
+5674f5dccbc4: Pull complete 
+96a79bcf8a3b: Pull complete 
+ebe753eda570: Pull complete 
+6560065e9851: Pull complete 
+25f7c7a44cc7: Pull complete 
+77d2cefd8a59: Pull complete 
+7c1bf8616c53: Pull complete 
+06148f35aaef: Pull complete 
+1dc43d7473bc: Pull complete 
+Digest: sha256:2465cbee3217c3f8a1a5d186afccb41b65344f5c7f211b4a8d6032793c560503
+Status: Downloaded newer image for eesprit/voting-app-result:latest
+e875551ed39a9b9894125dce2a670ce72c2eba8c4b143ec5ffadc4e8a66e3bfa
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=worker eesprit/voting-app-worker
+Unable to find image 'eesprit/voting-app-worker:latest' locally
+latest: Pulling from eesprit/voting-app-worker
+357ea8c3d80b: Pull complete 
+52befadefd24: Pull complete 
+3c0732d5313c: Pull complete 
+557cb7f84eb9: Pull complete 
+831d48be5871: Pull complete 
+fecf7eeb197d: Pull complete 
+e5e3695c1a93: Pull complete 
+a37afaae8f5b: Pull complete 
+9396f7944632: Pull complete 
+306f6a413011: Pull complete 
+58116027bf3c: Pull complete 
+3167f27420f0: Pull complete 
+b78a31344245: Pull complete 
+2338b0fbb9bc: Pull complete 
+84cdc15405cc: Pull complete 
+Digest: sha256:39a49677bbd867c02b15661f897b6e8362190609aa7c45e80236b540ef003213
+Status: Downloaded newer image for eesprit/voting-app-worker:latest
+78e07bda6d8f70ce7eb5b22406292dce194e71452265442a4b00afa57d2c00ab
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+78e07bda6d8f   eesprit/voting-app-worker   "java -jar target/wo…"   54 seconds ago   Up 54 seconds                                           worker
+e875551ed39a   eesprit/voting-app-result   "node server.js"         2 minutes ago    Up 2 minutes    0.0.0.0:5001->80/tcp, :::5001->80/tcp   result
+108f7e2f9ef6   eesprit/voting-app-vote     "gunicorn app:app -b…"   4 minutes ago    Up 4 minutes    0.0.0.0:5000->80/tcp, :::5000->80/tcp   vote
+e48c676b018f   redis                       "docker-entrypoint.s…"   10 minutes ago   Up 10 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker# docker kill $(docker ps -q)
+78e07bda6d8f
+e875551ed39a
+108f7e2f9ef6
+e48c676b018f
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=redis redis
+docker: Error response from daemon: Conflict. The container name "/redis" is already in use by container "e48c676b018f530a28d3bc1c8628c50435cbd532e91126c7e9c696f9511f1558". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps -a
+CONTAINER ID   IMAGE                            COMMAND                  CREATED          STATUS                        PORTS     NAMES
+78e07bda6d8f   eesprit/voting-app-worker        "java -jar target/wo…"   4 minutes ago    Exited (137) 54 seconds ago             worker
+e875551ed39a   eesprit/voting-app-result        "node server.js"         6 minutes ago    Exited (137) 54 seconds ago             result
+108f7e2f9ef6   eesprit/voting-app-vote          "gunicorn app:app -b…"   7 minutes ago    Exited (137) 54 seconds ago             vote
+c47cadf40496   postgres                         "docker-entrypoint.s…"   12 minutes ago   Exited (1) 12 minutes ago               db
+e48c676b018f   redis                            "docker-entrypoint.s…"   13 minutes ago   Exited (137) 54 seconds ago             redis
+019411f27ec8   my_app                           "/bin/sh -c 'FLASK_A…"   59 minutes ago   Exited (137) 58 minutes ago             angry_chebyshev
+b6593c3b872f   ubuntu                           "bash"                   4 hours ago      Exited (0) 4 hours ago                  nervous_bhabha
+d39b9bfa83ad   jenkins/jenkins                  "/sbin/tini -- /usr/…"   5 hours ago      Exited (143) 4 hours ago                agitated_perlman
+90f1c1f71bff   jenkins/jenkins                  "/sbin/tini -- /usr/…"   5 hours ago      Exited (130) 5 hours ago                angry_kapitsa
+f08cf94c7f52   redis                            "docker-entrypoint.s…"   5 hours ago      Exited (0) 5 hours ago                  gallant_satoshi
+a2ce57f871f0   ubuntu                           "bash"                   5 hours ago      Exited (0) 5 hours ago                  cool_meninsky
+fa14c55efa6a   kodekloud/simple-webapp          "python app.py"          4 days ago       Created                                 kind_burnell
+4c53daf131c7   kodekloud/webapp                 "/bin/sh -c 'FLASK_A…"   4 days ago       Exited (137) 4 days ago                 brave_johnson
+472f9e542c46   kodekloud/simple-prompt-docker   "sh /opt/app.sh"         4 days ago       Exited (0) 4 days ago                   brave_solomon
+faec5637bf54   kodekloud/simple-prompt-docker   "sh /opt/app.sh"         4 days ago       Exited (0) 4 days ago                   happy_cori
+869159b0527b   kodekloud/simple-prompt-docker   "sh /opt/app.sh"         4 days ago       Exited (0) 4 days ago                   zen_jennings
+6be2534bd45a   redis:4.0                        "docker-entrypoint.s…"   4 days ago       Exited (0) 4 days ago                   dreamy_ishizaka
+a7689e227baf   redis                            "docker-entrypoint.s…"   4 days ago       Exited (0) 4 days ago                   hungry_gauss
+6b0b312e2ab9   redis                            "docker-entrypoint.s…"   4 days ago       Exited (0) 4 days ago                   kind_aryabhata
+a47d735dadcc   mysql                            "docker-entrypoint.s…"   2 weeks ago      Exited (1) 2 weeks ago                  flamboyant_mahavira
+10f678859f7b   kodekloud/simple-webapp          "python app.py"          2 weeks ago      Created                                 busy_boyd
+eda1d10e44a5   kodekloud/webapp                 "/bin/sh -c 'FLASK_A…"   2 weeks ago      Exited (137) 2 weeks ago                elated_moser
+677d5b57d878   kodekloud/simple-prompt-docker   "sh /opt/app.sh"         2 weeks ago      Exited (0) 2 weeks ago                  stoic_ritchie
+e6481da16ef5   kodekloud/simple-prompt-docker   "sh /opt/app.sh"         2 weeks ago      Exited (0) 2 weeks ago                  intelligent_villani
+2233dd608b1b   redis:4.0                        "docker-entrypoint.s…"   2 weeks ago      Exited (0) 2 weeks ago                  admiring_hugle
+1fc3088a277e   redis                            "docker-entrypoint.s…"   2 weeks ago      Exited (0) 2 weeks ago                  upbeat_buck
+c2fa7fae5c91   ubuntu                           "sleep 500"              2 weeks ago      Exited (0) 2 weeks ago                  pensive_ganguly
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=result -p 5001:80 --link db:db eesprit/voting-app-result
+docker: Error response from daemon: Conflict. The container name "/result" is already in use by container "e875551ed39a9b9894125dce2a670ce72c2eba8c4b143ec5ffadc4e8a66e3bfa". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker# docker rm $(docker ps -q)
+"docker rm" requires at least 1 argument.
+See 'docker rm --help'.
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+root@nilesh:/home/nilesh/Desktop/Docker# docker rm $(docker ps -q -a)
+78e07bda6d8f
+e875551ed39a
+108f7e2f9ef6
+c47cadf40496
+e48c676b018f
+019411f27ec8
+b6593c3b872f
+d39b9bfa83ad
+90f1c1f71bff
+f08cf94c7f52
+a2ce57f871f0
+fa14c55efa6a
+4c53daf131c7
+472f9e542c46
+faec5637bf54
+869159b0527b
+6be2534bd45a
+a7689e227baf
+6b0b312e2ab9
+a47d735dadcc
+10f678859f7b
+eda1d10e44a5
+677d5b57d878
+e6481da16ef5
+2233dd608b1b
+1fc3088a277e
+c2fa7fae5c91
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=redis redis
+1894de790fc1e6c96e407d67c99ab4a1e666cd3b920d2df44a4e88ec8c689f21
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=db postgres
+fb55c3ca0a1cf6eab30e62866406d967d6b85f82da605716ce29a5ff3c962f9d
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=vote -p 5000:80 --link redis:redis eesprit/voting-app-vote
+b901665e0cc97dd2fc3a161d085d6184b86a933116970b14e95d9ea8ae7803d7
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=result -p 5001:80 --link db:db eesprit/voting-app-result
+649aa250e1c6557c4a6366497071bbcedb7cc65c04b06765046ccc8b48310ac6
+docker: Error response from daemon: Cannot link to a non running container: /db AS /result/db.
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=db postgres sleep 500
+docker: Error response from daemon: Conflict. The container name "/db" is already in use by container "fb55c3ca0a1cf6eab30e62866406d967d6b85f82da605716ce29a5ff3c962f9d". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=worker --link db:db --link redis:redis eesprit/voting-app-worker
+c105dcb7dcdb9c389b0d7915d201ac46cd442f6b87814a13e83b14a42735a835
+docker: Error response from daemon: Cannot link to a non running container: /db AS /worker/db.
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps
+CONTAINER ID   IMAGE                     COMMAND                  CREATED              STATUS              PORTS                                   NAMES
+b901665e0cc9   eesprit/voting-app-vote   "gunicorn app:app -b…"   About a minute ago   Up About a minute   0.0.0.0:5000->80/tcp, :::5000->80/tcp   vote
+1894de790fc1   redis                     "docker-entrypoint.s…"   2 minutes ago        Up 2 minutes        6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker# docker run -d --name=db postgres sleep 500
+docker: Error response from daemon: Conflict. The container name "/db" is already in use by container "fb55c3ca0a1cf6eab30e62866406d967d6b85f82da605716ce29a5ff3c962f9d". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps -a
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                     PORTS                                   NAMES
+c105dcb7dcdb   eesprit/voting-app-worker   "java -jar target/wo…"   56 seconds ago   Created                                                            worker
+649aa250e1c6   eesprit/voting-app-result   "node server.js"         2 minutes ago    Created                    0.0.0.0:5001->80/tcp, :::5001->80/tcp   result
+b901665e0cc9   eesprit/voting-app-vote     "gunicorn app:app -b…"   2 minutes ago    Up 2 minutes               0.0.0.0:5000->80/tcp, :::5000->80/tcp   vote
+fb55c3ca0a1c   postgres                    "docker-entrypoint.s…"   2 minutes ago    Exited (1) 2 minutes ago                                           db
+1894de790fc1   redis                       "docker-entrypoint.s…"   3 minutes ago    Up 3 minutes               6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker# 
+
+root@nilesh:/home/nilesh/Desktop/Docker# cd example-voting-app
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# cat Dockerfile
+cat: Dockerfile: No such file or directory
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# cd vote
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# cat Dockerfile
+# Using official python runtime base image
+FROM python:3.9-slim
+
+# add curl for healthcheck
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the application directory
+WORKDIR /app
+
+# Install our requirements.txt
+COPY requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
+
+# Copy our code from the current folder to /app inside the container
+COPY . .
+
+# Make port 80 available for links and/or publish
+EXPOSE 80
+
+# Define our command to be run when launching the container
+CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker build . -t voting-app
+Sending build context to Docker daemon  161.3kB
+Step 1/8 : FROM python:3.9-slim
+3.9-slim: Pulling from library/python
+42c077c10790: Already exists 
+f63e77b7563a: Pull complete 
+bd5fdadae976: Pull complete 
+205491f53016: Pull complete 
+2030d9f0f012: Pull complete 
+Digest: sha256:72eba56c7920aa900a2a5064019f3cf5737347441edc95cbcc6e47d5da863d8e
+Status: Downloaded newer image for python:3.9-slim
+ ---> 2de9c79b2c75
+Step 2/8 : RUN apt-get update     && apt-get install -y --no-install-recommends     curl     && rm -rf /var/lib/apt/lists/*
+ ---> Running in b484f726241d
+Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+Get:2 http://security.debian.org/debian-security bullseye-security InRelease [44.1 kB]
+Get:3 http://deb.debian.org/debian bullseye-updates InRelease [39.4 kB]
+Get:4 http://security.debian.org/debian-security bullseye-security/main amd64 Packages [152 kB]
+Get:5 http://deb.debian.org/debian bullseye/main amd64 Packages [8182 kB]
+Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [2592 B]
+Fetched 8536 kB in 4s (2042 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libbrotli1 libcurl4 libldap-2.4-2 libnghttp2-14 libpsl5 librtmp1 libsasl2-2
+  libsasl2-modules-db libssh2-1
+Recommended packages:
+  libldap-common publicsuffix libsasl2-modules
+The following NEW packages will be installed:
+  curl libbrotli1 libcurl4 libldap-2.4-2 libnghttp2-14 libpsl5 librtmp1
+  libsasl2-2 libsasl2-modules-db libssh2-1
+0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1645 kB of archives.
+After this operation, 3611 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bullseye/main amd64 libbrotli1 amd64 1.0.9-2+b2 [279 kB]
+Get:2 http://security.debian.org/debian-security bullseye-security/main amd64 libldap-2.4-2 amd64 2.4.57+dfsg-3+deb11u1 [232 kB]
+Get:3 http://deb.debian.org/debian bullseye/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2.1+deb11u1 [69.1 kB]
+Get:4 http://deb.debian.org/debian bullseye/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2.1+deb11u1 [106 kB]
+Get:5 http://deb.debian.org/debian bullseye/main amd64 libnghttp2-14 amd64 1.43.0-1 [77.1 kB]
+Get:6 http://deb.debian.org/debian bullseye/main amd64 libpsl5 amd64 0.21.0-1.2 [57.3 kB]
+Get:7 http://deb.debian.org/debian bullseye/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+Get:8 http://deb.debian.org/debian bullseye/main amd64 libssh2-1 amd64 1.9.0-2 [156 kB]
+Get:9 http://deb.debian.org/debian bullseye/main amd64 libcurl4 amd64 7.74.0-1.3+deb11u1 [341 kB]
+Get:10 http://deb.debian.org/debian bullseye/main amd64 curl amd64 7.74.0-1.3+deb11u1 [267 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 1645 kB in 0s (6764 kB/s)
+Selecting previously unselected package libbrotli1:amd64.
+(Reading database ... 7032 files and directories currently installed.)
+Preparing to unpack .../0-libbrotli1_1.0.9-2+b2_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.0.9-2+b2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../1-libsasl2-modules-db_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../2-libsasl2-2_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../3-libldap-2.4-2_2.4.57+dfsg-3+deb11u1_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.57+dfsg-3+deb11u1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../4-libnghttp2-14_1.43.0-1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.43.0-1) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../5-libpsl5_0.21.0-1.2_amd64.deb ...
+Unpacking libpsl5:amd64 (0.21.0-1.2) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../6-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Selecting previously unselected package libssh2-1:amd64.
+Preparing to unpack .../7-libssh2-1_1.9.0-2_amd64.deb ...
+Unpacking libssh2-1:amd64 (1.9.0-2) ...
+Selecting previously unselected package libcurl4:amd64.
+Preparing to unpack .../8-libcurl4_7.74.0-1.3+deb11u1_amd64.deb ...
+Unpacking libcurl4:amd64 (7.74.0-1.3+deb11u1) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../9-curl_7.74.0-1.3+deb11u1_amd64.deb ...
+Unpacking curl (7.74.0-1.3+deb11u1) ...
+Setting up libpsl5:amd64 (0.21.0-1.2) ...
+Setting up libbrotli1:amd64 (1.0.9-2+b2) ...
+Setting up libnghttp2-14:amd64 (1.43.0-1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Setting up libsasl2-2:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Setting up libssh2-1:amd64 (1.9.0-2) ...
+Setting up libldap-2.4-2:amd64 (2.4.57+dfsg-3+deb11u1) ...
+Setting up libcurl4:amd64 (7.74.0-1.3+deb11u1) ...
+Setting up curl (7.74.0-1.3+deb11u1) ...
+Processing triggers for libc-bin (2.31-13+deb11u3) ...
+Removing intermediate container b484f726241d
+ ---> b21381384801
+Step 3/8 : WORKDIR /app
+ ---> Running in e30081c783e6
+Removing intermediate container e30081c783e6
+ ---> a8fc6a3c4d90
+Step 4/8 : COPY requirements.txt /app/requirements.txt
+ ---> 776bded27d7e
+Step 5/8 : RUN pip install -r requirements.txt
+ ---> Running in 5f724fc6ffd3
+Collecting Flask
+  Downloading Flask-2.1.2-py3-none-any.whl (95 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.2/95.2 KB 3.4 MB/s eta 0:00:00
+Collecting Redis
+  Downloading redis-4.3.1-py3-none-any.whl (241 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 241.2/241.2 KB 8.7 MB/s eta 0:00:00
+Collecting gunicorn
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 KB 14.4 MB/s eta 0:00:00
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 KB 22.9 MB/s eta 0:00:00
+Collecting Werkzeug>=2.0
+  Downloading Werkzeug-2.1.2-py3-none-any.whl (224 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.9/224.9 KB 56.3 MB/s eta 0:00:00
+Collecting click>=8.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 21.9 MB/s eta 0:00:00
+Collecting importlib-metadata>=3.6.0
+  Downloading importlib_metadata-4.11.4-py3-none-any.whl (18 kB)
+Collecting async-timeout>=4.0.2
+  Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+Collecting packaging>=20.4
+  Downloading packaging-21.3-py3-none-any.whl (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 KB 5.6 MB/s eta 0:00:00
+Collecting deprecated>=1.2.3
+  Downloading Deprecated-1.2.13-py2.py3-none-any.whl (9.6 kB)
+Requirement already satisfied: setuptools>=3.0 in /usr/local/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (58.1.0)
+Collecting wrapt<2,>=1.10
+  Downloading wrapt-1.14.1-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (77 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.8/77.8 KB 27.8 MB/s eta 0:00:00
+Collecting zipp>=0.5
+  Downloading zipp-3.8.0-py3-none-any.whl (5.4 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 KB 32.6 MB/s eta 0:00:00
+Installing collected packages: zipp, wrapt, Werkzeug, pyparsing, MarkupSafe, itsdangerous, gunicorn, click, async-timeout, packaging, Jinja2, importlib-metadata, deprecated, Redis, Flask
+Successfully installed Flask-2.1.2 Jinja2-3.1.2 MarkupSafe-2.1.1 Redis-4.3.1 Werkzeug-2.1.2 async-timeout-4.0.2 click-8.1.3 deprecated-1.2.13 gunicorn-20.1.0 importlib-metadata-4.11.4 itsdangerous-2.1.2 packaging-21.3 pyparsing-3.0.9 wrapt-1.14.1 zipp-3.8.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+WARNING: You are using pip version 22.0.4; however, version 22.1.1 is available.
+You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+Removing intermediate container 5f724fc6ffd3
+ ---> f6c000e8d94f
+Step 6/8 : COPY . .
+ ---> d06848f9c631
+Step 7/8 : EXPOSE 80
+ ---> Running in 8dddd5f19600
+Removing intermediate container 8dddd5f19600
+ ---> db7677967f6e
+Step 8/8 : CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
+ ---> Running in e1307d64a0d9
+Removing intermediate container e1307d64a0d9
+ ---> fc76a8f54541
+Successfully built fc76a8f54541
+Successfully tagged voting-app:latest
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker images
+REPOSITORY                       TAG        IMAGE ID       CREATED          SIZE
+voting-app                       latest     fc76a8f54541   10 seconds ago   145MB
+iamnikaa/my_app                  latest     6c3c02ef1c9c   3 hours ago      469MB
+iamnikaa/training/my_app         latest     6c3c02ef1c9c   3 hours ago      469MB
+my_app                           latest     6c3c02ef1c9c   3 hours ago      469MB
+training/my_app                  latest     6c3c02ef1c9c   3 hours ago      469MB
+<none>                           <none>     e725fdf8d5d7   4 hours ago      469MB
+python                           3.9-slim   2de9c79b2c75   47 hours ago     125MB
+postgres                         latest     5b21e2e86aab   2 days ago       376MB
+jenkins/jenkins                  latest     011729edd836   3 days ago       460MB
+redis                            latest     1ca2c2a1b554   2 weeks ago      117MB
+mysql                            latest     76152be68449   2 weeks ago      524MB
+ubuntu                           latest     d2e4e1f51132   4 weeks ago      77.8MB
+redis                            4.0        191c4017dcdd   2 years ago      89.3MB
+kodekloud/simple-prompt-docker   latest     c0848fde57d1   2 years ago      4.41MB
+kodekloud/simple-webapp          latest     c6e3cd9aae36   3 years ago      84.8MB
+kodekloud/webapp                 latest     1a45ba829f10   4 years ago      432MB
+eesprit/voting-app-vote          latest     1c71ecb231a4   5 years ago      83.9MB
+eesprit/voting-app-result        latest     6f98b7114bf5   5 years ago      226MB
+eesprit/voting-app-worker        latest     3b8592893450   5 years ago      682MB
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker run -p 5000:80 voting-app
+[2022-05-30 12:57:50 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2022-05-30 12:57:50 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+[2022-05-30 12:57:50 +0000] [1] [INFO] Using worker: sync
+[2022-05-30 12:57:50 +0000] [7] [INFO] Booting worker with pid: 7
+[2022-05-30 12:57:50 +0000] [8] [INFO] Booting worker with pid: 8
+[2022-05-30 12:57:50 +0000] [9] [INFO] Booting worker with pid: 9
+[2022-05-30 12:57:50 +0000] [10] [INFO] Booting worker with pid: 10
+
+^C[2022-05-30 13:26:39 +0000] [1] [INFO] Handling signal: int
+[2022-05-30 13:26:39 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2022-05-30 13:26:39 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2022-05-30 13:26:39 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2022-05-30 13:26:39 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2022-05-30 13:26:39 +0000] [1] [INFO] Shutting down: Master
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker run --name=redis redis
+docker: Error response from daemon: Conflict. The container name "/redis" is already in use by container "1894de790fc1e6c96e407d67c99ab4a1e666cd3b920d2df44a4e88ec8c689f21". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker rm redis
+redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker run -d --name=redis redis
+a50a0f13eb3ad8b2e499caf5763cd4c2d93790355b5bf55cf31f023880c68c03
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker run -p 5000:80 --link redis:redis voting-app
+[2022-05-30 13:28:07 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2022-05-30 13:28:07 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+[2022-05-30 13:28:07 +0000] [1] [INFO] Using worker: sync
+[2022-05-30 13:28:07 +0000] [8] [INFO] Booting worker with pid: 8
+[2022-05-30 13:28:07 +0000] [9] [INFO] Booting worker with pid: 9
+[2022-05-30 13:28:07 +0000] [10] [INFO] Booting worker with pid: 10
+[2022-05-30 13:28:08 +0000] [11] [INFO] Booting worker with pid: 11
+^C[2022-05-30 13:32:48 +0000] [1] [INFO] Handling signal: int
+[2022-05-30 13:32:48 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2022-05-30 13:32:48 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2022-05-30 13:32:48 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2022-05-30 13:32:48 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2022-05-30 13:32:48 +0000] [1] [INFO] Shutting down: Master
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker run -p -d 5000:80 --link redis:redis voting-app
+docker: Invalid containerPort: -d.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker run -d -p 5000:80 --link redis:redis voting-app
+7e37682f91bb8a3276ce0b4933aa8320b2d70d7262a89c2c24467ee25fae0698
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker ps
+CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+7e37682f91bb   voting-app   "gunicorn app:app -b…"   4 seconds ago   Up 3 seconds   0.0.0.0:5000->80/tcp, :::5000->80/tcp   charming_bohr
+a50a0f13eb3a   redis        "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# docker inspect 7e3
+[
+    {
+        "Id": "7e37682f91bb8a3276ce0b4933aa8320b2d70d7262a89c2c24467ee25fae0698",
+        "Created": "2022-05-30T13:33:01.047157516Z",
+        "Path": "gunicorn",
+        "Args": [
+            "app:app",
+            "-b",
+            "0.0.0.0:80",
+            "--log-file",
+            "-",
+            "--access-logfile",
+            "-",
+            "--workers",
+            "4",
+            "--keep-alive",
+            "0"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 190737,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-05-30T13:33:01.406267221Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:fc76a8f54541e9365664c8bd35613bcfdcdf859193f66fd410bc0b3f1be7c68e",
+        "ResolvConfPath": "/var/lib/docker/containers/7e37682f91bb8a3276ce0b4933aa8320b2d70d7262a89c2c24467ee25fae0698/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/7e37682f91bb8a3276ce0b4933aa8320b2d70d7262a89c2c24467ee25fae0698/hostname",
+        "HostsPath": "/var/lib/docker/containers/7e37682f91bb8a3276ce0b4933aa8320b2d70d7262a89c2c24467ee25fae0698/hosts",
+        "LogPath": "/var/lib/docker/containers/7e37682f91bb8a3276ce0b4933aa8320b2d70d7262a89c2c24467ee25fae0698/7e37682f91bb8a3276ce0b4933aa8320b2d70d7262a89c2c24467ee25fae0698-json.log",
+        "Name": "/charming_bohr",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "5000"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": [
+                "/redis:/charming_bohr/redis"
+            ],
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/83aee7d104bf07ff9bb03a074ce616bdb48077f55641bc892c5346a9a74b4758-init/diff:/var/lib/docker/overlay2/bf990be2d799a8790ff2c8133636ee3088a6a4de7d11addfc1c6722cc93804d2/diff:/var/lib/docker/overlay2/25ab6c507a1ced277a7ded3cdfed392ad761f225d0b0bb1899330c47db90f3f1/diff:/var/lib/docker/overlay2/bea5859f6c94111fd762fadbe0619cd82f45f8dea8623f3ad9c65713fe2e52ff/diff:/var/lib/docker/overlay2/fb339e419499411bd2eb868668098be45079df0c38a80ac9458a3dd8f67692bc/diff:/var/lib/docker/overlay2/667359a6a5cf3bd38fbfd2b3bcccd2ee8e34aae60fc34962eefa7ddc13c98d74/diff:/var/lib/docker/overlay2/1da4203cc9de000a1fe6500f435f6511ff0d512fdb7b8b43b4013e910c7a6430/diff:/var/lib/docker/overlay2/7c7ee0ddbbd5e9417006c15c02d51b72d1a3c34f3936f5206986c800d52da85d/diff:/var/lib/docker/overlay2/830ef6f44fbee80c155f66408456fa45ceeedd7f187b09240954aeac4d1eed33/diff:/var/lib/docker/overlay2/942b1368911f69c37ca8d175809747c315cd2fd940fed2111ddee9214c536ac0/diff:/var/lib/docker/overlay2/df458af536628ca08141f3165c5e75ab4ac8d9720cb6f267ab5aa4152abf0cce/diff",
+                "MergedDir": "/var/lib/docker/overlay2/83aee7d104bf07ff9bb03a074ce616bdb48077f55641bc892c5346a9a74b4758/merged",
+                "UpperDir": "/var/lib/docker/overlay2/83aee7d104bf07ff9bb03a074ce616bdb48077f55641bc892c5346a9a74b4758/diff",
+                "WorkDir": "/var/lib/docker/overlay2/83aee7d104bf07ff9bb03a074ce616bdb48077f55641bc892c5346a9a74b4758/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "7e37682f91bb",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.9.13",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=58.1.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a312303dbd516f6a692f2fee59852701bd828dd8/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=8dd03e99645c19f49bbb629ce65c46b665ee92a1d94d246418bad6afade89f8d"
+            ],
+            "Cmd": [
+                "gunicorn",
+                "app:app",
+                "-b",
+                "0.0.0.0:80",
+                "--log-file",
+                "-",
+                "--access-logfile",
+                "-",
+                "--workers",
+                "4",
+                "--keep-alive",
+                "0"
+            ],
+            "Image": "voting-app",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "1254e1dd67677243262fd5a3e5a542e05496f36027e83b63b00d2213c2491fc8",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "5000"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "5000"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/1254e1dd6767",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "c60df2fd3fd6aa3af1ef917c81630038ce87071da93ab5fef95f7e8a87809320",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:03",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "6a4a3c3a7a441bbc812fca8da8adefa3fd5778c6ec1d6d98dbecfd92f61f561e",
+                    "EndpointID": "c60df2fd3fd6aa3af1ef917c81630038ce87071da93ab5fef95f7e8a87809320",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:03",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# 
+
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/vote# cd ..
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# cd worker
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker run --name=db postgres:9.4
+Unable to find image 'postgres:9.4' locally
+9.4: Pulling from library/postgres
+619014d83c02: Pull complete 
+7ec0fe6664f6: Pull complete 
+9ca7ba8f7764: Pull complete 
+9e1155d037e2: Pull complete 
+febcfb7f8870: Pull complete 
+8c78c79412b5: Pull complete 
+5a35744405c5: Pull complete 
+27717922e067: Pull complete 
+36f0c5255550: Pull complete 
+dbf0a396f422: Pull complete 
+ec4c06ea33e5: Pull complete 
+e8dd33eba6d1: Pull complete 
+51c81b3b2c20: Pull complete 
+2a03dd76f5d7: Pull complete 
+Digest: sha256:42a7a6a647a602efa9592edd1f56359800d079b93fa52c5d92244c58ac4a2ab9
+Status: Downloaded newer image for postgres:9.4
+docker: Error response from daemon: Conflict. The container name "/db" is already in use by container "fb55c3ca0a1cf6eab30e62866406d967d6b85f82da605716ce29a5ff3c962f9d". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker rm db
+db
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker run -d --name=db postgres:9.4
+dfb7037e7d73448041fe259e66784ef12787fc54070a612e0afc0fffe68ec9b7
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker ps
+CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS         PORTS                                   NAMES
+7e37682f91bb   voting-app   "gunicorn app:app -b…"   4 minutes ago    Up 4 minutes   0.0.0.0:5000->80/tcp, :::5000->80/tcp   charming_bohr
+a50a0f13eb3a   redis        "docker-entrypoint.s…"   10 minutes ago   Up 9 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker rm db
+db
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker run -d --name=db postgres:9.4 sleep 1000
+ba6c1e821c616c0ccf0715f459f5fd22afd903f20eff6e96e245acb800f14ff8
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+ba6c1e821c61   postgres:9.4   "docker-entrypoint.s…"   2 seconds ago    Up 2 seconds    5432/tcp                                db
+7e37682f91bb   voting-app     "gunicorn app:app -b…"   4 minutes ago    Up 4 minutes    0.0.0.0:5000->80/tcp, :::5000->80/tcp   charming_bohr
+a50a0f13eb3a   redis          "docker-entrypoint.s…"   10 minutes ago   Up 10 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# cat Dockerfile
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as builder
+
+WORKDIR /Worker
+COPY src/Worker/Worker.csproj .
+RUN dotnet restore
+
+COPY src/Worker/ .
+RUN dotnet publish -c Release -o /out Worker.csproj
+
+# app image
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+
+WORKDIR /app
+ENTRYPOINT ["dotnet", "Worker.dll"]
+
+COPY --from=builder /out .root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker build . -t worker-app
+Sending build context to Docker daemon  59.39kB
+Step 1/10 : FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as builder
+3.1: Pulling from dotnet/core/sdk
+982cba7e471c: Pull complete 
+b02d86f59850: Pull complete 
+8b047e8f2e47: Pull complete 
+478cfe935c2f: Pull complete 
+fc83b58abd60: Pull complete 
+75f01331d259: Pull complete 
+59edf99bf549: Pull complete 
+Digest: sha256:830978e65d2b2b3c7d214b2ce63117fe1e3a2d5db5d3c07fd7f1572b77444fb5
+Status: Downloaded newer image for mcr.microsoft.com/dotnet/core/sdk:3.1
+ ---> 6dac2916209e
+Step 2/10 : WORKDIR /Worker
+ ---> Running in 9f63a7454f3e
+Removing intermediate container 9f63a7454f3e
+ ---> 591c9f15e371
+Step 3/10 : COPY src/Worker/Worker.csproj .
+ ---> 7d15d445619a
+Step 4/10 : RUN dotnet restore
+ ---> Running in ac61514200b1
+  Determining projects to restore...
+  Restored /Worker/Worker.csproj (in 7.66 sec).
+Removing intermediate container ac61514200b1
+ ---> 3d333387bdab
+Step 5/10 : COPY src/Worker/ .
+ ---> 133993a8e73d
+Step 6/10 : RUN dotnet publish -c Release -o /out Worker.csproj
+ ---> Running in ab81a73b58d4
+Microsoft (R) Build Engine version 16.7.2+b60ddb6f4 for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Worker -> /Worker/bin/Release/netcoreapp3.1/Worker.dll
+  Worker -> /out/
+Removing intermediate container ab81a73b58d4
+ ---> 8c4623fac31e
+Step 7/10 : FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+3.1: Pulling from dotnet/core/runtime
+c1ad9731b2c7: Pull complete 
+169ba0027942: Pull complete 
+8b28250a561d: Pull complete 
+bc8ce0008738: Pull complete 
+Digest: sha256:bdf444e70e23cede3f34597a4958fbbe3b63c13291cf535fef35a8dc716da17e
+Status: Downloaded newer image for mcr.microsoft.com/dotnet/core/runtime:3.1
+ ---> b3bbe16bb594
+Step 8/10 : WORKDIR /app
+ ---> Running in 812cf4ce2f13
+Removing intermediate container 812cf4ce2f13
+ ---> 79a8c5222df9
+Step 9/10 : ENTRYPOINT ["dotnet", "Worker.dll"]
+ ---> Running in c78377435911
+Removing intermediate container c78377435911
+ ---> 44f32d140d82
+Step 10/10 : COPY --from=builder /out .
+ ---> 8d6dd60a6782
+Successfully built 8d6dd60a6782
+Successfully tagged worker-app:latest
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker run -d --name=worker --link redis:redis --link db:db worker-app
+docker: Error response from daemon: Conflict. The container name "/worker" is already in use by container "c105dcb7dcdb9c389b0d7915d201ac46cd442f6b87814a13e83b14a42735a835". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker rm worker
+worker
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker run -d --name=worker --link redis:redis --link db:db worker-app
+ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+ed42db179a00   worker-app     "dotnet Worker.dll"      9 seconds ago    Up 9 seconds                                            worker
+ba6c1e821c61   postgres:9.4   "docker-entrypoint.s…"   3 minutes ago    Up 3 minutes    5432/tcp                                db
+7e37682f91bb   voting-app     "gunicorn app:app -b…"   8 minutes ago    Up 8 minutes    0.0.0.0:5000->80/tcp, :::5000->80/tcp   charming_bohr
+a50a0f13eb3a   redis          "docker-entrypoint.s…"   13 minutes ago   Up 13 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/worker# cd ..
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# cd result
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# cat Dockerfile
+FROM node:10-slim
+
+# add curl for healthcheck
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add Tini for proper init of signals
+ENV TINI_VERSION v0.19.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+
+WORKDIR /app
+
+# have nodemon available for local dev use (file watching)
+RUN npm install -g nodemon
+
+COPY package*.json ./
+
+RUN npm ci \
+ && npm cache clean --force \
+ && mv /app/node_modules /node_modules
+
+COPY . .
+
+ENV PORT 80
+
+EXPOSE 80
+
+CMD ["/tini", "--", "node", "server.js"]
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker build . -t result-app
+Sending build context to Docker daemon  507.4kB
+Step 1/13 : FROM node:10-slim
+10-slim: Pulling from library/node
+62deabe7a6db: Pull complete 
+f698164f6049: Pull complete 
+bc29352cb629: Pull complete 
+85e84b4c858f: Pull complete 
+ac72e4359589: Pull complete 
+Digest: sha256:88932859e3d022d79161b99628c4c2c50e836437455e2d1b1a008d98367b10d6
+Status: Downloaded newer image for node:10-slim
+ ---> 6fbcbbb5c603
+Step 2/13 : RUN apt-get update     && apt-get install -y --no-install-recommends     curl     && rm -rf /var/lib/apt/lists/*
+ ---> Running in 37ae23941838
+Get:1 http://security.debian.org/debian-security stretch/updates InRelease [53.0 kB]
+Ign:2 http://deb.debian.org/debian stretch InRelease
+Get:3 http://deb.debian.org/debian stretch-updates InRelease [93.6 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [770 kB]
+Get:6 http://deb.debian.org/debian stretch Release.gpg [3177 B]
+Get:7 http://deb.debian.org/debian stretch/main amd64 Packages [7080 kB]
+Fetched 8117 kB in 3s (2575 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following package was automatically installed and is no longer required:
+  xz-utils
+Use 'apt autoremove' to remove it.
+The following additional packages will be installed:
+  libcurl3 libffi6 libgmp10 libgnutls30 libgssapi-krb5-2 libhogweed4 libidn11
+  libidn2-0 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2
+  libldap-common libnettle6 libnghttp2-14 libp11-kit0 libpsl5 librtmp1
+  libsasl2-2 libsasl2-modules-db libssh2-1 libssl1.0.2 libtasn1-6
+  libunistring0
+Suggested packages:
+  gnutls-bin krb5-doc krb5-user
+Recommended packages:
+  ca-certificates krb5-locales publicsuffix libsasl2-modules
+The following NEW packages will be installed:
+  curl libcurl3 libffi6 libgmp10 libgnutls30 libgssapi-krb5-2 libhogweed4
+  libidn11 libidn2-0 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
+  libldap-2.4-2 libldap-common libnettle6 libnghttp2-14 libp11-kit0 libpsl5
+  librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1 libssl1.0.2 libtasn1-6
+  libunistring0
+0 upgraded, 26 newly installed, 0 to remove and 12 not upgraded.
+Need to get 5411 kB of archives.
+After this operation, 14.2 MB of additional disk space will be used.
+Get:1 http://security.debian.org/debian-security stretch/updates/main amd64 libssl1.0.2 amd64 1.0.2u-1~deb9u7 [1305 kB]
+Get:2 http://deb.debian.org/debian stretch/main amd64 libidn11 amd64 1.33-1+deb9u1 [115 kB]
+Get:3 http://deb.debian.org/debian stretch/main amd64 libffi6 amd64 3.2.1-6 [20.4 kB]
+Get:4 http://deb.debian.org/debian stretch/main amd64 libtasn1-6 amd64 4.10-1.1+deb9u1 [50.6 kB]
+Get:5 http://deb.debian.org/debian stretch/main amd64 libkeyutils1 amd64 1.5.9-9 [12.4 kB]
+Get:6 http://deb.debian.org/debian stretch/main amd64 libunistring0 amd64 0.9.6+really0.9.3-0.1 [279 kB]
+Get:7 http://deb.debian.org/debian stretch/main amd64 libidn2-0 amd64 0.16-1+deb9u1 [60.7 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 libpsl5 amd64 0.17.0-3 [41.8 kB]
+Get:9 http://deb.debian.org/debian stretch/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1+b1 [60.4 kB]
+Get:10 http://security.debian.org/debian-security stretch/updates/main amd64 libgmp10 amd64 2:6.1.2+dfsg-1+deb9u1 [253 kB]
+Get:11 http://security.debian.org/debian-security stretch/updates/main amd64 libnettle6 amd64 3.3-1+deb9u1 [192 kB]
+Get:12 http://security.debian.org/debian-security stretch/updates/main amd64 libhogweed4 amd64 3.3-1+deb9u1 [136 kB]
+Get:13 http://security.debian.org/debian-security stretch/updates/main amd64 libp11-kit0 amd64 0.23.3-2+deb9u1 [112 kB]
+Get:14 http://security.debian.org/debian-security stretch/updates/main amd64 libgnutls30 amd64 3.5.8-5+deb9u6 [897 kB]
+Get:15 http://security.debian.org/debian-security stretch/updates/main amd64 libkrb5support0 amd64 1.15-1+deb9u3 [62.3 kB]
+Get:16 http://security.debian.org/debian-security stretch/updates/main amd64 libk5crypto3 amd64 1.15-1+deb9u3 [120 kB]
+Get:17 http://security.debian.org/debian-security stretch/updates/main amd64 libkrb5-3 amd64 1.15-1+deb9u3 [312 kB]
+Get:18 http://security.debian.org/debian-security stretch/updates/main amd64 libgssapi-krb5-2 amd64 1.15-1+deb9u3 [155 kB]
+Get:19 http://security.debian.org/debian-security stretch/updates/main amd64 libsasl2-modules-db amd64 2.1.27~101-g0780600+dfsg-3+deb9u2 [68.5 kB]
+Get:20 http://security.debian.org/debian-security stretch/updates/main amd64 libsasl2-2 amd64 2.1.27~101-g0780600+dfsg-3+deb9u2 [105 kB]
+Get:21 http://security.debian.org/debian-security stretch/updates/main amd64 libldap-common all 2.4.44+dfsg-5+deb9u9 [86.3 kB]
+Get:22 http://security.debian.org/debian-security stretch/updates/main amd64 libldap-2.4-2 amd64 2.4.44+dfsg-5+deb9u9 [220 kB]
+Get:23 http://security.debian.org/debian-security stretch/updates/main amd64 libnghttp2-14 amd64 1.18.1-1+deb9u2 [79.4 kB]
+Get:24 http://security.debian.org/debian-security stretch/updates/main amd64 libssh2-1 amd64 1.7.0-1+deb9u2 [139 kB]
+Get:25 http://security.debian.org/debian-security stretch/updates/main amd64 libcurl3 amd64 7.52.1-5+deb9u16 [298 kB]
+Get:26 http://security.debian.org/debian-security stretch/updates/main amd64 curl amd64 7.52.1-5+deb9u16 [229 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 5411 kB in 0s (6965 kB/s)
+Selecting previously unselected package libssl1.0.2:amd64.
+(Reading database ... 6366 files and directories currently installed.)
+Preparing to unpack .../00-libssl1.0.2_1.0.2u-1~deb9u7_amd64.deb ...
+Unpacking libssl1.0.2:amd64 (1.0.2u-1~deb9u7) ...
+Selecting previously unselected package libgmp10:amd64.
+Preparing to unpack .../01-libgmp10_2%3a6.1.2+dfsg-1+deb9u1_amd64.deb ...
+Unpacking libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+Selecting previously unselected package libnettle6:amd64.
+Preparing to unpack .../02-libnettle6_3.3-1+deb9u1_amd64.deb ...
+Unpacking libnettle6:amd64 (3.3-1+deb9u1) ...
+Selecting previously unselected package libhogweed4:amd64.
+Preparing to unpack .../03-libhogweed4_3.3-1+deb9u1_amd64.deb ...
+Unpacking libhogweed4:amd64 (3.3-1+deb9u1) ...
+Selecting previously unselected package libidn11:amd64.
+Preparing to unpack .../04-libidn11_1.33-1+deb9u1_amd64.deb ...
+Unpacking libidn11:amd64 (1.33-1+deb9u1) ...
+Selecting previously unselected package libffi6:amd64.
+Preparing to unpack .../05-libffi6_3.2.1-6_amd64.deb ...
+Unpacking libffi6:amd64 (3.2.1-6) ...
+Selecting previously unselected package libp11-kit0:amd64.
+Preparing to unpack .../06-libp11-kit0_0.23.3-2+deb9u1_amd64.deb ...
+Unpacking libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+Selecting previously unselected package libtasn1-6:amd64.
+Preparing to unpack .../07-libtasn1-6_4.10-1.1+deb9u1_amd64.deb ...
+Unpacking libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+Selecting previously unselected package libgnutls30:amd64.
+Preparing to unpack .../08-libgnutls30_3.5.8-5+deb9u6_amd64.deb ...
+Unpacking libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../09-libkeyutils1_1.5.9-9_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.5.9-9) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../10-libkrb5support0_1.15-1+deb9u3_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.15-1+deb9u3) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../11-libk5crypto3_1.15-1+deb9u3_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.15-1+deb9u3) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../12-libkrb5-3_1.15-1+deb9u3_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.15-1+deb9u3) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../13-libgssapi-krb5-2_1.15-1+deb9u3_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.15-1+deb9u3) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../14-libsasl2-modules-db_2.1.27~101-g0780600+dfsg-3+deb9u2_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../15-libsasl2-2_2.1.27~101-g0780600+dfsg-3+deb9u2_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../16-libldap-common_2.4.44+dfsg-5+deb9u9_all.deb ...
+Unpacking libldap-common (2.4.44+dfsg-5+deb9u9) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../17-libldap-2.4-2_2.4.44+dfsg-5+deb9u9_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u9) ...
+Selecting previously unselected package libunistring0:amd64.
+Preparing to unpack .../18-libunistring0_0.9.6+really0.9.3-0.1_amd64.deb ...
+Unpacking libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+Selecting previously unselected package libidn2-0:amd64.
+Preparing to unpack .../19-libidn2-0_0.16-1+deb9u1_amd64.deb ...
+Unpacking libidn2-0:amd64 (0.16-1+deb9u1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../20-libnghttp2-14_1.18.1-1+deb9u2_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.18.1-1+deb9u2) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../21-libpsl5_0.17.0-3_amd64.deb ...
+Unpacking libpsl5:amd64 (0.17.0-3) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../22-librtmp1_2.4+20151223.gitfa8646d.1-1+b1_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+Selecting previously unselected package libssh2-1:amd64.
+Preparing to unpack .../23-libssh2-1_1.7.0-1+deb9u2_amd64.deb ...
+Unpacking libssh2-1:amd64 (1.7.0-1+deb9u2) ...
+Selecting previously unselected package libcurl3:amd64.
+Preparing to unpack .../24-libcurl3_7.52.1-5+deb9u16_amd64.deb ...
+Unpacking libcurl3:amd64 (7.52.1-5+deb9u16) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../25-curl_7.52.1-5+deb9u16_amd64.deb ...
+Unpacking curl (7.52.1-5+deb9u16) ...
+Setting up libnettle6:amd64 (3.3-1+deb9u1) ...
+Setting up libnghttp2-14:amd64 (1.18.1-1+deb9u2) ...
+Setting up libldap-common (2.4.44+dfsg-5+deb9u9) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+Setting up libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+Setting up libssl1.0.2:amd64 (1.0.2u-1~deb9u7) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+Setting up libssh2-1:amd64 (1.7.0-1+deb9u2) ...
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Setting up libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+Setting up libffi6:amd64 (3.2.1-6) ...
+Setting up libkeyutils1:amd64 (1.5.9-9) ...
+Setting up libidn11:amd64 (1.33-1+deb9u1) ...
+Setting up libidn2-0:amd64 (0.16-1+deb9u1) ...
+Setting up libpsl5:amd64 (0.17.0-3) ...
+Setting up libkrb5support0:amd64 (1.15-1+deb9u3) ...
+Setting up libhogweed4:amd64 (3.3-1+deb9u1) ...
+Setting up libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+Setting up libk5crypto3:amd64 (1.15-1+deb9u3) ...
+Setting up libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+Setting up libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u9) ...
+Setting up libkrb5-3:amd64 (1.15-1+deb9u3) ...
+Setting up libgssapi-krb5-2:amd64 (1.15-1+deb9u3) ...
+Setting up libcurl3:amd64 (7.52.1-5+deb9u16) ...
+Setting up curl (7.52.1-5+deb9u16) ...
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Removing intermediate container 37ae23941838
+ ---> ddaeb766a977
+Step 3/13 : ENV TINI_VERSION v0.19.0
+ ---> Running in 5ee18befe326
+Removing intermediate container 5ee18befe326
+ ---> 3daa9c1a24d0
+Step 4/13 : ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+Downloading [==================================================>]  24.06kB/24.06kB
+
+ ---> 473ad4c080e1
+Step 5/13 : RUN chmod +x /tini
+ ---> Running in 1370f9dedc2c
+Removing intermediate container 1370f9dedc2c
+ ---> e4739608975e
+Step 6/13 : WORKDIR /app
+ ---> Running in 15ef87919f59
+Removing intermediate container 15ef87919f59
+ ---> 429a724d2e08
+Step 7/13 : RUN npm install -g nodemon
+ ---> Running in cb2b52199c77
+/usr/local/bin/nodemon -> /usr/local/lib/node_modules/nodemon/bin/nodemon.js
+
+> nodemon@2.0.16 postinstall /usr/local/lib/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+Love nodemon? You can now support the project via the open collective:
+ > https://opencollective.com/nodemon/donate
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/nodemon/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ nodemon@2.0.16
+added 116 packages from 54 contributors in 5.959s
+Removing intermediate container cb2b52199c77
+ ---> 2b2a8e59bf93
+Step 8/13 : COPY package*.json ./
+ ---> ab6044306d0a
+Step 9/13 : RUN npm ci  && npm cache clean --force  && mv /app/node_modules /node_modules
+ ---> Running in aad6f5ec1a71
+added 109 packages in 1.754s
+npm WARN using --force I sure hope you know what you are doing.
+Removing intermediate container aad6f5ec1a71
+ ---> 576f1dc32c29
+Step 10/13 : COPY . .
+ ---> c6de72655cdd
+Step 11/13 : ENV PORT 80
+ ---> Running in 9aa8a2b9ee23
+Removing intermediate container 9aa8a2b9ee23
+ ---> 322f81660484
+Step 12/13 : EXPOSE 80
+ ---> Running in a7dcd86abcd4
+Removing intermediate container a7dcd86abcd4
+ ---> a0a6e0d122de
+Step 13/13 : CMD ["/tini", "--", "node", "server.js"]
+ ---> Running in 74f0948c61c9
+Removing intermediate container 74f0948c61c9
+ ---> c8e51d2eeffe
+Successfully built c8e51d2eeffe
+Successfully tagged result-app:latest
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker images
+REPOSITORY                              TAG        IMAGE ID       CREATED          SIZE
+result-app                              latest     c8e51d2eeffe   47 seconds ago   160MB
+worker-app                              latest     8d6dd60a6782   4 minutes ago    193MB
+<none>                                  <none>     8c4623fac31e   4 minutes ago    750MB
+voting-app                              latest     fc76a8f54541   47 minutes ago   145MB
+my_app                                  latest     6c3c02ef1c9c   4 hours ago      469MB
+training/my_app                         latest     6c3c02ef1c9c   4 hours ago      469MB
+iamnikaa/my_app                         latest     6c3c02ef1c9c   4 hours ago      469MB
+iamnikaa/training/my_app                latest     6c3c02ef1c9c   4 hours ago      469MB
+<none>                                  <none>     e725fdf8d5d7   5 hours ago      469MB
+python                                  3.9-slim   2de9c79b2c75   2 days ago       125MB
+postgres                                latest     5b21e2e86aab   2 days ago       376MB
+mcr.microsoft.com/dotnet/core/sdk       3.1        6dac2916209e   2 days ago       711MB
+mcr.microsoft.com/dotnet/core/runtime   3.1        b3bbe16bb594   2 days ago       190MB
+jenkins/jenkins                         latest     011729edd836   3 days ago       460MB
+redis                                   latest     1ca2c2a1b554   2 weeks ago      117MB
+mysql                                   latest     76152be68449   2 weeks ago      524MB
+ubuntu                                  latest     d2e4e1f51132   4 weeks ago      77.8MB
+node                                    10-slim    6fbcbbb5c603   13 months ago    134MB
+redis                                   4.0        191c4017dcdd   2 years ago      89.3MB
+postgres                                9.4        ed5a45034282   2 years ago      251MB
+kodekloud/simple-prompt-docker          latest     c0848fde57d1   2 years ago      4.41MB
+kodekloud/simple-webapp                 latest     c6e3cd9aae36   3 years ago      84.8MB
+kodekloud/webapp                        latest     1a45ba829f10   4 years ago      432MB
+eesprit/voting-app-vote                 latest     1c71ecb231a4   5 years ago      83.9MB
+eesprit/voting-app-result               latest     6f98b7114bf5   5 years ago      226MB
+eesprit/voting-app-worker               latest     3b8592893450   5 years ago      682MB
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker run -p 5001:80 --link db=db worker-app
+docker: Error response from daemon: could not get container for db=db: No such container: db=db.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker run -p 5001:80 --link db:db worker-app
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+^Croot@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker run -p 5001:80 --link db:db result-app
+Mon, 30 May 2022 13:45:41 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at server.js:73:9
+Mon, 30 May 2022 13:45:41 GMT body-parser deprecated undefined extended: provide extended option at ../node_modules/body-parser/index.js:105:29
+App running on port 80
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+^Croot@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+ed42db179a00   worker-app     "dotnet Worker.dll"      5 minutes ago    Up 5 minutes                                            worker
+ba6c1e821c61   postgres:9.4   "docker-entrypoint.s…"   9 minutes ago    Up 9 minutes    5432/tcp                                db
+7e37682f91bb   voting-app     "gunicorn app:app -b…"   14 minutes ago   Up 14 minutes   0.0.0.0:5000->80/tcp, :::5000->80/tcp   charming_bohr
+a50a0f13eb3a   redis          "docker-entrypoint.s…"   19 minutes ago   Up 19 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker rm worker
+Error response from daemon: You cannot remove a running container ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393. Stop the container before attempting removal or force remove
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker attach worker
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+Waiting for db
+^Croot@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker inspect worker
+[
+    {
+        "Id": "ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393",
+        "Created": "2022-05-30T13:41:27.035509547Z",
+        "Path": "dotnet",
+        "Args": [
+            "Worker.dll"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 130,
+            "Error": "",
+            "StartedAt": "2022-05-30T13:41:27.343795Z",
+            "FinishedAt": "2022-05-30T13:48:11.536531513Z"
+        },
+        "Image": "sha256:8d6dd60a67829c027c50757026df1f3475c1bbbc009fa680df058448a5d5e170",
+        "ResolvConfPath": "/var/lib/docker/containers/ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393/hostname",
+        "HostsPath": "/var/lib/docker/containers/ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393/hosts",
+        "LogPath": "/var/lib/docker/containers/ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393/ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393-json.log",
+        "Name": "/worker",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": [
+                "/db:/worker/db",
+                "/redis:/worker/redis"
+            ],
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/da63ec0545651ccf5ceb55b3be75fb305dc8561659f425750a04bd1b9daf4ecf-init/diff:/var/lib/docker/overlay2/0ca29a57e9ccc5c8916f2c92880dfc7835558216be34424f692081052785bfea/diff:/var/lib/docker/overlay2/560133915e91cf34138ac872ba4510691d9e33dddcfb2c44ad3b714dc5bf0f1e/diff:/var/lib/docker/overlay2/105d1e75d29c2d303706a924dad77b02b6c392eff0478b698ab1cc07d8c5204e/diff:/var/lib/docker/overlay2/7661664db1e50c66b30a9952a737abfa80aa765b5940a8da6362337fb78cabdb/diff:/var/lib/docker/overlay2/b010dc2083d3d719c96bdb9234da9e5c89c61f7fd559212691ec969e4558f8fc/diff:/var/lib/docker/overlay2/518eaaae87ad915e73c1fd68cdcea24a959ccdb372ac38741b06d09e711e43dc/diff",
+                "MergedDir": "/var/lib/docker/overlay2/da63ec0545651ccf5ceb55b3be75fb305dc8561659f425750a04bd1b9daf4ecf/merged",
+                "UpperDir": "/var/lib/docker/overlay2/da63ec0545651ccf5ceb55b3be75fb305dc8561659f425750a04bd1b9daf4ecf/diff",
+                "WorkDir": "/var/lib/docker/overlay2/da63ec0545651ccf5ceb55b3be75fb305dc8561659f425750a04bd1b9daf4ecf/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "ed42db179a00",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "ASPNETCORE_URLS=http://+:80",
+                "DOTNET_RUNNING_IN_CONTAINER=true"
+            ],
+            "Cmd": null,
+            "Image": "worker-app",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "dotnet",
+                "Worker.dll"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "15e9ddb140d8d87fdaaab3f894fcb179f45acfbb97ede77af56cf7a66eb4b11b",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {},
+            "SandboxKey": "/var/run/docker/netns/15e9ddb140d8",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "6a4a3c3a7a441bbc812fca8da8adefa3fd5778c6ec1d6d98dbecfd92f61f561e",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+ba6c1e821c61   postgres:9.4   "docker-entrypoint.s…"   10 minutes ago   Up 10 minutes   5432/tcp                                db
+7e37682f91bb   voting-app     "gunicorn app:app -b…"   15 minutes ago   Up 15 minutes   0.0.0.0:5000->80/tcp, :::5000->80/tcp   charming_bohr
+a50a0f13eb3a   redis          "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker run -d --name=worker --link redis:redis --link db:db worker-app
+docker: Error response from daemon: Conflict. The container name "/worker" is already in use by container "ed42db179a00fc4da82b4b76dcc4864b33781af5686d2bccb9800e81473a5393". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker rm worker
+worker
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker run -d --name=worker --link redis:redis --link db:db worker-app
+6853bbd5a4aa20a20fd4005cece28da480df5d861e9208989e98f588863f52de
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+6853bbd5a4aa   worker-app     "dotnet Worker.dll"      3 seconds ago    Up 2 seconds                                            worker
+ba6c1e821c61   postgres:9.4   "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   5432/tcp                                db
+7e37682f91bb   voting-app     "gunicorn app:app -b…"   16 minutes ago   Up 16 minutes   0.0.0.0:5000->80/tcp, :::5000->80/tcp   charming_bohr
+a50a0f13eb3a   redis          "docker-entrypoint.s…"   21 minutes ago   Up 21 minutes   6379/tcp                                redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker attach 7e3
+^C[2022-05-30 13:49:44 +0000] [1] [INFO] Handling signal: int
+[2022-05-30 13:49:44 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2022-05-30 13:49:44 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2022-05-30 13:49:44 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2022-05-30 13:49:44 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2022-05-30 13:49:44 +0000] [1] [INFO] Shutting down: Master
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS      NAMES
+6853bbd5a4aa   worker-app     "dotnet Worker.dll"      37 seconds ago   Up 35 seconds              worker
+ba6c1e821c61   postgres:9.4   "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   5432/tcp   db
+a50a0f13eb3a   redis          "docker-entrypoint.s…"   22 minutes ago   Up 22 minutes   6379/tcp   redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker rm 7e3
+7e3
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker run -p 5000:80 --link redis:redis voting-app
+[2022-05-30 13:50:17 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2022-05-30 13:50:17 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+[2022-05-30 13:50:17 +0000] [1] [INFO] Using worker: sync
+[2022-05-30 13:50:17 +0000] [7] [INFO] Booting worker with pid: 7
+[2022-05-30 13:50:17 +0000] [8] [INFO] Booting worker with pid: 8
+[2022-05-30 13:50:17 +0000] [9] [INFO] Booting worker with pid: 9
+[2022-05-30 13:50:17 +0000] [10] [INFO] Booting worker with pid: 10
+[2022-05-30 13:50:35 +0000] [1] [INFO] Handling signal: winch
+[2022-05-30 13:52:40 +0000] [1] [INFO] Handling signal: winch
+[2022-05-30 13:53:21 +0000] [1] [INFO] Handling signal: winch
+[2022-05-30 13:53:25 +0000] [1] [INFO] Handling signal: winch
+^C[2022-05-30 13:53:28 +0000] [1] [INFO] Handling signal: int
+[2022-05-30 13:53:28 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2022-05-30 13:53:28 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2022-05-30 13:53:28 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2022-05-30 13:53:28 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2022-05-30 13:53:28 +0000] [1] [INFO] Shutting down: Master
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS      NAMES
+6853bbd5a4aa   worker-app     "dotnet Worker.dll"      4 minutes ago    Up 4 minutes               worker
+ba6c1e821c61   postgres:9.4   "docker-entrypoint.s…"   15 minutes ago   Up 15 minutes   5432/tcp   db
+a50a0f13eb3a   redis          "docker-entrypoint.s…"   25 minutes ago   Up 25 minutes   6379/tcp   redis
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# docker run -p 5000:80 --link redis:redis voting-app
+[2022-05-30 13:53:48 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2022-05-30 13:53:48 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+[2022-05-30 13:53:48 +0000] [1] [INFO] Using worker: sync
+[2022-05-30 13:53:48 +0000] [7] [INFO] Booting worker with pid: 7
+[2022-05-30 13:53:48 +0000] [8] [INFO] Booting worker with pid: 8
+[2022-05-30 13:53:48 +0000] [9] [INFO] Booting worker with pid: 9
+[2022-05-30 13:53:48 +0000] [10] [INFO] Booting worker with pid: 10
+^C[2022-05-30 13:54:59 +0000] [1] [INFO] Handling signal: int
+[2022-05-30 13:54:59 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2022-05-30 13:54:59 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2022-05-30 13:54:59 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2022-05-30 13:54:59 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2022-05-30 13:54:59 +0000] [1] [INFO] Shutting down: Master
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# 
+
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app/result# cd ..
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# docker stop $(docker ps -q)
+6853bbd5a4aa
+a50a0f13eb3a
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# cat > docker-compose.yml
+redis:
+
+db:
+
+vote:
+
+worker:
+
+result:
+^C
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# nano docker-compose.yml
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# docker-compose up
+
+Command 'docker-compose' not found, but can be installed with:
+
+snap install docker          # version 20.10.14, or
+apt  install docker-compose  # version 1.25.0-1
+
+See 'snap info docker' for additional versions.
+
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# docker-compose up
+ERROR: yaml.scanner.ScannerError: while scanning for the next token
+found character '\t' that cannot start any token
+  in "./docker-compose.yml", line 2, column 1
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# docker-compose up
+Creating example-voting-app_redis_1 ... done
+Creating example-voting-app_db_1    ... done
+Creating example-voting-app_vote_1   ... done
+Creating example-voting-app_result_1 ... 
+Creating example-voting-app_worker_1 ... 
+
+ERROR: for example-voting-app_worker_1  a bytes-like object is required, not 'str'
+
+ERROR: for example-voting-app_result_1  a bytes-like object is required, not 'str'
+
+ERROR: for worker  a bytes-like object is required, not 'str'
+
+ERROR: for result  a bytes-like object is required, not 'str'
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 940, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.21/containers/5e336aa66c1cdd721ef8d4df2f26160a9944e852371d60c3d73be47cc633ea8b/start
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/compose/service.py", line 625, in start_container
+    container.start()
+  File "/usr/lib/python3/dist-packages/compose/container.py", line 241, in start
+    return self.client.start(self.id, **options)
+  File "/usr/lib/python3/dist-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/docker/api/container.py", line 1095, in start
+    self._raise_for_status(res)
+  File "/usr/lib/python3/dist-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3/dist-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 500 Server Error: Internal Server Error ("b'Cannot link to a non running container: /example-voting-app_db_1 AS /example-voting-app_result_1/db'")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/docker-compose", line 11, in <module>
+    load_entry_point('docker-compose==1.25.0', 'console_scripts', 'docker-compose')()
+  File "/usr/lib/python3/dist-packages/compose/cli/main.py", line 72, in main
+    command()
+  File "/usr/lib/python3/dist-packages/compose/cli/main.py", line 128, in perform_command
+    handler(command, command_options)
+  File "/usr/lib/python3/dist-packages/compose/cli/main.py", line 1107, in up
+    to_attach = up(False)
+  File "/usr/lib/python3/dist-packages/compose/cli/main.py", line 1088, in up
+    return self.project.up(
+  File "/usr/lib/python3/dist-packages/compose/project.py", line 565, in up
+    results, errors = parallel.parallel_execute(
+  File "/usr/lib/python3/dist-packages/compose/parallel.py", line 112, in parallel_execute
+    raise error_to_reraise
+  File "/usr/lib/python3/dist-packages/compose/parallel.py", line 210, in producer
+    result = func(obj)
+  File "/usr/lib/python3/dist-packages/compose/project.py", line 548, in do
+    return service.execute_convergence_plan(
+  File "/usr/lib/python3/dist-packages/compose/service.py", line 545, in execute_convergence_plan
+    return self._execute_convergence_create(
+  File "/usr/lib/python3/dist-packages/compose/service.py", line 460, in _execute_convergence_create
+    containers, errors = parallel_execute(
+  File "/usr/lib/python3/dist-packages/compose/parallel.py", line 112, in parallel_execute
+    raise error_to_reraise
+  File "/usr/lib/python3/dist-packages/compose/parallel.py", line 210, in producer
+    result = func(obj)
+  File "/usr/lib/python3/dist-packages/compose/service.py", line 465, in <lambda>
+    lambda service_name: create_and_start(self, service_name.number),
+  File "/usr/lib/python3/dist-packages/compose/service.py", line 457, in create_and_start
+    self.start_container(container)
+  File "/usr/lib/python3/dist-packages/compose/service.py", line 627, in start_container
+    if "driver failed programming external connectivity" in ex.explanation:
+TypeError: a bytes-like object is required, not 'str'
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# 
+
