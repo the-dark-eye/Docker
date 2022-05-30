@@ -1,0 +1,51 @@
+root@nilesh:~# docker run redis
+1:C 26 May 2022 05:12:55.714 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 26 May 2022 05:12:55.714 # Redis version=7.0.0, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 26 May 2022 05:12:55.714 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 26 May 2022 05:12:55.715 * monotonic clock: POSIX clock_gettime
+1:M 26 May 2022 05:12:55.716 * Running mode=standalone, port=6379.
+1:M 26 May 2022 05:12:55.716 # Server initialized
+1:M 26 May 2022 05:12:55.716 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 26 May 2022 05:12:55.717 * The AOF directory appendonlydir doesn't exist
+1:M 26 May 2022 05:12:55.717 * Ready to accept connections
+^C1:signal-handler (1653541979) Received SIGINT scheduling shutdown...
+1:M 26 May 2022 05:12:59.127 # User requested shutdown...
+1:M 26 May 2022 05:12:59.127 * Saving the final RDB snapshot before exiting.
+1:M 26 May 2022 05:12:59.133 * DB saved on disk
+1:M 26 May 2022 05:12:59.133 # Redis is now ready to exit, bye bye...
+
+root@nilesh:~# docker run redis:4.0
+1:C 26 May 05:13:11.935 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 26 May 05:13:11.937 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 26 May 05:13:11.937 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 26 May 05:13:11.938 * Running mode=standalone, port=6379.
+1:M 26 May 05:13:11.938 # Server initialized
+1:M 26 May 05:13:11.938 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 26 May 05:13:11.938 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 26 May 05:13:11.938 * Ready to accept connections
+^C1:signal-handler (1653542001) Received SIGINT scheduling shutdown...
+1:M 26 May 05:13:21.966 # User requested shutdown...
+1:M 26 May 05:13:21.966 * Saving the final RDB snapshot before exiting.
+1:M 26 May 05:13:21.971 * DB saved on disk
+1:M 26 May 05:13:21.971 # Redis is now ready to exit, bye bye...
+
+root@nilesh:~# docker run kodekloud/simple-prompt-docker
+Welcome! Please enter your name: 
+Hello and Welcome !
+
+root@nilesh:~# docker run -i kodekloud/simple-prompt-docker
+Welcome! Please enter your name: Nilesh
+
+Hello and Welcome Nilesh!
+
+root@nilesh:~# docker run -it kodekloud/simple-prompt-docker
+Welcome! Please enter your name: Nilesh
+
+Hello and Welcome Nilesh!
+
+root@nilesh:~# docker run kodekloud/webapp
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+
+root@nilesh:~docker run -p 80:5000 kodekloud/simple-webapp
+docker: Error response from daemon: driver failed programming external connectivity on endpoint kind_burnell (230b82baee6ed02b584b70db94e1f406db0ae1dc2b5e6de2f609098dcdf1d028): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use.
+ERRO[0000] error waiting for container: context canceled 
