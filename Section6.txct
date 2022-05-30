@@ -1,0 +1,1026 @@
+root@nilesh:/home/nilesh/Desktop/Docker#  docker run -it --rm -p 8888:8080 tomcat:9.0
+Unable to find image 'tomcat:9.0' locally
+9.0: Pulling from library/tomcat
+e756f3fdd6a3: Pull complete 
+bf168a674899: Pull complete 
+e604223835cc: Pull complete 
+6d5c91c4cd86: Pull complete 
+5e20d165240e: Pull complete 
+1334d60df9a8: Pull complete 
+16c2728dcd90: Pull complete 
+05288798d23d: Pull complete 
+22cc5e0633cb: Pull complete 
+0c572f1a581a: Pull complete 
+Digest: sha256:c20ac4dab13ca6ecd9e29cba39a3c34bb2f155528133315b1773b08012912deb
+Status: Downloaded newer image for tomcat:9.0
+Using CATALINA_BASE:   /usr/local/tomcat
+Using CATALINA_HOME:   /usr/local/tomcat
+Using CATALINA_TMPDIR: /usr/local/tomcat/temp
+Using JRE_HOME:        /usr/local/openjdk-11
+Using CLASSPATH:       /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-May-2022 20:35:55.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.63
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 11 2022 07:52:11 UTC
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.63.0
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.13.0-44-generic
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/local/openjdk-11
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.15+10
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+30-May-2022 20:35:55.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+30-May-2022 20:35:55.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+30-May-2022 20:35:55.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-May-2022 20:35:55.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+30-May-2022 20:35:55.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-May-2022 20:35:55.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+30-May-2022 20:35:55.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+30-May-2022 20:35:55.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+30-May-2022 20:35:55.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+30-May-2022 20:35:55.034 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.33] using APR version [1.7.0].
+30-May-2022 20:35:55.034 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+30-May-2022 20:35:55.035 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+30-May-2022 20:35:55.042 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+30-May-2022 20:35:55.307 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-May-2022 20:35:55.333 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [495] milliseconds
+30-May-2022 20:35:55.403 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-May-2022 20:35:55.403 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.63]
+30-May-2022 20:35:55.413 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-May-2022 20:35:55.434 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [100] milliseconds
+^C30-May-2022 20:36:25.543 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-May-2022 20:36:25.547 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-May-2022 20:36:25.549 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-May-2022 20:36:25.552 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+root@nilesh:/home/nilesh/Desktop/Docker#  docker run -d --rm -p 8888:8080 tomcat:9.0
+9f7a78fade403b5567e182222e9074a9ff2645d36e4e5c8a62ce639bc0305f08
+root@nilesh:/home/nilesh/Desktop/Docker# docker ps
+CONTAINER ID   IMAGE        COMMAND             CREATED         STATUS         PORTS                                       NAMES
+9f7a78fade40   tomcat:9.0   "catalina.sh run"   5 seconds ago   Up 3 seconds   0.0.0.0:8888->8080/tcp, :::8888->8080/tcp   elegant_khayyam
+root@nilesh:/home/nilesh/Desktop/Docker# docker exec 9f7 ps -eaf
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  9 20:36 ?        00:00:01 /usr/local/openjdk-11/bin/java -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar -Dcatalina.base=/usr/local/tomcat -Dcatalina.home=/usr/local/tomcat -Djava.io.tmpdir=/usr/local/tomcat/temp org.apache.catalina.startup.Bootstrap start
+root          43       0  0 20:36 ?        00:00:00 ps -eaf
+root@nilesh:/home/nilesh/Desktop/Docker# ps -eaf | grep /usr/local/openjdk
+root      256954  256934  2 02:06 ?        00:00:01 /usr/local/openjdk-11/bin/java -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar -Dcatalina.base=/usr/local/tomcat -Dcatalina.home=/usr/local/tomcat -Djava.io.tmpdir=/usr/local/tomcat/temp org.apache.catalina.startup.Bootstrap start
+root      257379   99271  0 02:07 pts/2    00:00:00 grep --color=auto /usr/local/openjdk
+root@nilesh:/home/nilesh/Desktop/Docker# 
+
+root@nilesh:/home/nilesh/Desktop/Docker# ls -l /va/lib/docker
+ls: cannot access '/va/lib/docker': No such file or directory
+root@nilesh:/home/nilesh/Desktop/Docker# ls -l /var/lib/docker
+total 68
+drwx--x--x   4 root root  4096 May 13 16:51 buildkit
+drwx--x---  19 root root  4096 May 31 02:06 containers
+drwx------   3 root root  4096 May 13 16:51 image
+drwxr-x---   3 root root  4096 May 13 16:51 network
+drwx--x--- 213 root root 24576 May 31 02:06 overlay2
+drwx------   4 root root  4096 May 13 16:51 plugins
+drwx------   2 root root  4096 May 29 00:41 runtimes
+drwx------   2 root root  4096 May 13 16:51 swarm
+drwx------   2 root root  4096 May 31 02:05 tmp
+drwx------   2 root root  4096 May 13 16:51 trust
+drwx-----x  19 root root  4096 May 30 19:38 volumes
+root@nilesh:/home/nilesh/Desktop/Docker# docker info
+Client:
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  app: Docker App (Docker Inc., v0.9.1-beta3)
+  buildx: Docker Buildx (Docker Inc., v0.8.2-docker)
+  compose: Docker Compose (Docker Inc., v2.5.0)
+  scan: Docker Scan (Docker Inc., v0.17.0)
+
+Server:
+ Containers: 17
+  Running: 1
+  Paused: 0
+  Stopped: 16
+ Images: 52
+ Server Version: 20.10.16
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 212e8b6fa2f44b9c21b2798135fc6fb7c53efc16
+ runc version: v1.1.1-0-g52de29d
+ init version: de40ad0
+ Security Options:
+  apparmor
+  seccomp
+   Profile: default
+ Kernel Version: 5.13.0-44-generic
+ Operating System: Ubuntu 20.04.4 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 8
+ Total Memory: 7.568GiB
+ Name: nilesh
+ ID: SOH2:DETT:464K:FQWB:WQLV:PU5H:GYBH:CIER:O754:PE5H:XUWX:7IH3
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Username: iamnikaa
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+root@nilesh:/home/nilesh/Desktop/Docker# ls -l /var/lib/docker/overlay2
+total 852
+drwx--x--- 4 root root  4096 May 30 19:13 01a0939115c1dc4418797f08e03ea7b760974e37b78de88dba92a0dfa8991d40
+drwx--x--- 4 root root  4096 May 31 02:05 05b5d2e7140bfe635b49979c52b3416b07721839fcb835074dafc63273c2026c
+drwx--x--- 4 root root  4096 May 30 19:13 0683e350f5f5ae38e9ed159490657204af5b9c7f6258dc6bd58010a79045b920
+drwx--x--- 4 root root  4096 May 30 19:13 068d73687e353663af31255a5cfe639caaad7738d8e7bc16c383b6c91b167a3b
+drwx--x--- 4 root root  4096 May 16 15:31 070879d9176420b96bf88645b45918093ca7fe6861dbbdea36d45a238076e872
+drwx--x--- 4 root root  4096 May 30 19:09 07189eba003a59ba503d67b4cd8d8edab9b279c5b6aea2ee84d4c7eef9ddf23d
+drwx--x--- 3 root root  4096 May 30 15:56 091b0d18af4eb4575c37d612bb7b86e878776901b6259760c90d8f83c8632e69
+drwx--x--- 4 root root  4096 May 30 19:07 09c3912bdbd70904bbdd014b8bf0f737adb6677a3b2cd1c96d4a39425b779303
+drwx--x--- 4 root root  4096 May 30 19:07 09cded423c8c50b8465e10286894b5062a0e7942837fc7325b4896627ba43826
+drwx--x--- 4 root root  4096 May 30 19:11 0ca29a57e9ccc5c8916f2c92880dfc7835558216be34424f692081052785bfea
+drwx--x--- 4 root root  4096 May 31 02:05 0dc3f3b78db99713fda3ade4773f099854f825eaf9b4ed40ff4bf801ecafa62c
+drwx--x--- 4 root root  4096 May 30 19:07 0de67bb41e0c6316dac5496b162614364fcc23730a37074c49d7c82ce42937d0
+drwx--x--- 4 root root  4096 May 30 15:54 0f791edfe333139b28ebff601d4df26b6a5b08fb4aa1a5fe45205a32903c3e4c
+drwx--x--- 4 root root  4096 May 30 19:09 105d1e75d29c2d303706a924dad77b02b6c392eff0478b698ab1cc07d8c5204e
+drwx--x--- 3 root root  4096 May 30 19:09 1096ce45a4248f35078178e064e079de6c2cb8817997a78086587cc73e374c25
+drwx--x--- 4 root root  4096 May 16 15:28 12d705ca0dae7f3c2b43a406617d7d7fbb2d9ca95aa222ccfe5cc79b302e0e0d
+drwx--x--- 3 root root  4096 May 16 15:22 14df8ea25d369dca2888042284b29d84ad2dc644a509d0413421668061ac92cc
+drwx--x--- 4 root root  4096 May 30 11:11 16e51e490d6dd2d0ec0c7144df26b6c939acff253086fb47b59ed5c60632c1b7
+drwx--x--- 4 root root  4096 May 30 15:56 16f4082dcb2a7d699c81fe690769d79eaecd0353edde7bcb83f0cf786a7e8be7
+drwx--x--- 4 root root  4096 May 31 00:44 174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a
+drwx--x--- 4 root root  4096 May 31 00:40 174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a-init
+drwx--x--- 4 root root  4096 May 16 15:31 184b4db4b69a208e451cfc3a11421a269a1ea75fc04656ee344928b4ab0e5520
+drwx--x--- 4 root root  4096 May 30 11:11 18888a64ba1b0e86e6755c6277feb48f9f323fa43c0549642950fc1054e2555b
+drwx--x--- 4 root root  4096 May 30 11:11 1a47394a49e75afd591a28594d78e5bae0537a854cdfe291eb4f3d228881d697
+drwx--x--- 4 root root  4096 May 30 19:06 1a65d85f1188464588a76bbfed6b8a30699770ae336bcab233a73b5efc595d86
+drwx--x--- 4 root root  4096 May 31 00:44 1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088
+drwx--x--- 4 root root  4096 May 31 00:40 1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088-init
+drwx--x--- 4 root root  4096 May 16 15:20 1b1814a75ccbb15791962e7ef8bbe733bb0e05ed1c47034d9e8cddc798335f40
+drwx--x--- 4 root root  4096 May 30 19:02 1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f
+drwx--x--- 4 root root  4096 May 30 18:58 1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f-init
+drwx--x--- 4 root root  4096 May 30 15:56 1be72860e379e2fecd094657ff485ac4b5b144b8afd565bcf33572c00c0d9743
+drwx--x--- 4 root root  4096 May 16 15:28 1cea80c9897b6128ce46b7998429542480e41a3f5360455e20130c84f7fc0657
+drwx--x--- 4 root root  4096 May 30 18:26 1da4203cc9de000a1fe6500f435f6511ff0d512fdb7b8b43b4013e910c7a6430
+drwx--x--- 4 root root  4096 May 16 15:31 1dff858c9ad99c50fecc528cb598d3400bf9b31567bc29d3611a5fe6a1345f9e
+drwx--x--- 4 root root  4096 May 30 15:48 1ec9432433291c5112ecefe24b2eb5a24640ab39dc1b8a5ee48adfda2b372e93
+drwx--x--- 4 root root  4096 May 30 11:11 1fe14f8b234be6bbdca2aaa048be9c8c70fef8551bbcdac8d3f9a66026c3161a
+drwx--x--- 4 root root  4096 May 30 19:23 24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf
+drwx--x--- 4 root root  4096 May 30 19:20 24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf-init
+drwx--x--- 4 root root  4096 May 30 18:27 25ab6c507a1ced277a7ded3cdfed392ad761f225d0b0bb1899330c47db90f3f1
+drwx--x--- 4 root root  4096 May 30 19:13 25f57b071e530c45cedfebb8e5c30677e1cf68c23baf87c729abbd4a7bce3ccc
+drwx--x--- 4 root root  4096 May 30 15:56 2770ebaed89d2aa06e747b92ae25b0ec384286be584b5e2ab3026746db836a86
+drwx--x--- 4 root root  4096 May 16 15:28 2881cfa83a0d813e8ae78746ca0f167c6f559a254807932bc5dc2f7c544079c1
+drwx--x--- 4 root root  4096 May 30 19:13 2d10c11a2d861fab67343053d42f587a230f55e4015ae42929af43c50c7b882e
+drwx--x--- 4 root root  4096 May 16 15:21 2d88c3ac0c0bf258d84d0a239d4527f1ec89cd8f45965ff9ee1eb60e3a9cebe1
+drwx--x--- 4 root root  4096 May 31 02:05 2dd3b7b2bd7a0f6b569b1896f1268dd446c60eb8ce5c7394a8a3a35571545e49
+drwx--x--- 4 root root  4096 May 30 19:13 2f1465df4f85c762b3efe5210584d759dd2bef3e65e5e75600cb3f88f6995812
+drwx--x--- 4 root root  4096 May 30 15:48 300ebde4109333bbc3b05bda096aa98830956106cd1a3513137620847a2b51a7
+drwx--x--- 4 root root  4096 May 16 15:21 308264da7ebe15da014c9f6da1ffebc7ac081bc7d2bc296e3c1a7407e86b5c56
+drwx--x--- 4 root root  4096 May 30 15:54 310d38b08d064ed4d3a4498a18895cac8cd399656ce0a4620aec2392c7dfd631
+drwx--x--- 4 root root  4096 May 30 11:11 32bc61f12a28c136c3e3285a19e989320a67cb1f4d05f97c36de00d2b290a0f2
+drwx--x--- 4 root root  4096 May 31 02:05 33feff6dd5a7084142ddc1986f720e850b469bc2ee1f0d07d55cdf03abaf5e3a
+drwx--x--- 4 root root  4096 May 16 15:28 357950fc7a3eee080f61ff81539cd128d488485dc2ac2ef51b5c73dc9a5dcf6a
+drwx--x--- 4 root root  4096 May 30 11:10 379d3f3019350b5d6bc420a41315fa1dddaffc4f6c883ccde33094d413653be5
+drwx--x--- 4 root root  4096 May 30 15:48 37b67b0970a1efb360e04ea3feb1d59f1e2853d100c423149eafb45c9d4df506
+drwx--x--- 4 root root  4096 May 30 15:56 3afef2d11dc225ca3f23099d2dc68090a81042329ccaebd601cfbd3a60d7d589
+drwx--x--- 4 root root  4096 May 30 15:56 3b27dfc5f5b5d2bdaad333bc92bc8006cbc986c32c0185f4b342b1b267ad06bd
+drwx--x--- 4 root root  4096 May 30 15:56 3b4ba79755965c44ee6ccef20c618939e55311bf1eacee6258a4508850a2b232
+drwx--x--- 4 root root  4096 May 16 15:31 3c30be5765503dc0fb3b27e1dda5ee2fdbbd5727c14b8136d14f49de1066f02d
+drwx--x--- 3 root root  4096 May 16 15:21 3c62cd5750f2f52cbef368642e753782f1b715a6837bcbadecbd688e95f4fef0
+drwx--x--- 4 root root  4096 May 30 19:24 3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c
+drwx--x--- 4 root root  4096 May 30 19:23 3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c-init
+drwx--x--- 4 root root  4096 May 30 15:48 3ecb45d11f56bafb3f663184cd5005a4b06c47c4ae807b4290bd0a00402d9c0a
+drwx--x--- 4 root root  4096 May 30 15:54 3ed02eea22ac67c392e3399f430d1d9faa5965f53d8ff6d87becad8c85a2c5b9
+drwx--x--- 4 root root  4096 May 16 15:20 3f7f5f51a45f82ebafe10d3725aa9875ac5929a1f56260786dc2b79899fe4716
+drwx--x--- 3 root root  4096 May 31 02:05 413aceddbbc88c1f835bf80794e5ed235255ec526b765cc8addd93cd08f18554
+drwx--x--- 4 root root  4096 May 30 19:09 43e56f4ef70bac22bc186b88b2177a05a1adc06b4ba32bf2aa68ccba8da1b9d4
+drwx--x--- 4 root root  4096 May 16 15:24 4443791cb328511fec36079deb10f4512e0d390bd39b33f98997f379e49e2f0c
+drwx--x--- 4 root root  4096 May 30 18:56 44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31
+drwx--x--- 4 root root  4096 May 30 18:27 44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31-init
+drwx--x--- 4 root root  4096 May 16 15:31 472ed4aa5b816bd7978220b5c9aa909078ea6bd39b41ff98da7aeb2bc3fcdf61
+drwx--x--- 3 root root  4096 May 30 11:10 47f895e710e7324d87b0a24e660894bc3cebd58734230d39b5c1932fa842ba49
+drwx--x--- 4 root root  4096 May 30 15:53 497b1d235a8842d2940b63443e3ab6f6926e1e4d2e2dcaf5295fd0580baf4968
+drwx--x--- 4 root root  4096 May 30 15:48 4b94e4ab27e53bd07001520046300c50ada830135b72cce97abef0e000a08d23
+drwx--x--- 4 root root  4096 May 30 19:09 4bb7fd9a6b1dfddaee4cce2312f05aaf4edbbb657ccffa250999c6c090852169
+drwx--x--- 4 root root  4096 May 30 19:09 4eb58daef9c64fdc749d442482e1fcb890c8d13091aeb1cc495497482ea5b66a
+drwx--x--- 4 root root  4096 May 30 15:56 50eff2fb319c62bdd0c4ac94d7fc4362ac8b5b19b6125b538c2919a8a29dcf3d
+drwx--x--- 3 root root  4096 May 30 19:09 518eaaae87ad915e73c1fd68cdcea24a959ccdb372ac38741b06d09e711e43dc
+drwx--x--- 4 root root  4096 May 30 15:53 54aff7eef25406858a04055bdcbe966b079302adb0f6197cfd19e18e29b5d22f
+drwx--x--- 3 root root  4096 May 30 19:06 54dd72502d53a0149090422bf948c6b6a2d7b4a5b559c3ae907c03f1fed69885
+drwx--x--- 4 root root  4096 May 16 15:20 55f3f3f8271af999a9937d4a8bd099e3bc6df9f93f83fd10149462b8256b028c
+drwx--x--- 4 root root  4096 May 30 19:09 560133915e91cf34138ac872ba4510691d9e33dddcfb2c44ad3b714dc5bf0f1e
+drwx--x--- 4 root root  4096 May 30 15:54 56850cecee02549ff23ee327d96adae733ac9fb9445faa867f0a9ec167c748e6
+drwx--x--- 4 root root  4096 May 30 15:54 59a86892587b4caebe9e70daebf9b77915a1dc6448d8419464492769545149eb
+drwx--x--- 4 root root  4096 May 30 19:13 59d89e5676a93f95b7839b70cde82f86d962e682463b5012c4347d00de37aa3d
+drwx--x--- 4 root root  4096 May 16 15:20 5ce05f14f9452edbaffe2b852f4e8828f416005d4987253fd3e44975433e3771
+drwx--x--- 4 root root  4096 May 30 19:07 5ce73ccc5c04110df9734969a6360a74a354e75f7605106f90065e2adf4ab256
+drwx--x--- 4 root root  4096 May 30 15:54 5cf69b410bde46bee225dcab25d9debde51b070199d3e86a0dcb51216179c546
+drwx--x--- 4 root root  4096 May 30 15:54 619d8ecbee81ad601c55ef3ee10703c7f20d30c4e8f10251e7a15d956c7cd1a8
+drwx--x--- 3 root root  4096 May 16 15:23 62318a10372707ddc25242c6d6752e45be4950f1a87d74818badefd32c9c556f
+drwx--x--- 4 root root  4096 May 30 19:15 6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16
+drwx--x--- 4 root root  4096 May 30 19:15 6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16-init
+drwx--x--- 4 root root  4096 May 30 15:54 6243bc095743aeb66b73b466391c9ac5d661643aa5c6ebce4d6046bc608890e7
+drwx--x--- 4 root root  4096 May 31 02:05 64818b414b24c96cc21365e68efb69952290cea0e9dc320ef7c7e52ccb73b098
+drwx--x--- 4 root root  4096 May 30 15:48 64b6ea9578206ba62cadc3d106d2885e7f495568520136679a2cad4129aba7bb
+drwx--x--- 4 root root  4096 May 30 15:56 64cf9204428d1d688e7e0146ec6cde7758a626dbc3882e2bf938ccdc031c7557
+drwx--x--- 4 root root  4096 May 30 18:26 667359a6a5cf3bd38fbfd2b3bcccd2ee8e34aae60fc34962eefa7ddc13c98d74
+drwx--x--- 4 root root  4096 May 30 19:06 67e61b0f70029e77beae947397f6115fe43cb95294925947c9aadc7db189db13
+drwx--x--- 4 root root  4096 May 30 11:11 691f400b059b402b710fbef9b2044608e4d8968b6d3b06d1e048f28e91817b6c
+drwx--x--- 3 root root  4096 May 30 15:53 6a7a979a342684fd0eba09bcd96dd056def59de7e0ab6d564643378dfe2a99e1
+drwx--x--- 4 root root  4096 May 16 15:28 6d5566e2f20bc00dfa32c09c7e69f9e6b7a7ff7193c9b8aa2b0f166bed88bd94
+drwx--x--- 4 root root  4096 May 30 19:06 6e1de35ce6c9244e6cb6db2052109b01becb60f00330099825dc8a2921de6346
+drwx--x--- 4 root root  4096 May 30 16:03 6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38
+drwx--x--- 4 root root  4096 May 30 16:03 6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38-init
+drwx--x--- 4 root root  4096 May 30 15:53 6f6cd7fb0ef0b6e60b1e52c4f07516b3ce1a6c08b00a302834c9b8b17a24d7b3
+drwx--x--- 4 root root  4096 May 30 19:09 714b0336f44b65a034c0e1b0c8e84400dbf4239e249e433a4f6b46a1f161667a
+drwx--x--- 4 root root  4096 May 30 19:07 73f631bf54c37ba2d79fad214403da1a4e364a0eb9de2d8ffa7c15dc41aa08d1
+drwx--x--- 4 root root  4096 May 30 19:09 7661664db1e50c66b30a9952a737abfa80aa765b5940a8da6362337fb78cabdb
+drwx--x--- 4 root root  4096 May 16 15:31 766419065fe17defe3257de2f17eabc37c314474363466796dbdb349c00c50b9
+drwx--x--- 4 root root  4096 May 30 18:26 7c7ee0ddbbd5e9417006c15c02d51b72d1a3c34f3936f5206986c800d52da85d
+drwx--x--- 4 root root  4096 May 30 19:13 7cfc9d4d5d2cc2909479404d43d61929a08a92c17b36d7f422fd5cb6b2508a9f
+drwx--x--- 4 root root  4096 May 16 15:24 7dce40f4c352d4e4c0d155c5c2940765880593523f0246c3370fe636d0ff7779
+drwx--x--- 4 root root  4096 May 30 15:22 7ea5f6f7978ff22b32c021760bf08936fef651aa1bdc785f86ea926831fb981a
+drwx--x--- 4 root root  4096 May 30 19:09 80211d9020c1f4c1e6782c0032d03bf846da743f8bdde8fadeab28ac1016d24a
+drwx--x--- 4 root root  4096 May 16 15:31 8142c680894f38204f8fc83e4d318abd4e8aa4b490f36d63944a6efd6a38fd17
+drwx--x--- 4 root root  4096 May 16 15:28 82c7dd56117e2b7267b0e62edcd18dfcb799a848c284574738f800f0b7ca048b
+drwx--x--- 4 root root  4096 May 30 18:26 830ef6f44fbee80c155f66408456fa45ceeedd7f187b09240954aeac4d1eed33
+drwx--x--- 4 root root  4096 May 31 02:05 838ebd14adc32ef09990fa789a60e145a4c2713a6f5fd054265fb5771637fa7f
+drwx--x--- 4 root root  4096 May 30 19:24 851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff
+drwx--x--- 4 root root  4096 May 30 19:07 851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff-init
+drwx--x--- 4 root root  4096 May 30 15:48 853a28fe7126a7ca0da315c29da900d1f1f3c5020d967ec0a07785d90944cb93
+drwx--x--- 4 root root  4096 May 30 19:09 89dfe758b2cb731755bb1e8576218d4a9994afc43c4c6956f18900bec02cf75e
+drwx--x--- 4 root root  4096 May 30 15:56 8b1060d76b8a4157e956af6752a4216158cbd7132074b78ca687b8d59eeb8a3c
+drwx--x--- 4 root root  4096 May 31 00:44 8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f
+drwx--x--- 4 root root  4096 May 31 00:42 8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f-init
+drwx--x--- 3 root root  4096 May 30 19:13 8efed2a68f41d061cce1f42b329483cd1d7e47833ef0b1f2c0c59ab4acd3743c
+drwx--x--- 4 root root  4096 May 16 15:21 93a21ab93d55fd8a60882d83cdfb64b9bfdbea5f62a00b6962859326986ca2cd
+drwx--x--- 4 root root  4096 May 30 19:09 9411b10269b74dd0a77f68eafcb09fb383be97d983c85a9fd2e0cfe0a3c68910
+drwx--x--- 4 root root  4096 May 30 18:26 942b1368911f69c37ca8d175809747c315cd2fd940fed2111ddee9214c536ac0
+drwx--x--- 4 root root  4096 May 30 15:56 94889445d7a38829bbb11d89129314512ba5b87374aa5d7b8cc6eab4eeb72452
+drwx--x--- 3 root root  4096 May 16 15:20 985ba8210ed1e8d42f21b4e69d4d649873a9151c96e3b20fcac07f3f5d7652f3
+drwx--x--- 4 root root  4096 May 30 15:54 98db00ea8c27b30926f734ec5e8f4c5ee8fdd4bd830c12235a2cf84992c81912
+drwx--x--- 4 root root  4096 May 30 15:48 9a96a97ae25fded6656f07143db1bf0aa838bda408d9037111ec35e601a24d69
+drwx--x--- 4 root root  4096 May 16 15:23 9b09a9d7bc9042089449deba88ec9c0988824a9885e39438c96e75846d6ec971
+drwx--x--- 4 root root  4096 May 16 15:31 9b739224affecc33904bdb7b22a64f377538897a3db09fb93908f0ff77c10390
+drwx--x--- 4 root root  4096 May 30 19:09 9c424a4ae532c1016212dd38e374e369584d5eb056bc84e7f54438e61a0b19f1
+drwx--x--- 4 root root  4096 May 30 15:54 9f91ac6ed4e049c7108caf06555fe78e2f7f75afb9ba2bcfd4a1684994fff18e
+drwx--x--- 4 root root  4096 May 31 02:05 9fa080ed3c9fa1a05a2cc5a92d9d85c5a8140c6b5d76b5eb358b17061e29bebe
+drwx--x--- 3 root root  4096 May 30 15:54 a48ca8555fdec25ee52671d1b0f3e67e65cfd1c466fdbf2a04acae72ed837fb4
+drwx--x--- 4 root root  4096 May 30 15:23 a49240edf5410559997ab5748595c4479cb3fd73a5c95cb529dbcc1b34b0aa2c
+drwx--x--- 3 root root  4096 May 16 15:31 a4938275813e03e9151f037ddc0a82ea464c89111114a0019088f286edf31931
+drwx--x--- 4 root root  4096 May 30 15:53 a56ad2449975301f430f3cf447dd0564b827127dd5fd03b8aba58f88d55bb5f3
+drwx--x--- 4 root root  4096 May 30 15:48 a6ceb0957e30c0f1c5a82675009fb9f6691bd8bc5a7d614c2a64bd9307d17f92
+drwx--x--- 4 root root  4096 May 30 15:53 a7329805ff53cbeeaa2a5912ccb4af6783c13d31c8d4d87dffe68e0de78ee7fc
+drwx--x--- 4 root root  4096 May 30 11:10 a8f491a9dcc6b160aab78b834e451a43b21238c3ee943010b3ade0c2e764e6d1
+drwx--x--- 4 root root  4096 May 16 15:31 aaccc75fe7bae1e9ce5dd2280a321cd3d455a6b34094b45cf0d93d48295a7e1f
+drwx--x--- 4 root root  4096 May 16 15:21 aba91203c74301b2a2e19fc74278c1fd6c9ed4ff9e1967fbda1a81e2c40efe76
+drwx--x--- 4 root root  4096 May 30 15:54 ac9555d3a4bd683ce897c62a6899d57bf5514543ea8be3b8b434bc5517425f09
+drwx--x--- 4 root root  4096 May 30 15:56 ad1e22377be7eb2e963fa13287adac4445788c61dd070e3dcd39a5210aaf3e8b
+drwx--x--- 4 root root  4096 May 31 00:44 adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f
+drwx--x--- 4 root root  4096 May 31 00:40 adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f-init
+drwx--x--- 4 root root  4096 May 30 19:09 b010dc2083d3d719c96bdb9234da9e5c89c61f7fd559212691ec969e4558f8fc
+drwx--x--- 4 root root  4096 May 30 11:11 b016a7dc8d18ce1af51e8855a71b05a90a0a951683acf5aa1691eb30c281414e
+drwx--x--- 4 root root  4096 May 30 15:23 b274235a7e6b43deca35b6d27bef7b26105891aa7d21ac6d75f7c525db819b6c
+drwx--x--- 4 root root  4096 May 16 15:22 b549e2f8400b95aa1d3eef6646fb8a025b4c92939570bb2879eae2ed1cdebd16
+drwx--x--- 4 root root  4096 May 16 15:24 b618de58d445826cf1f19868b8010a68d7d7f5ec8ea65b584611e4075430dc1a
+drwx--x--- 4 root root  4096 May 30 18:10 b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2
+drwx--x--- 4 root root  4096 May 30 16:03 b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2-init
+drwx--x--- 4 root root  4096 May 30 19:13 b7e01fa3598dfa2ce49a3fa31de2e4d047525b0b4fa5fc471ddd586cd8be6ae6
+drwx--x--- 4 root root  4096 May 31 00:44 ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827
+drwx--x--- 4 root root  4096 May 31 00:40 ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827-init
+drwx--x--- 4 root root  4096 May 16 15:31 bb0ad667c7e80e261aac4dba907d72ee646a7b044d94036292603deba1a22216
+drwx--x--- 4 root root  4096 May 16 15:21 bd4137f8cf0b33de4c730c4a1720bf664025c934366d51e7b900e14b23e27bc8
+drwx--x--- 4 root root  4096 May 30 18:26 bea5859f6c94111fd762fadbe0619cd82f45f8dea8623f3ad9c65713fe2e52ff
+drwx--x--- 4 root root  4096 May 30 18:27 bf990be2d799a8790ff2c8133636ee3088a6a4de7d11addfc1c6722cc93804d2
+drwx--x--- 4 root root  4096 May 31 02:05 c1951d09345931076bfb9b81babe1d4ce2cd2b74c33d842fa4ea1bef0b165f54
+drwx--x--- 4 root root  4096 May 30 19:13 c251629ff8996f0dfc3cf85b4526b8972130320486c0c6dfc9892d4e2f5184d2
+drwx--x--- 4 root root  4096 May 30 15:54 c2542de4cbf0665d76e7bc36c07affe7cfc4a7c3c34a5e56de1048c3d6217e16
+drwx--x--- 4 root root  4096 May 30 15:22 c2683771843f72abfd3c41e6eccc055b433957a6687fe439166672f109a945c1
+drwx--x--- 4 root root  4096 May 30 15:56 c3a152be084e54762698b9fdc07bcc5bc8436d638f607b28dd25c2ff678cf8f5
+drwx--x--- 4 root root  4096 May 30 15:54 c3df2ac5a7e5839ccee5912ba2d200e70944fb610a5502667eac948e3ca6e71e
+drwx--x--- 4 root root  4096 May 30 15:54 c7f2e29ed509a9f510d0c60a5d770fc77b461fae1e20d26d07e59184cc5c0ac6
+drwx--x--- 4 root root  4096 May 16 15:20 c876e10ae745db418dae4f15359cbb2dbb4136918e43d1c9e6432a323716ef2c
+drwx--x--- 4 root root  4096 May 16 15:31 cab17e019487258a86d2a2f7943ac4093ba48edb631da5829dac9bfe8c586135
+drwx--x--- 4 root root  4096 May 30 19:17 cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5
+drwx--x--- 4 root root  4096 May 30 19:15 cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5-init
+drwx--x--- 4 root root  4096 May 30 19:09 cd7273c6f0b9519cefd2790194af83a95246ac22ad9faa1dbe214467c52d45dc
+drwx--x--- 4 root root  4096 May 30 15:56 d0ad1459e51d63b47d3f920bb299f9e930824a8869c46ec1a0c94b560abc81ce
+drwx--x--- 4 root root  4096 May 30 19:25 d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b
+drwx--x--- 4 root root  4096 May 30 18:57 d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b-init
+drwx--x--- 4 root root  4096 May 30 15:48 d53165c64018240843ced18f245e797c25f31d1cce13188237dc73d8fa3a7a84
+drwx--x--- 4 root root  4096 May 30 15:48 dbad4e6e1e6240d20c21c9dd0b2ef0c43d938f84d61a7d1eff28d2655ee64112
+drwx--x--- 3 root root  4096 May 30 15:48 df458af536628ca08141f3165c5e75ab4ac8d9720cb6f267ab5aa4152abf0cce
+drwx--x--- 4 root root  4096 May 16 15:24 e167ac4738dd48d2465c570b57e1e6829c649c699c200114fa8669ba3ed9fc08
+drwx--x--- 4 root root  4096 May 30 19:07 e1806ae2f0c805ea24d5e250fda52ab115caf2587b5d8f69f37527593ea02de5
+drwx--x--- 4 root root  4096 May 30 11:10 e2b819db1d055df98c4d4839d7571ea626bd14f94b971aec892f4add83ff2e26
+drwx--x--- 4 root root  4096 May 30 11:10 e53b51d0dd26dfecee51946cae3c9572336435be707926b74f88867ac3358cdb
+drwx--x--- 4 root root  4096 May 16 15:23 e6d18a77f83f0297cf7b0191a447152ddc4e475300953c8e4e7c3a02919a5e52
+drwx--x--- 4 root root  4096 May 30 19:13 e86e063becd0b8764662d7163711ddf0f11043167c707fb49eda30cbc2b7a82f
+drwx--x--- 5 root root  4096 May 31 02:06 e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df
+drwx--x--- 4 root root  4096 May 31 02:06 e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df-init
+drwx--x--- 4 root root  4096 May 30 11:10 e9b0d4b6a70ea298095b4281d43750389e360003cb0572815e3da6c1e422dd84
+drwx--x--- 4 root root  4096 May 30 11:11 ea67f5cd44cca561d81f5b8337fed93249c4c4c12073181613bacd1642004483
+drwx--x--- 4 root root  4096 May 30 19:06 ed00e6fcac923260c784bebea6dc17662e71b831d52030f3d3a129de34b2c41b
+drwx--x--- 4 root root  4096 May 30 19:09 ef0d8e98172be5ce705d320ce62b1f7bbc5fa1db2896534979084fe27230064b
+drwx--x--- 4 root root  4096 May 30 11:11 efd382fea6b31c78839b809e2ec9f5793dddef82ebd9e65034dd8aa70cef106f
+drwx--x--- 4 root root  4096 May 30 15:56 f1d6c1030201f7440cb7d953c385398d57445038fce1ad33390669312c50c774
+drwx--x--- 3 root root  4096 May 16 14:42 f1f63cbf30599485a6d65b7d69232b95225ae89c35519f9a94352e999475c14a
+drwx--x--- 4 root root  4096 May 30 19:25 f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad
+drwx--x--- 4 root root  4096 May 30 19:19 f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad-init
+drwx--x--- 4 root root  4096 May 30 19:07 f8bfc92e3d409953a03b043592ce68e0b716fb32ce25d278449eb3dc4648c66f
+drwx--x--- 4 root root  4096 May 30 15:53 f8c67ce278ee91207075b2d7fb062b992a883bac26b6ba37cb1636e083e74e6c
+drwx--x--- 4 root root  4096 May 16 15:23 f8d81cf43d6a22534b07dd144a419ed336c0ed683c6626820443c3c18c868669
+drwx--x--- 4 root root  4096 May 30 11:10 faa397d57baab20812f9bc9905adfb6ca4dac7adcdf097859c65a73cefdd357f
+drwx--x--- 4 root root  4096 May 30 18:26 fb339e419499411bd2eb868668098be45079df0c38a80ac9458a3dd8f67692bc
+drwx--x--- 4 root root  4096 May 30 19:06 fc12a06a2526542d31ab419c23ef1f202d93551d379a46cc9317a0ef37909ef3
+drwx--x--- 4 root root  4096 May 30 19:13 fc534ccf657250b11b1710c6dd427a396b45349366c9a8fff38c0220640e58a2
+drwx--x--- 4 root root  4096 May 30 15:48 fc83ece39b8a6425ed3ef61380c68fc4d591f8d79a6fdbb1fe9a6b0cfc32a71c
+drwx--x--- 4 root root  4096 May 30 11:11 fc87866967c7ae808a13bef4d2b614da2b4870bedf9e75f1cd1bd3f62abc14e6
+drwx--x--- 4 root root  4096 May 31 02:05 fccebdd1082f4bde87eda8d3ec7b9cb0735134291c95b190e0ddd389b85aff63
+drwx--x--- 4 root root  4096 May 30 19:06 fe8c515b058617beb1b8e77bf0902fb49c4c0169216cbe42e60e0ed63fc62bb2
+drwx------ 2 root root 12288 May 31 02:06 l
+root@nilesh:/home/nilesh/Desktop/Docker# docker pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete 
+Digest: sha256:80f31da1ac7b312ba29d65080fddf797dd76acfb870e677f390d5acba9741b17
+Status: Downloaded newer image for hello-world:latest
+docker.io/library/hello-world:latest
+root@nilesh:/home/nilesh/Desktop/Docker# docker images
+REPOSITORY                              TAG        IMAGE ID       CREATED         SIZE
+result-app                              latest     c8e51d2eeffe   7 hours ago     160MB
+worker-app                              latest     8d6dd60a6782   7 hours ago     193MB
+<none>                                  <none>     8c4623fac31e   7 hours ago     750MB
+voting-app                              latest     fc76a8f54541   8 hours ago     145MB
+training/my_app                         latest     6c3c02ef1c9c   11 hours ago    469MB
+iamnikaa/my_app                         latest     6c3c02ef1c9c   11 hours ago    469MB
+iamnikaa/training/my_app                latest     6c3c02ef1c9c   11 hours ago    469MB
+my_app                                  latest     6c3c02ef1c9c   11 hours ago    469MB
+<none>                                  <none>     e725fdf8d5d7   12 hours ago    469MB
+tomcat                                  9.0        bce48a218e94   47 hours ago    680MB
+python                                  3.9-slim   2de9c79b2c75   2 days ago      125MB
+postgres                                latest     5b21e2e86aab   2 days ago      376MB
+mcr.microsoft.com/dotnet/core/sdk       3.1        6dac2916209e   2 days ago      711MB
+mcr.microsoft.com/dotnet/core/runtime   3.1        b3bbe16bb594   2 days ago      190MB
+jenkins/jenkins                         latest     011729edd836   3 days ago      460MB
+redis                                   latest     1ca2c2a1b554   2 weeks ago     117MB
+mysql                                   latest     76152be68449   2 weeks ago     524MB
+ubuntu                                  latest     d2e4e1f51132   4 weeks ago     77.8MB
+hello-world                             latest     feb5d9fea6a5   8 months ago    13.3kB
+node                                    10-slim    6fbcbbb5c603   13 months ago   134MB
+redis                                   4.0        191c4017dcdd   2 years ago     89.3MB
+postgres                                9.4        ed5a45034282   2 years ago     251MB
+kodekloud/simple-prompt-docker          latest     c0848fde57d1   2 years ago     4.41MB
+kodekloud/simple-webapp                 latest     c6e3cd9aae36   3 years ago     84.8MB
+kodekloud/webapp                        latest     1a45ba829f10   4 years ago     432MB
+eesprit/voting-app-vote                 latest     1c71ecb231a4   5 years ago     83.9MB
+eesprit/voting-app-result               latest     6f98b7114bf5   5 years ago     226MB
+eesprit/voting-app-worker               latest     3b8592893450   5 years ago     682MB
+root@nilesh:/home/nilesh/Desktop/Docker# ls /var/lib/docker/overlay2
+01a0939115c1dc4418797f08e03ea7b760974e37b78de88dba92a0dfa8991d40       7661664db1e50c66b30a9952a737abfa80aa765b5940a8da6362337fb78cabdb
+05b5d2e7140bfe635b49979c52b3416b07721839fcb835074dafc63273c2026c       766419065fe17defe3257de2f17eabc37c314474363466796dbdb349c00c50b9
+0683e350f5f5ae38e9ed159490657204af5b9c7f6258dc6bd58010a79045b920       7c7ee0ddbbd5e9417006c15c02d51b72d1a3c34f3936f5206986c800d52da85d
+068d73687e353663af31255a5cfe639caaad7738d8e7bc16c383b6c91b167a3b       7cfc9d4d5d2cc2909479404d43d61929a08a92c17b36d7f422fd5cb6b2508a9f
+070879d9176420b96bf88645b45918093ca7fe6861dbbdea36d45a238076e872       7dce40f4c352d4e4c0d155c5c2940765880593523f0246c3370fe636d0ff7779
+07189eba003a59ba503d67b4cd8d8edab9b279c5b6aea2ee84d4c7eef9ddf23d       7ea5f6f7978ff22b32c021760bf08936fef651aa1bdc785f86ea926831fb981a
+091b0d18af4eb4575c37d612bb7b86e878776901b6259760c90d8f83c8632e69       80211d9020c1f4c1e6782c0032d03bf846da743f8bdde8fadeab28ac1016d24a
+09c3912bdbd70904bbdd014b8bf0f737adb6677a3b2cd1c96d4a39425b779303       8142c680894f38204f8fc83e4d318abd4e8aa4b490f36d63944a6efd6a38fd17
+09cded423c8c50b8465e10286894b5062a0e7942837fc7325b4896627ba43826       82c7dd56117e2b7267b0e62edcd18dfcb799a848c284574738f800f0b7ca048b
+0ca29a57e9ccc5c8916f2c92880dfc7835558216be34424f692081052785bfea       830ef6f44fbee80c155f66408456fa45ceeedd7f187b09240954aeac4d1eed33
+0dc3f3b78db99713fda3ade4773f099854f825eaf9b4ed40ff4bf801ecafa62c       838ebd14adc32ef09990fa789a60e145a4c2713a6f5fd054265fb5771637fa7f
+0de67bb41e0c6316dac5496b162614364fcc23730a37074c49d7c82ce42937d0       851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff
+0f791edfe333139b28ebff601d4df26b6a5b08fb4aa1a5fe45205a32903c3e4c       851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff-init
+105d1e75d29c2d303706a924dad77b02b6c392eff0478b698ab1cc07d8c5204e       853a28fe7126a7ca0da315c29da900d1f1f3c5020d967ec0a07785d90944cb93
+1096ce45a4248f35078178e064e079de6c2cb8817997a78086587cc73e374c25       89dfe758b2cb731755bb1e8576218d4a9994afc43c4c6956f18900bec02cf75e
+12d705ca0dae7f3c2b43a406617d7d7fbb2d9ca95aa222ccfe5cc79b302e0e0d       8b1060d76b8a4157e956af6752a4216158cbd7132074b78ca687b8d59eeb8a3c
+14df8ea25d369dca2888042284b29d84ad2dc644a509d0413421668061ac92cc       8c74055ae49ecfbce0f162c516637cc70105afa81d2b1e2cde84f65037973465
+16e51e490d6dd2d0ec0c7144df26b6c939acff253086fb47b59ed5c60632c1b7       8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f
+16f4082dcb2a7d699c81fe690769d79eaecd0353edde7bcb83f0cf786a7e8be7       8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f-init
+174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a       8efed2a68f41d061cce1f42b329483cd1d7e47833ef0b1f2c0c59ab4acd3743c
+174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a-init  93a21ab93d55fd8a60882d83cdfb64b9bfdbea5f62a00b6962859326986ca2cd
+184b4db4b69a208e451cfc3a11421a269a1ea75fc04656ee344928b4ab0e5520       9411b10269b74dd0a77f68eafcb09fb383be97d983c85a9fd2e0cfe0a3c68910
+18888a64ba1b0e86e6755c6277feb48f9f323fa43c0549642950fc1054e2555b       942b1368911f69c37ca8d175809747c315cd2fd940fed2111ddee9214c536ac0
+1a47394a49e75afd591a28594d78e5bae0537a854cdfe291eb4f3d228881d697       94889445d7a38829bbb11d89129314512ba5b87374aa5d7b8cc6eab4eeb72452
+1a65d85f1188464588a76bbfed6b8a30699770ae336bcab233a73b5efc595d86       985ba8210ed1e8d42f21b4e69d4d649873a9151c96e3b20fcac07f3f5d7652f3
+1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088       98db00ea8c27b30926f734ec5e8f4c5ee8fdd4bd830c12235a2cf84992c81912
+1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088-init  9a96a97ae25fded6656f07143db1bf0aa838bda408d9037111ec35e601a24d69
+1b1814a75ccbb15791962e7ef8bbe733bb0e05ed1c47034d9e8cddc798335f40       9b09a9d7bc9042089449deba88ec9c0988824a9885e39438c96e75846d6ec971
+1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f       9b739224affecc33904bdb7b22a64f377538897a3db09fb93908f0ff77c10390
+1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f-init  9c424a4ae532c1016212dd38e374e369584d5eb056bc84e7f54438e61a0b19f1
+1be72860e379e2fecd094657ff485ac4b5b144b8afd565bcf33572c00c0d9743       9f91ac6ed4e049c7108caf06555fe78e2f7f75afb9ba2bcfd4a1684994fff18e
+1cea80c9897b6128ce46b7998429542480e41a3f5360455e20130c84f7fc0657       9fa080ed3c9fa1a05a2cc5a92d9d85c5a8140c6b5d76b5eb358b17061e29bebe
+1da4203cc9de000a1fe6500f435f6511ff0d512fdb7b8b43b4013e910c7a6430       a48ca8555fdec25ee52671d1b0f3e67e65cfd1c466fdbf2a04acae72ed837fb4
+1dff858c9ad99c50fecc528cb598d3400bf9b31567bc29d3611a5fe6a1345f9e       a49240edf5410559997ab5748595c4479cb3fd73a5c95cb529dbcc1b34b0aa2c
+1ec9432433291c5112ecefe24b2eb5a24640ab39dc1b8a5ee48adfda2b372e93       a4938275813e03e9151f037ddc0a82ea464c89111114a0019088f286edf31931
+1fe14f8b234be6bbdca2aaa048be9c8c70fef8551bbcdac8d3f9a66026c3161a       a56ad2449975301f430f3cf447dd0564b827127dd5fd03b8aba58f88d55bb5f3
+24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf       a6ceb0957e30c0f1c5a82675009fb9f6691bd8bc5a7d614c2a64bd9307d17f92
+24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf-init  a7329805ff53cbeeaa2a5912ccb4af6783c13d31c8d4d87dffe68e0de78ee7fc
+25ab6c507a1ced277a7ded3cdfed392ad761f225d0b0bb1899330c47db90f3f1       a8f491a9dcc6b160aab78b834e451a43b21238c3ee943010b3ade0c2e764e6d1
+25f57b071e530c45cedfebb8e5c30677e1cf68c23baf87c729abbd4a7bce3ccc       aaccc75fe7bae1e9ce5dd2280a321cd3d455a6b34094b45cf0d93d48295a7e1f
+2770ebaed89d2aa06e747b92ae25b0ec384286be584b5e2ab3026746db836a86       aba91203c74301b2a2e19fc74278c1fd6c9ed4ff9e1967fbda1a81e2c40efe76
+2881cfa83a0d813e8ae78746ca0f167c6f559a254807932bc5dc2f7c544079c1       ac9555d3a4bd683ce897c62a6899d57bf5514543ea8be3b8b434bc5517425f09
+2d10c11a2d861fab67343053d42f587a230f55e4015ae42929af43c50c7b882e       ad1e22377be7eb2e963fa13287adac4445788c61dd070e3dcd39a5210aaf3e8b
+2d88c3ac0c0bf258d84d0a239d4527f1ec89cd8f45965ff9ee1eb60e3a9cebe1       adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f
+2dd3b7b2bd7a0f6b569b1896f1268dd446c60eb8ce5c7394a8a3a35571545e49       adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f-init
+2f1465df4f85c762b3efe5210584d759dd2bef3e65e5e75600cb3f88f6995812       b010dc2083d3d719c96bdb9234da9e5c89c61f7fd559212691ec969e4558f8fc
+300ebde4109333bbc3b05bda096aa98830956106cd1a3513137620847a2b51a7       b016a7dc8d18ce1af51e8855a71b05a90a0a951683acf5aa1691eb30c281414e
+308264da7ebe15da014c9f6da1ffebc7ac081bc7d2bc296e3c1a7407e86b5c56       b274235a7e6b43deca35b6d27bef7b26105891aa7d21ac6d75f7c525db819b6c
+310d38b08d064ed4d3a4498a18895cac8cd399656ce0a4620aec2392c7dfd631       b549e2f8400b95aa1d3eef6646fb8a025b4c92939570bb2879eae2ed1cdebd16
+32bc61f12a28c136c3e3285a19e989320a67cb1f4d05f97c36de00d2b290a0f2       b618de58d445826cf1f19868b8010a68d7d7f5ec8ea65b584611e4075430dc1a
+33feff6dd5a7084142ddc1986f720e850b469bc2ee1f0d07d55cdf03abaf5e3a       b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2
+357950fc7a3eee080f61ff81539cd128d488485dc2ac2ef51b5c73dc9a5dcf6a       b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2-init
+379d3f3019350b5d6bc420a41315fa1dddaffc4f6c883ccde33094d413653be5       b7e01fa3598dfa2ce49a3fa31de2e4d047525b0b4fa5fc471ddd586cd8be6ae6
+37b67b0970a1efb360e04ea3feb1d59f1e2853d100c423149eafb45c9d4df506       ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827
+3afef2d11dc225ca3f23099d2dc68090a81042329ccaebd601cfbd3a60d7d589       ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827-init
+3b27dfc5f5b5d2bdaad333bc92bc8006cbc986c32c0185f4b342b1b267ad06bd       bb0ad667c7e80e261aac4dba907d72ee646a7b044d94036292603deba1a22216
+3b4ba79755965c44ee6ccef20c618939e55311bf1eacee6258a4508850a2b232       bd4137f8cf0b33de4c730c4a1720bf664025c934366d51e7b900e14b23e27bc8
+3c30be5765503dc0fb3b27e1dda5ee2fdbbd5727c14b8136d14f49de1066f02d       bea5859f6c94111fd762fadbe0619cd82f45f8dea8623f3ad9c65713fe2e52ff
+3c62cd5750f2f52cbef368642e753782f1b715a6837bcbadecbd688e95f4fef0       bf990be2d799a8790ff2c8133636ee3088a6a4de7d11addfc1c6722cc93804d2
+3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c       c1951d09345931076bfb9b81babe1d4ce2cd2b74c33d842fa4ea1bef0b165f54
+3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c-init  c251629ff8996f0dfc3cf85b4526b8972130320486c0c6dfc9892d4e2f5184d2
+3ecb45d11f56bafb3f663184cd5005a4b06c47c4ae807b4290bd0a00402d9c0a       c2542de4cbf0665d76e7bc36c07affe7cfc4a7c3c34a5e56de1048c3d6217e16
+3ed02eea22ac67c392e3399f430d1d9faa5965f53d8ff6d87becad8c85a2c5b9       c2683771843f72abfd3c41e6eccc055b433957a6687fe439166672f109a945c1
+3f7f5f51a45f82ebafe10d3725aa9875ac5929a1f56260786dc2b79899fe4716       c3a152be084e54762698b9fdc07bcc5bc8436d638f607b28dd25c2ff678cf8f5
+413aceddbbc88c1f835bf80794e5ed235255ec526b765cc8addd93cd08f18554       c3df2ac5a7e5839ccee5912ba2d200e70944fb610a5502667eac948e3ca6e71e
+43e56f4ef70bac22bc186b88b2177a05a1adc06b4ba32bf2aa68ccba8da1b9d4       c7f2e29ed509a9f510d0c60a5d770fc77b461fae1e20d26d07e59184cc5c0ac6
+4443791cb328511fec36079deb10f4512e0d390bd39b33f98997f379e49e2f0c       c876e10ae745db418dae4f15359cbb2dbb4136918e43d1c9e6432a323716ef2c
+44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31       cab17e019487258a86d2a2f7943ac4093ba48edb631da5829dac9bfe8c586135
+44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31-init  cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5
+472ed4aa5b816bd7978220b5c9aa909078ea6bd39b41ff98da7aeb2bc3fcdf61       cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5-init
+47f895e710e7324d87b0a24e660894bc3cebd58734230d39b5c1932fa842ba49       cd7273c6f0b9519cefd2790194af83a95246ac22ad9faa1dbe214467c52d45dc
+497b1d235a8842d2940b63443e3ab6f6926e1e4d2e2dcaf5295fd0580baf4968       d0ad1459e51d63b47d3f920bb299f9e930824a8869c46ec1a0c94b560abc81ce
+4b94e4ab27e53bd07001520046300c50ada830135b72cce97abef0e000a08d23       d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b
+4bb7fd9a6b1dfddaee4cce2312f05aaf4edbbb657ccffa250999c6c090852169       d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b-init
+4eb58daef9c64fdc749d442482e1fcb890c8d13091aeb1cc495497482ea5b66a       d53165c64018240843ced18f245e797c25f31d1cce13188237dc73d8fa3a7a84
+50eff2fb319c62bdd0c4ac94d7fc4362ac8b5b19b6125b538c2919a8a29dcf3d       dbad4e6e1e6240d20c21c9dd0b2ef0c43d938f84d61a7d1eff28d2655ee64112
+518eaaae87ad915e73c1fd68cdcea24a959ccdb372ac38741b06d09e711e43dc       df458af536628ca08141f3165c5e75ab4ac8d9720cb6f267ab5aa4152abf0cce
+54aff7eef25406858a04055bdcbe966b079302adb0f6197cfd19e18e29b5d22f       e167ac4738dd48d2465c570b57e1e6829c649c699c200114fa8669ba3ed9fc08
+54dd72502d53a0149090422bf948c6b6a2d7b4a5b559c3ae907c03f1fed69885       e1806ae2f0c805ea24d5e250fda52ab115caf2587b5d8f69f37527593ea02de5
+55f3f3f8271af999a9937d4a8bd099e3bc6df9f93f83fd10149462b8256b028c       e2b819db1d055df98c4d4839d7571ea626bd14f94b971aec892f4add83ff2e26
+560133915e91cf34138ac872ba4510691d9e33dddcfb2c44ad3b714dc5bf0f1e       e53b51d0dd26dfecee51946cae3c9572336435be707926b74f88867ac3358cdb
+56850cecee02549ff23ee327d96adae733ac9fb9445faa867f0a9ec167c748e6       e6d18a77f83f0297cf7b0191a447152ddc4e475300953c8e4e7c3a02919a5e52
+59a86892587b4caebe9e70daebf9b77915a1dc6448d8419464492769545149eb       e86e063becd0b8764662d7163711ddf0f11043167c707fb49eda30cbc2b7a82f
+59d89e5676a93f95b7839b70cde82f86d962e682463b5012c4347d00de37aa3d       e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df
+5ce05f14f9452edbaffe2b852f4e8828f416005d4987253fd3e44975433e3771       e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df-init
+5ce73ccc5c04110df9734969a6360a74a354e75f7605106f90065e2adf4ab256       e9b0d4b6a70ea298095b4281d43750389e360003cb0572815e3da6c1e422dd84
+5cf69b410bde46bee225dcab25d9debde51b070199d3e86a0dcb51216179c546       ea67f5cd44cca561d81f5b8337fed93249c4c4c12073181613bacd1642004483
+619d8ecbee81ad601c55ef3ee10703c7f20d30c4e8f10251e7a15d956c7cd1a8       ed00e6fcac923260c784bebea6dc17662e71b831d52030f3d3a129de34b2c41b
+62318a10372707ddc25242c6d6752e45be4950f1a87d74818badefd32c9c556f       ef0d8e98172be5ce705d320ce62b1f7bbc5fa1db2896534979084fe27230064b
+6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16       efd382fea6b31c78839b809e2ec9f5793dddef82ebd9e65034dd8aa70cef106f
+6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16-init  f1d6c1030201f7440cb7d953c385398d57445038fce1ad33390669312c50c774
+6243bc095743aeb66b73b466391c9ac5d661643aa5c6ebce4d6046bc608890e7       f1f63cbf30599485a6d65b7d69232b95225ae89c35519f9a94352e999475c14a
+64818b414b24c96cc21365e68efb69952290cea0e9dc320ef7c7e52ccb73b098       f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad
+64b6ea9578206ba62cadc3d106d2885e7f495568520136679a2cad4129aba7bb       f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad-init
+64cf9204428d1d688e7e0146ec6cde7758a626dbc3882e2bf938ccdc031c7557       f8bfc92e3d409953a03b043592ce68e0b716fb32ce25d278449eb3dc4648c66f
+667359a6a5cf3bd38fbfd2b3bcccd2ee8e34aae60fc34962eefa7ddc13c98d74       f8c67ce278ee91207075b2d7fb062b992a883bac26b6ba37cb1636e083e74e6c
+67e61b0f70029e77beae947397f6115fe43cb95294925947c9aadc7db189db13       f8d81cf43d6a22534b07dd144a419ed336c0ed683c6626820443c3c18c868669
+691f400b059b402b710fbef9b2044608e4d8968b6d3b06d1e048f28e91817b6c       faa397d57baab20812f9bc9905adfb6ca4dac7adcdf097859c65a73cefdd357f
+6a7a979a342684fd0eba09bcd96dd056def59de7e0ab6d564643378dfe2a99e1       fb339e419499411bd2eb868668098be45079df0c38a80ac9458a3dd8f67692bc
+6d5566e2f20bc00dfa32c09c7e69f9e6b7a7ff7193c9b8aa2b0f166bed88bd94       fc12a06a2526542d31ab419c23ef1f202d93551d379a46cc9317a0ef37909ef3
+6e1de35ce6c9244e6cb6db2052109b01becb60f00330099825dc8a2921de6346       fc534ccf657250b11b1710c6dd427a396b45349366c9a8fff38c0220640e58a2
+6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38       fc83ece39b8a6425ed3ef61380c68fc4d591f8d79a6fdbb1fe9a6b0cfc32a71c
+6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38-init  fc87866967c7ae808a13bef4d2b614da2b4870bedf9e75f1cd1bd3f62abc14e6
+6f6cd7fb0ef0b6e60b1e52c4f07516b3ce1a6c08b00a302834c9b8b17a24d7b3       fccebdd1082f4bde87eda8d3ec7b9cb0735134291c95b190e0ddd389b85aff63
+714b0336f44b65a034c0e1b0c8e84400dbf4239e249e433a4f6b46a1f161667a       fe8c515b058617beb1b8e77bf0902fb49c4c0169216cbe42e60e0ed63fc62bb2
+73f631bf54c37ba2d79fad214403da1a4e364a0eb9de2d8ffa7c15dc41aa08d1       l
+root@nilesh:/home/nilesh/Desktop/Docker# docker history 05
+Error response from daemon: No such image: 05:latest
+root@nilesh:/home/nilesh/Desktop/Docker# docker history
+"docker history" requires exactly 1 argument.
+See 'docker history --help'.
+
+Usage:  docker history [OPTIONS] IMAGE
+
+Show the history of an image
+root@nilesh:/home/nilesh/Desktop/Docker# docker images
+REPOSITORY                              TAG        IMAGE ID       CREATED         SIZE
+result-app                              latest     c8e51d2eeffe   7 hours ago     160MB
+worker-app                              latest     8d6dd60a6782   7 hours ago     193MB
+<none>                                  <none>     8c4623fac31e   7 hours ago     750MB
+voting-app                              latest     fc76a8f54541   8 hours ago     145MB
+iamnikaa/my_app                         latest     6c3c02ef1c9c   11 hours ago    469MB
+iamnikaa/training/my_app                latest     6c3c02ef1c9c   11 hours ago    469MB
+my_app                                  latest     6c3c02ef1c9c   11 hours ago    469MB
+training/my_app                         latest     6c3c02ef1c9c   11 hours ago    469MB
+<none>                                  <none>     e725fdf8d5d7   12 hours ago    469MB
+tomcat                                  9.0        bce48a218e94   47 hours ago    680MB
+python                                  3.9-slim   2de9c79b2c75   2 days ago      125MB
+postgres                                latest     5b21e2e86aab   2 days ago      376MB
+mcr.microsoft.com/dotnet/core/sdk       3.1        6dac2916209e   2 days ago      711MB
+mcr.microsoft.com/dotnet/core/runtime   3.1        b3bbe16bb594   2 days ago      190MB
+jenkins/jenkins                         latest     011729edd836   3 days ago      460MB
+redis                                   latest     1ca2c2a1b554   2 weeks ago     117MB
+mysql                                   latest     76152be68449   2 weeks ago     524MB
+ubuntu                                  latest     d2e4e1f51132   4 weeks ago     77.8MB
+hello-world                             latest     feb5d9fea6a5   8 months ago    13.3kB
+node                                    10-slim    6fbcbbb5c603   13 months ago   134MB
+redis                                   4.0        191c4017dcdd   2 years ago     89.3MB
+postgres                                9.4        ed5a45034282   2 years ago     251MB
+kodekloud/simple-prompt-docker          latest     c0848fde57d1   2 years ago     4.41MB
+kodekloud/simple-webapp                 latest     c6e3cd9aae36   3 years ago     84.8MB
+kodekloud/webapp                        latest     1a45ba829f10   4 years ago     432MB
+eesprit/voting-app-vote                 latest     1c71ecb231a4   5 years ago     83.9MB
+eesprit/voting-app-result               latest     6f98b7114bf5   5 years ago     226MB
+eesprit/voting-app-worker               latest     3b8592893450   5 years ago     682MB
+root@nilesh:/home/nilesh/Desktop/Docker# docker history feb
+IMAGE          CREATED        CREATED BY                                      SIZE      COMMENT
+feb5d9fea6a5   8 months ago   /bin/sh -c #(nop)  CMD ["/hello"]               0B        
+<missing>      8 months ago   /bin/sh -c #(nop) COPY file:50563a97010fd7ce…   13.3kB    
+root@nilesh:/home/nilesh/Desktop/Docker# ls -l /var/lib/docker/overlay2/diff
+ls: cannot access '/var/lib/docker/overlay2/diff': No such file or directory
+root@nilesh:/home/nilesh/Desktop/Docker# docker pull iamnikaa/my_app
+Using default tag: latest
+latest: Pulling from iamnikaa/my_app
+Digest: sha256:854425825d463e17f766e21cb61e85e279e9128da0554e86ab1a5c23c8252e8b
+Status: Image is up to date for iamnikaa/my_app:latest
+docker.io/iamnikaa/my_app:latest
+root@nilesh:/home/nilesh/Desktop/Docker# cd my_app
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# docker build .
+Sending build context to Docker daemon  3.072kB
+Step 1/6 : FROM ubuntu
+ ---> d2e4e1f51132
+Step 2/6 : RUN apt-get update
+ ---> Using cache
+ ---> 67e623127cc0
+Step 3/6 : RUN apt-get install -y python3 python3-pip
+ ---> Using cache
+ ---> 188d5f2af1f7
+Step 4/6 : RUN pip install flask
+ ---> Using cache
+ ---> 0d43c742d114
+Step 5/6 : COPY app.py /opt/app.py
+ ---> Using cache
+ ---> 3eb7754bb1a7
+Step 6/6 : ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
+ ---> Using cache
+ ---> 6c3c02ef1c9c
+Successfully built 6c3c02ef1c9c
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# docker images
+REPOSITORY                              TAG        IMAGE ID       CREATED         SIZE
+result-app                              latest     c8e51d2eeffe   7 hours ago     160MB
+worker-app                              latest     8d6dd60a6782   7 hours ago     193MB
+<none>                                  <none>     8c4623fac31e   7 hours ago     750MB
+voting-app                              latest     fc76a8f54541   8 hours ago     145MB
+iamnikaa/training/my_app                latest     6c3c02ef1c9c   12 hours ago    469MB
+my_app                                  latest     6c3c02ef1c9c   12 hours ago    469MB
+training/my_app                         latest     6c3c02ef1c9c   12 hours ago    469MB
+iamnikaa/my_app                         latest     6c3c02ef1c9c   12 hours ago    469MB
+<none>                                  <none>     e725fdf8d5d7   12 hours ago    469MB
+tomcat                                  9.0        bce48a218e94   47 hours ago    680MB
+python                                  3.9-slim   2de9c79b2c75   2 days ago      125MB
+postgres                                latest     5b21e2e86aab   2 days ago      376MB
+mcr.microsoft.com/dotnet/core/sdk       3.1        6dac2916209e   2 days ago      711MB
+mcr.microsoft.com/dotnet/core/runtime   3.1        b3bbe16bb594   2 days ago      190MB
+jenkins/jenkins                         latest     011729edd836   3 days ago      460MB
+redis                                   latest     1ca2c2a1b554   2 weeks ago     117MB
+mysql                                   latest     76152be68449   2 weeks ago     524MB
+ubuntu                                  latest     d2e4e1f51132   4 weeks ago     77.8MB
+hello-world                             latest     feb5d9fea6a5   8 months ago    13.3kB
+node                                    10-slim    6fbcbbb5c603   13 months ago   134MB
+redis                                   4.0        191c4017dcdd   2 years ago     89.3MB
+postgres                                9.4        ed5a45034282   2 years ago     251MB
+kodekloud/simple-prompt-docker          latest     c0848fde57d1   2 years ago     4.41MB
+kodekloud/simple-webapp                 latest     c6e3cd9aae36   3 years ago     84.8MB
+kodekloud/webapp                        latest     1a45ba829f10   4 years ago     432MB
+eesprit/voting-app-vote                 latest     1c71ecb231a4   5 years ago     83.9MB
+eesprit/voting-app-result               latest     6f98b7114bf5   5 years ago     226MB
+eesprit/voting-app-worker               latest     3b8592893450   5 years ago     682MB
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# docker history my_app
+IMAGE          CREATED        CREATED BY                                      SIZE      COMMENT
+6c3c02ef1c9c   12 hours ago   /bin/sh -c #(nop)  ENTRYPOINT ["/bin/sh" "-c…   0B        
+3eb7754bb1a7   12 hours ago   /bin/sh -c #(nop) COPY file:a0f88ceb6dcc5130…   116B      
+0d43c742d114   12 hours ago   /bin/sh -c pip install flask                    4.42MB    
+188d5f2af1f7   12 hours ago   /bin/sh -c apt-get install -y python3 python…   353MB     
+67e623127cc0   12 hours ago   /bin/sh -c apt-get update                       34MB      
+d2e4e1f51132   4 weeks ago    /bin/sh -c #(nop)  CMD ["bash"]                 0B        
+<missing>      4 weeks ago    /bin/sh -c #(nop) ADD file:37744639836b248c8…   77.8MB    
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# cd var/lib/docker
+bash: cd: var/lib/docker: No such file or directory
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# cd /var/lib/docker
+root@nilesh:/var/lib/docker# ls
+buildkit  containers  image  network  overlay2  plugins  runtimes  swarm  tmp  trust  volumes
+root@nilesh:/var/lib/docker# cd overlay2
+root@nilesh:/var/lib/docker/overlay2# ls
+01a0939115c1dc4418797f08e03ea7b760974e37b78de88dba92a0dfa8991d40       7661664db1e50c66b30a9952a737abfa80aa765b5940a8da6362337fb78cabdb
+05b5d2e7140bfe635b49979c52b3416b07721839fcb835074dafc63273c2026c       766419065fe17defe3257de2f17eabc37c314474363466796dbdb349c00c50b9
+0683e350f5f5ae38e9ed159490657204af5b9c7f6258dc6bd58010a79045b920       7c7ee0ddbbd5e9417006c15c02d51b72d1a3c34f3936f5206986c800d52da85d
+068d73687e353663af31255a5cfe639caaad7738d8e7bc16c383b6c91b167a3b       7cfc9d4d5d2cc2909479404d43d61929a08a92c17b36d7f422fd5cb6b2508a9f
+070879d9176420b96bf88645b45918093ca7fe6861dbbdea36d45a238076e872       7dce40f4c352d4e4c0d155c5c2940765880593523f0246c3370fe636d0ff7779
+07189eba003a59ba503d67b4cd8d8edab9b279c5b6aea2ee84d4c7eef9ddf23d       7ea5f6f7978ff22b32c021760bf08936fef651aa1bdc785f86ea926831fb981a
+091b0d18af4eb4575c37d612bb7b86e878776901b6259760c90d8f83c8632e69       80211d9020c1f4c1e6782c0032d03bf846da743f8bdde8fadeab28ac1016d24a
+09c3912bdbd70904bbdd014b8bf0f737adb6677a3b2cd1c96d4a39425b779303       8142c680894f38204f8fc83e4d318abd4e8aa4b490f36d63944a6efd6a38fd17
+09cded423c8c50b8465e10286894b5062a0e7942837fc7325b4896627ba43826       82c7dd56117e2b7267b0e62edcd18dfcb799a848c284574738f800f0b7ca048b
+0ca29a57e9ccc5c8916f2c92880dfc7835558216be34424f692081052785bfea       830ef6f44fbee80c155f66408456fa45ceeedd7f187b09240954aeac4d1eed33
+0dc3f3b78db99713fda3ade4773f099854f825eaf9b4ed40ff4bf801ecafa62c       838ebd14adc32ef09990fa789a60e145a4c2713a6f5fd054265fb5771637fa7f
+0de67bb41e0c6316dac5496b162614364fcc23730a37074c49d7c82ce42937d0       851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff
+0f791edfe333139b28ebff601d4df26b6a5b08fb4aa1a5fe45205a32903c3e4c       851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff-init
+105d1e75d29c2d303706a924dad77b02b6c392eff0478b698ab1cc07d8c5204e       853a28fe7126a7ca0da315c29da900d1f1f3c5020d967ec0a07785d90944cb93
+1096ce45a4248f35078178e064e079de6c2cb8817997a78086587cc73e374c25       89dfe758b2cb731755bb1e8576218d4a9994afc43c4c6956f18900bec02cf75e
+12d705ca0dae7f3c2b43a406617d7d7fbb2d9ca95aa222ccfe5cc79b302e0e0d       8b1060d76b8a4157e956af6752a4216158cbd7132074b78ca687b8d59eeb8a3c
+14df8ea25d369dca2888042284b29d84ad2dc644a509d0413421668061ac92cc       8c74055ae49ecfbce0f162c516637cc70105afa81d2b1e2cde84f65037973465
+16e51e490d6dd2d0ec0c7144df26b6c939acff253086fb47b59ed5c60632c1b7       8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f
+16f4082dcb2a7d699c81fe690769d79eaecd0353edde7bcb83f0cf786a7e8be7       8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f-init
+174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a       8efed2a68f41d061cce1f42b329483cd1d7e47833ef0b1f2c0c59ab4acd3743c
+174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a-init  93a21ab93d55fd8a60882d83cdfb64b9bfdbea5f62a00b6962859326986ca2cd
+184b4db4b69a208e451cfc3a11421a269a1ea75fc04656ee344928b4ab0e5520       9411b10269b74dd0a77f68eafcb09fb383be97d983c85a9fd2e0cfe0a3c68910
+18888a64ba1b0e86e6755c6277feb48f9f323fa43c0549642950fc1054e2555b       942b1368911f69c37ca8d175809747c315cd2fd940fed2111ddee9214c536ac0
+1a47394a49e75afd591a28594d78e5bae0537a854cdfe291eb4f3d228881d697       94889445d7a38829bbb11d89129314512ba5b87374aa5d7b8cc6eab4eeb72452
+1a65d85f1188464588a76bbfed6b8a30699770ae336bcab233a73b5efc595d86       985ba8210ed1e8d42f21b4e69d4d649873a9151c96e3b20fcac07f3f5d7652f3
+1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088       98db00ea8c27b30926f734ec5e8f4c5ee8fdd4bd830c12235a2cf84992c81912
+1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088-init  9a96a97ae25fded6656f07143db1bf0aa838bda408d9037111ec35e601a24d69
+1b1814a75ccbb15791962e7ef8bbe733bb0e05ed1c47034d9e8cddc798335f40       9b09a9d7bc9042089449deba88ec9c0988824a9885e39438c96e75846d6ec971
+1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f       9b739224affecc33904bdb7b22a64f377538897a3db09fb93908f0ff77c10390
+1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f-init  9c424a4ae532c1016212dd38e374e369584d5eb056bc84e7f54438e61a0b19f1
+1be72860e379e2fecd094657ff485ac4b5b144b8afd565bcf33572c00c0d9743       9f91ac6ed4e049c7108caf06555fe78e2f7f75afb9ba2bcfd4a1684994fff18e
+1cea80c9897b6128ce46b7998429542480e41a3f5360455e20130c84f7fc0657       9fa080ed3c9fa1a05a2cc5a92d9d85c5a8140c6b5d76b5eb358b17061e29bebe
+1da4203cc9de000a1fe6500f435f6511ff0d512fdb7b8b43b4013e910c7a6430       a48ca8555fdec25ee52671d1b0f3e67e65cfd1c466fdbf2a04acae72ed837fb4
+1dff858c9ad99c50fecc528cb598d3400bf9b31567bc29d3611a5fe6a1345f9e       a49240edf5410559997ab5748595c4479cb3fd73a5c95cb529dbcc1b34b0aa2c
+1ec9432433291c5112ecefe24b2eb5a24640ab39dc1b8a5ee48adfda2b372e93       a4938275813e03e9151f037ddc0a82ea464c89111114a0019088f286edf31931
+1fe14f8b234be6bbdca2aaa048be9c8c70fef8551bbcdac8d3f9a66026c3161a       a56ad2449975301f430f3cf447dd0564b827127dd5fd03b8aba58f88d55bb5f3
+24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf       a6ceb0957e30c0f1c5a82675009fb9f6691bd8bc5a7d614c2a64bd9307d17f92
+24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf-init  a7329805ff53cbeeaa2a5912ccb4af6783c13d31c8d4d87dffe68e0de78ee7fc
+25ab6c507a1ced277a7ded3cdfed392ad761f225d0b0bb1899330c47db90f3f1       a8f491a9dcc6b160aab78b834e451a43b21238c3ee943010b3ade0c2e764e6d1
+25f57b071e530c45cedfebb8e5c30677e1cf68c23baf87c729abbd4a7bce3ccc       aaccc75fe7bae1e9ce5dd2280a321cd3d455a6b34094b45cf0d93d48295a7e1f
+2770ebaed89d2aa06e747b92ae25b0ec384286be584b5e2ab3026746db836a86       aba91203c74301b2a2e19fc74278c1fd6c9ed4ff9e1967fbda1a81e2c40efe76
+2881cfa83a0d813e8ae78746ca0f167c6f559a254807932bc5dc2f7c544079c1       ac9555d3a4bd683ce897c62a6899d57bf5514543ea8be3b8b434bc5517425f09
+2d10c11a2d861fab67343053d42f587a230f55e4015ae42929af43c50c7b882e       ad1e22377be7eb2e963fa13287adac4445788c61dd070e3dcd39a5210aaf3e8b
+2d88c3ac0c0bf258d84d0a239d4527f1ec89cd8f45965ff9ee1eb60e3a9cebe1       adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f
+2dd3b7b2bd7a0f6b569b1896f1268dd446c60eb8ce5c7394a8a3a35571545e49       adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f-init
+2f1465df4f85c762b3efe5210584d759dd2bef3e65e5e75600cb3f88f6995812       b010dc2083d3d719c96bdb9234da9e5c89c61f7fd559212691ec969e4558f8fc
+300ebde4109333bbc3b05bda096aa98830956106cd1a3513137620847a2b51a7       b016a7dc8d18ce1af51e8855a71b05a90a0a951683acf5aa1691eb30c281414e
+308264da7ebe15da014c9f6da1ffebc7ac081bc7d2bc296e3c1a7407e86b5c56       b274235a7e6b43deca35b6d27bef7b26105891aa7d21ac6d75f7c525db819b6c
+310d38b08d064ed4d3a4498a18895cac8cd399656ce0a4620aec2392c7dfd631       b549e2f8400b95aa1d3eef6646fb8a025b4c92939570bb2879eae2ed1cdebd16
+32bc61f12a28c136c3e3285a19e989320a67cb1f4d05f97c36de00d2b290a0f2       b618de58d445826cf1f19868b8010a68d7d7f5ec8ea65b584611e4075430dc1a
+33feff6dd5a7084142ddc1986f720e850b469bc2ee1f0d07d55cdf03abaf5e3a       b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2
+357950fc7a3eee080f61ff81539cd128d488485dc2ac2ef51b5c73dc9a5dcf6a       b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2-init
+379d3f3019350b5d6bc420a41315fa1dddaffc4f6c883ccde33094d413653be5       b7e01fa3598dfa2ce49a3fa31de2e4d047525b0b4fa5fc471ddd586cd8be6ae6
+37b67b0970a1efb360e04ea3feb1d59f1e2853d100c423149eafb45c9d4df506       ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827
+3afef2d11dc225ca3f23099d2dc68090a81042329ccaebd601cfbd3a60d7d589       ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827-init
+3b27dfc5f5b5d2bdaad333bc92bc8006cbc986c32c0185f4b342b1b267ad06bd       bb0ad667c7e80e261aac4dba907d72ee646a7b044d94036292603deba1a22216
+3b4ba79755965c44ee6ccef20c618939e55311bf1eacee6258a4508850a2b232       bd4137f8cf0b33de4c730c4a1720bf664025c934366d51e7b900e14b23e27bc8
+3c30be5765503dc0fb3b27e1dda5ee2fdbbd5727c14b8136d14f49de1066f02d       bea5859f6c94111fd762fadbe0619cd82f45f8dea8623f3ad9c65713fe2e52ff
+3c62cd5750f2f52cbef368642e753782f1b715a6837bcbadecbd688e95f4fef0       bf990be2d799a8790ff2c8133636ee3088a6a4de7d11addfc1c6722cc93804d2
+3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c       c1951d09345931076bfb9b81babe1d4ce2cd2b74c33d842fa4ea1bef0b165f54
+3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c-init  c251629ff8996f0dfc3cf85b4526b8972130320486c0c6dfc9892d4e2f5184d2
+3ecb45d11f56bafb3f663184cd5005a4b06c47c4ae807b4290bd0a00402d9c0a       c2542de4cbf0665d76e7bc36c07affe7cfc4a7c3c34a5e56de1048c3d6217e16
+3ed02eea22ac67c392e3399f430d1d9faa5965f53d8ff6d87becad8c85a2c5b9       c2683771843f72abfd3c41e6eccc055b433957a6687fe439166672f109a945c1
+3f7f5f51a45f82ebafe10d3725aa9875ac5929a1f56260786dc2b79899fe4716       c3a152be084e54762698b9fdc07bcc5bc8436d638f607b28dd25c2ff678cf8f5
+413aceddbbc88c1f835bf80794e5ed235255ec526b765cc8addd93cd08f18554       c3df2ac5a7e5839ccee5912ba2d200e70944fb610a5502667eac948e3ca6e71e
+43e56f4ef70bac22bc186b88b2177a05a1adc06b4ba32bf2aa68ccba8da1b9d4       c7f2e29ed509a9f510d0c60a5d770fc77b461fae1e20d26d07e59184cc5c0ac6
+4443791cb328511fec36079deb10f4512e0d390bd39b33f98997f379e49e2f0c       c876e10ae745db418dae4f15359cbb2dbb4136918e43d1c9e6432a323716ef2c
+44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31       cab17e019487258a86d2a2f7943ac4093ba48edb631da5829dac9bfe8c586135
+44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31-init  cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5
+472ed4aa5b816bd7978220b5c9aa909078ea6bd39b41ff98da7aeb2bc3fcdf61       cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5-init
+47f895e710e7324d87b0a24e660894bc3cebd58734230d39b5c1932fa842ba49       cd7273c6f0b9519cefd2790194af83a95246ac22ad9faa1dbe214467c52d45dc
+497b1d235a8842d2940b63443e3ab6f6926e1e4d2e2dcaf5295fd0580baf4968       d0ad1459e51d63b47d3f920bb299f9e930824a8869c46ec1a0c94b560abc81ce
+4b94e4ab27e53bd07001520046300c50ada830135b72cce97abef0e000a08d23       d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b
+4bb7fd9a6b1dfddaee4cce2312f05aaf4edbbb657ccffa250999c6c090852169       d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b-init
+4eb58daef9c64fdc749d442482e1fcb890c8d13091aeb1cc495497482ea5b66a       d53165c64018240843ced18f245e797c25f31d1cce13188237dc73d8fa3a7a84
+50eff2fb319c62bdd0c4ac94d7fc4362ac8b5b19b6125b538c2919a8a29dcf3d       dbad4e6e1e6240d20c21c9dd0b2ef0c43d938f84d61a7d1eff28d2655ee64112
+518eaaae87ad915e73c1fd68cdcea24a959ccdb372ac38741b06d09e711e43dc       df458af536628ca08141f3165c5e75ab4ac8d9720cb6f267ab5aa4152abf0cce
+54aff7eef25406858a04055bdcbe966b079302adb0f6197cfd19e18e29b5d22f       e167ac4738dd48d2465c570b57e1e6829c649c699c200114fa8669ba3ed9fc08
+54dd72502d53a0149090422bf948c6b6a2d7b4a5b559c3ae907c03f1fed69885       e1806ae2f0c805ea24d5e250fda52ab115caf2587b5d8f69f37527593ea02de5
+55f3f3f8271af999a9937d4a8bd099e3bc6df9f93f83fd10149462b8256b028c       e2b819db1d055df98c4d4839d7571ea626bd14f94b971aec892f4add83ff2e26
+560133915e91cf34138ac872ba4510691d9e33dddcfb2c44ad3b714dc5bf0f1e       e53b51d0dd26dfecee51946cae3c9572336435be707926b74f88867ac3358cdb
+56850cecee02549ff23ee327d96adae733ac9fb9445faa867f0a9ec167c748e6       e6d18a77f83f0297cf7b0191a447152ddc4e475300953c8e4e7c3a02919a5e52
+59a86892587b4caebe9e70daebf9b77915a1dc6448d8419464492769545149eb       e86e063becd0b8764662d7163711ddf0f11043167c707fb49eda30cbc2b7a82f
+59d89e5676a93f95b7839b70cde82f86d962e682463b5012c4347d00de37aa3d       e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df
+5ce05f14f9452edbaffe2b852f4e8828f416005d4987253fd3e44975433e3771       e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df-init
+5ce73ccc5c04110df9734969a6360a74a354e75f7605106f90065e2adf4ab256       e9b0d4b6a70ea298095b4281d43750389e360003cb0572815e3da6c1e422dd84
+5cf69b410bde46bee225dcab25d9debde51b070199d3e86a0dcb51216179c546       ea67f5cd44cca561d81f5b8337fed93249c4c4c12073181613bacd1642004483
+619d8ecbee81ad601c55ef3ee10703c7f20d30c4e8f10251e7a15d956c7cd1a8       ed00e6fcac923260c784bebea6dc17662e71b831d52030f3d3a129de34b2c41b
+62318a10372707ddc25242c6d6752e45be4950f1a87d74818badefd32c9c556f       ef0d8e98172be5ce705d320ce62b1f7bbc5fa1db2896534979084fe27230064b
+6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16       efd382fea6b31c78839b809e2ec9f5793dddef82ebd9e65034dd8aa70cef106f
+6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16-init  f1d6c1030201f7440cb7d953c385398d57445038fce1ad33390669312c50c774
+6243bc095743aeb66b73b466391c9ac5d661643aa5c6ebce4d6046bc608890e7       f1f63cbf30599485a6d65b7d69232b95225ae89c35519f9a94352e999475c14a
+64818b414b24c96cc21365e68efb69952290cea0e9dc320ef7c7e52ccb73b098       f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad
+64b6ea9578206ba62cadc3d106d2885e7f495568520136679a2cad4129aba7bb       f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad-init
+64cf9204428d1d688e7e0146ec6cde7758a626dbc3882e2bf938ccdc031c7557       f8bfc92e3d409953a03b043592ce68e0b716fb32ce25d278449eb3dc4648c66f
+667359a6a5cf3bd38fbfd2b3bcccd2ee8e34aae60fc34962eefa7ddc13c98d74       f8c67ce278ee91207075b2d7fb062b992a883bac26b6ba37cb1636e083e74e6c
+67e61b0f70029e77beae947397f6115fe43cb95294925947c9aadc7db189db13       f8d81cf43d6a22534b07dd144a419ed336c0ed683c6626820443c3c18c868669
+691f400b059b402b710fbef9b2044608e4d8968b6d3b06d1e048f28e91817b6c       faa397d57baab20812f9bc9905adfb6ca4dac7adcdf097859c65a73cefdd357f
+6a7a979a342684fd0eba09bcd96dd056def59de7e0ab6d564643378dfe2a99e1       fb339e419499411bd2eb868668098be45079df0c38a80ac9458a3dd8f67692bc
+6d5566e2f20bc00dfa32c09c7e69f9e6b7a7ff7193c9b8aa2b0f166bed88bd94       fc12a06a2526542d31ab419c23ef1f202d93551d379a46cc9317a0ef37909ef3
+6e1de35ce6c9244e6cb6db2052109b01becb60f00330099825dc8a2921de6346       fc534ccf657250b11b1710c6dd427a396b45349366c9a8fff38c0220640e58a2
+6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38       fc83ece39b8a6425ed3ef61380c68fc4d591f8d79a6fdbb1fe9a6b0cfc32a71c
+6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38-init  fc87866967c7ae808a13bef4d2b614da2b4870bedf9e75f1cd1bd3f62abc14e6
+6f6cd7fb0ef0b6e60b1e52c4f07516b3ce1a6c08b00a302834c9b8b17a24d7b3       fccebdd1082f4bde87eda8d3ec7b9cb0735134291c95b190e0ddd389b85aff63
+714b0336f44b65a034c0e1b0c8e84400dbf4239e249e433a4f6b46a1f161667a       fe8c515b058617beb1b8e77bf0902fb49c4c0169216cbe42e60e0ed63fc62bb2
+73f631bf54c37ba2d79fad214403da1a4e364a0eb9de2d8ffa7c15dc41aa08d1       l
+root@nilesh:/var/lib/docker/overlay2# du -sh *
+44K     01a0939115c1dc4418797f08e03ea7b760974e37b78de88dba92a0dfa8991d40
+160M    05b5d2e7140bfe635b49979c52b3416b07721839fcb835074dafc63273c2026c
+36K     0683e350f5f5ae38e9ed159490657204af5b9c7f6258dc6bd58010a79045b920
+11M     068d73687e353663af31255a5cfe639caaad7738d8e7bc16c383b6c91b167a3b
+20K     070879d9176420b96bf88645b45918093ca7fe6861dbbdea36d45a238076e872
+19M     07189eba003a59ba503d67b4cd8d8edab9b279c5b6aea2ee84d4c7eef9ddf23d
+137M    091b0d18af4eb4575c37d612bb7b86e878776901b6259760c90d8f83c8632e69
+171M    09c3912bdbd70904bbdd014b8bf0f737adb6677a3b2cd1c96d4a39425b779303
+28K     09cded423c8c50b8465e10286894b5062a0e7942837fc7325b4896627ba43826
+3.0M    0ca29a57e9ccc5c8916f2c92880dfc7835558216be34424f692081052785bfea
+28K     0dc3f3b78db99713fda3ade4773f099854f825eaf9b4ed40ff4bf801ecafa62c
+44K     0de67bb41e0c6316dac5496b162614364fcc23730a37074c49d7c82ce42937d0
+46M     0f791edfe333139b28ebff601d4df26b6a5b08fb4aa1a5fe45205a32903c3e4c
+74M     105d1e75d29c2d303706a924dad77b02b6c392eff0478b698ab1cc07d8c5204e
+125M    1096ce45a4248f35078178e064e079de6c2cb8817997a78086587cc73e374c25
+7.3M    12d705ca0dae7f3c2b43a406617d7d7fbb2d9ca95aa222ccfe5cc79b302e0e0d
+4.8M    14df8ea25d369dca2888042284b29d84ad2dc644a509d0413421668061ac92cc
+6.1M    16e51e490d6dd2d0ec0c7144df26b6c939acff253086fb47b59ed5c60632c1b7
+350M    16f4082dcb2a7d699c81fe690769d79eaecd0353edde7bcb83f0cf786a7e8be7
+696K    174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a
+40K     174151419e30c477209e461cf19652a20fbef778db95b72510dbf5cc8cd47c2a-init
+9.7M    184b4db4b69a208e451cfc3a11421a269a1ea75fc04656ee344928b4ab0e5520
+36K     18888a64ba1b0e86e6755c6277feb48f9f323fa43c0549642950fc1054e2555b
+880K    1a47394a49e75afd591a28594d78e5bae0537a854cdfe291eb4f3d228881d697
+18M     1a65d85f1188464588a76bbfed6b8a30699770ae336bcab233a73b5efc595d86
+28K     1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088
+40K     1aa917f96c6fc9038490d99e3e66798bec08be27ea37fdd2c9734bfc28191088-init
+4.2M    1b1814a75ccbb15791962e7ef8bbe733bb0e05ed1c47034d9e8cddc798335f40
+680K    1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f
+40K     1bb45bd728430cd1ffb49acde103bdfe17347d4bb609289d9ae8d4292547479f-init
+44K     1be72860e379e2fecd094657ff485ac4b5b144b8afd565bcf33572c00c0d9743
+1.6M    1cea80c9897b6128ce46b7998429542480e41a3f5360455e20130c84f7fc0657
+13M     1da4203cc9de000a1fe6500f435f6511ff0d512fdb7b8b43b4013e910c7a6430
+384K    1dff858c9ad99c50fecc528cb598d3400bf9b31567bc29d3611a5fe6a1345f9e
+4.2M    1ec9432433291c5112ecefe24b2eb5a24640ab39dc1b8a5ee48adfda2b372e93
+40K     1fe14f8b234be6bbdca2aaa048be9c8c70fef8551bbcdac8d3f9a66026c3161a
+680K    24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf
+40K     24a002bbb46fcbb609c58ff00d18331276d46fbf1f7b2f6efa03cee8b215cecf-init
+20M     25ab6c507a1ced277a7ded3cdfed392ad761f225d0b0bb1899330c47db90f3f1
+8.5M    25f57b071e530c45cedfebb8e5c30677e1cf68c23baf87c729abbd4a7bce3ccc
+1.7M    2770ebaed89d2aa06e747b92ae25b0ec384286be584b5e2ab3026746db836a86
+69M     2881cfa83a0d813e8ae78746ca0f167c6f559a254807932bc5dc2f7c544079c1
+24K     2d10c11a2d861fab67343053d42f587a230f55e4015ae42929af43c50c7b882e
+4.2M    2d88c3ac0c0bf258d84d0a239d4527f1ec89cd8f45965ff9ee1eb60e3a9cebe1
+13M     2dd3b7b2bd7a0f6b569b1896f1268dd446c60eb8ce5c7394a8a3a35571545e49
+44K     2f1465df4f85c762b3efe5210584d759dd2bef3e65e5e75600cb3f88f6995812
+11M     300ebde4109333bbc3b05bda096aa98830956106cd1a3513137620847a2b51a7
+384K    308264da7ebe15da014c9f6da1ffebc7ac081bc7d2bc296e3c1a7407e86b5c56
+13M     310d38b08d064ed4d3a4498a18895cac8cd399656ce0a4620aec2392c7dfd631
+87M     32bc61f12a28c136c3e3285a19e989320a67cb1f4d05f97c36de00d2b290a0f2
+329M    33feff6dd5a7084142ddc1986f720e850b469bc2ee1f0d07d55cdf03abaf5e3a
+13M     357950fc7a3eee080f61ff81539cd128d488485dc2ac2ef51b5c73dc9a5dcf6a
+88K     379d3f3019350b5d6bc420a41315fa1dddaffc4f6c883ccde33094d413653be5
+36K     37b67b0970a1efb360e04ea3feb1d59f1e2853d100c423149eafb45c9d4df506
+9.4M    3afef2d11dc225ca3f23099d2dc68090a81042329ccaebd601cfbd3a60d7d589
+5.0M    3b27dfc5f5b5d2bdaad333bc92bc8006cbc986c32c0185f4b342b1b267ad06bd
+46M     3b4ba79755965c44ee6ccef20c618939e55311bf1eacee6258a4508850a2b232
+57M     3c30be5765503dc0fb3b27e1dda5ee2fdbbd5727c14b8136d14f49de1066f02d
+76M     3c62cd5750f2f52cbef368642e753782f1b715a6837bcbadecbd688e95f4fef0
+680K    3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c
+40K     3ebb8f518e6b958e6a0cbe40b28e98e12eea7a0b18515d08af858b4d78c6777c-init
+28K     3ecb45d11f56bafb3f663184cd5005a4b06c47c4ae807b4290bd0a00402d9c0a
+252K    3ed02eea22ac67c392e3399f430d1d9faa5965f53d8ff6d87becad8c85a2c5b9
+36K     3f7f5f51a45f82ebafe10d3725aa9875ac5929a1f56260786dc2b79899fe4716
+135M    413aceddbbc88c1f835bf80794e5ed235255ec526b765cc8addd93cd08f18554
+18M     43e56f4ef70bac22bc186b88b2177a05a1adc06b4ba32bf2aa68ccba8da1b9d4
+314M    4443791cb328511fec36079deb10f4512e0d390bd39b33f98997f379e49e2f0c
+680K    44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31
+40K     44520bee437c72424f72e1880f8f71d61a53ddf07b968383facf932ef78cfe31-init
+48K     472ed4aa5b816bd7978220b5c9aa909078ea6bd39b41ff98da7aeb2bc3fcdf61
+135M    47f895e710e7324d87b0a24e660894bc3cebd58734230d39b5c1932fa842ba49
+1.8M    497b1d235a8842d2940b63443e3ab6f6926e1e4d2e2dcaf5295fd0580baf4968
+3.7M    4b94e4ab27e53bd07001520046300c50ada830135b72cce97abef0e000a08d23
+28K     4bb7fd9a6b1dfddaee4cce2312f05aaf4edbbb657ccffa250999c6c090852169
+153M    4eb58daef9c64fdc749d442482e1fcb890c8d13091aeb1cc495497482ea5b66a
+472K    50eff2fb319c62bdd0c4ac94d7fc4362ac8b5b19b6125b538c2919a8a29dcf3d
+76M     518eaaae87ad915e73c1fd68cdcea24a959ccdb372ac38741b06d09e711e43dc
+28K     54aff7eef25406858a04055bdcbe966b079302adb0f6197cfd19e18e29b5d22f
+62M     54dd72502d53a0149090422bf948c6b6a2d7b4a5b559c3ae907c03f1fed69885
+24K     55f3f3f8271af999a9937d4a8bd099e3bc6df9f93f83fd10149462b8256b028c
+24K     560133915e91cf34138ac872ba4510691d9e33dddcfb2c44ad3b714dc5bf0f1e
+20K     56850cecee02549ff23ee327d96adae733ac9fb9445faa867f0a9ec167c748e6
+20K     59a86892587b4caebe9e70daebf9b77915a1dc6448d8419464492769545149eb
+412K    59d89e5676a93f95b7839b70cde82f86d962e682463b5012c4347d00de37aa3d
+31M     5ce05f14f9452edbaffe2b852f4e8828f416005d4987253fd3e44975433e3771
+104K    5ce73ccc5c04110df9734969a6360a74a354e75f7605106f90065e2adf4ab256
+116K    5cf69b410bde46bee225dcab25d9debde51b070199d3e86a0dcb51216179c546
+24K     619d8ecbee81ad601c55ef3ee10703c7f20d30c4e8f10251e7a15d956c7cd1a8
+128M    62318a10372707ddc25242c6d6752e45be4950f1a87d74818badefd32c9c556f
+28K     6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16
+40K     6234808621ea58273eef7cffe8540a4becae605abedb84ad375ea6be44bb5a16-init
+28K     6243bc095743aeb66b73b466391c9ac5d661643aa5c6ebce4d6046bc608890e7
+22M     64818b414b24c96cc21365e68efb69952290cea0e9dc320ef7c7e52ccb73b098
+120K    64b6ea9578206ba62cadc3d106d2885e7f495568520136679a2cad4129aba7bb
+17M     64cf9204428d1d688e7e0146ec6cde7758a626dbc3882e2bf938ccdc031c7557
+4.4M    667359a6a5cf3bd38fbfd2b3bcccd2ee8e34aae60fc34962eefa7ddc13c98d74
+11M     67e61b0f70029e77beae947397f6115fe43cb95294925947c9aadc7db189db13
+56K     691f400b059b402b710fbef9b2044608e4d8968b6d3b06d1e048f28e91817b6c
+5.1M    6a7a979a342684fd0eba09bcd96dd056def59de7e0ab6d564643378dfe2a99e1
+216K    6d5566e2f20bc00dfa32c09c7e69f9e6b7a7ff7193c9b8aa2b0f166bed88bd94
+24K     6e1de35ce6c9244e6cb6db2052109b01becb60f00330099825dc8a2921de6346
+24K     6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38
+40K     6e53f2a835bcd5669fa1a25e259e3dfffab0c6a17e99c3d953dee64ec342ce38-init
+76M     6f6cd7fb0ef0b6e60b1e52c4f07516b3ce1a6c08b00a302834c9b8b17a24d7b3
+34M     714b0336f44b65a034c0e1b0c8e84400dbf4239e249e433a4f6b46a1f161667a
+36K     73f631bf54c37ba2d79fad214403da1a4e364a0eb9de2d8ffa7c15dc41aa08d1
+2.6M    7661664db1e50c66b30a9952a737abfa80aa765b5940a8da6362337fb78cabdb
+24K     766419065fe17defe3257de2f17eabc37c314474363466796dbdb349c00c50b9
+32K     7c7ee0ddbbd5e9417006c15c02d51b72d1a3c34f3936f5206986c800d52da85d
+668K    7cfc9d4d5d2cc2909479404d43d61929a08a92c17b36d7f422fd5cb6b2508a9f
+32K     7dce40f4c352d4e4c0d155c5c2940765880593523f0246c3370fe636d0ff7779
+28K     7ea5f6f7978ff22b32c021760bf08936fef651aa1bdc785f86ea926831fb981a
+36K     80211d9020c1f4c1e6782c0032d03bf846da743f8bdde8fadeab28ac1016d24a
+36K     8142c680894f38204f8fc83e4d318abd4e8aa4b490f36d63944a6efd6a38fd17
+32K     82c7dd56117e2b7267b0e62edcd18dfcb799a848c284574738f800f0b7ca048b
+32M     830ef6f44fbee80c155f66408456fa45ceeedd7f187b09240954aeac4d1eed33
+32K     838ebd14adc32ef09990fa789a60e145a4c2713a6f5fd054265fb5771637fa7f
+24K     851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff
+40K     851424512edf681eb5b2deac49eef2b01e4accf939953cf59eb2a6e21fa16dff-init
+26M     853a28fe7126a7ca0da315c29da900d1f1f3c5020d967ec0a07785d90944cb93
+336M    89dfe758b2cb731755bb1e8576218d4a9994afc43c4c6956f18900bec02cf75e
+36K     8b1060d76b8a4157e956af6752a4216158cbd7132074b78ca687b8d59eeb8a3c
+28K     8c74055ae49ecfbce0f162c516637cc70105afa81d2b1e2cde84f65037973465
+36K     8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f
+40K     8da3308e5abfc591be63deadf0a890d302f27de0f5cf79ba256c88c5b8f6873f-init
+62M     8efed2a68f41d061cce1f42b329483cd1d7e47833ef0b1f2c0c59ab4acd3743c
+24K     93a21ab93d55fd8a60882d83cdfb64b9bfdbea5f62a00b6962859326986ca2cd
+24K     9411b10269b74dd0a77f68eafcb09fb383be97d983c85a9fd2e0cfe0a3c68910
+4.0M    942b1368911f69c37ca8d175809747c315cd2fd940fed2111ddee9214c536ac0
+28K     94889445d7a38829bbb11d89129314512ba5b87374aa5d7b8cc6eab4eeb72452
+88M     985ba8210ed1e8d42f21b4e69d4d649873a9151c96e3b20fcac07f3f5d7652f3
+20K     98db00ea8c27b30926f734ec5e8f4c5ee8fdd4bd830c12235a2cf84992c81912
+44K     9a96a97ae25fded6656f07143db1bf0aa838bda408d9037111ec35e601a24d69
+32K     9b09a9d7bc9042089449deba88ec9c0988824a9885e39438c96e75846d6ec971
+40K     9b739224affecc33904bdb7b22a64f377538897a3db09fb93908f0ff77c10390
+6.2M    9c424a4ae532c1016212dd38e374e369584d5eb056bc84e7f54438e61a0b19f1
+15M     9f91ac6ed4e049c7108caf06555fe78e2f7f75afb9ba2bcfd4a1684994fff18e
+20M     9fa080ed3c9fa1a05a2cc5a92d9d85c5a8140c6b5d76b5eb358b17061e29bebe
+137M    a48ca8555fdec25ee52671d1b0f3e67e65cfd1c466fdbf2a04acae72ed837fb4
+362M    a49240edf5410559997ab5748595c4479cb3fd73a5c95cb529dbcc1b34b0aa2c
+76M     a4938275813e03e9151f037ddc0a82ea464c89111114a0019088f286edf31931
+52K     a56ad2449975301f430f3cf447dd0564b827127dd5fd03b8aba58f88d55bb5f3
+252M    a6ceb0957e30c0f1c5a82675009fb9f6691bd8bc5a7d614c2a64bd9307d17f92
+24K     a7329805ff53cbeeaa2a5912ccb4af6783c13d31c8d4d87dffe68e0de78ee7fc
+388K    a8f491a9dcc6b160aab78b834e451a43b21238c3ee943010b3ade0c2e764e6d1
+40K     aaccc75fe7bae1e9ce5dd2280a321cd3d455a6b34094b45cf0d93d48295a7e1f
+16M     aba91203c74301b2a2e19fc74278c1fd6c9ed4ff9e1967fbda1a81e2c40efe76
+46M     ac9555d3a4bd683ce897c62a6899d57bf5514543ea8be3b8b434bc5517425f09
+14M     ad1e22377be7eb2e963fa13287adac4445788c61dd070e3dcd39a5210aaf3e8b
+24K     adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f
+40K     adab5dff6bc4877b74dc61f1501fb65a8b222be6bc125f402e69d040391b0b9f-init
+41M     b010dc2083d3d719c96bdb9234da9e5c89c61f7fd559212691ec969e4558f8fc
+28K     b016a7dc8d18ce1af51e8855a71b05a90a0a951683acf5aa1691eb30c281414e
+33M     b274235a7e6b43deca35b6d27bef7b26105891aa7d21ac6d75f7c525db819b6c
+28K     b549e2f8400b95aa1d3eef6646fb8a025b4c92939570bb2879eae2ed1cdebd16
+7.5M    b618de58d445826cf1f19868b8010a68d7d7f5ec8ea65b584611e4075430dc1a
+300K    b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2
+32K     b69ed395d38a317712cb68e88d066067596490d15fa1bc7f1d9c90d0f5e70ab2-init
+82M     b7e01fa3598dfa2ce49a3fa31de2e4d047525b0b4fa5fc471ddd586cd8be6ae6
+24K     ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827
+40K     ba91cb77b007af47fdf6dd9806ec28f4fcabe494fad40acb31ae2144b8b8c827-init
+371M    bb0ad667c7e80e261aac4dba907d72ee646a7b044d94036292603deba1a22216
+36K     bd4137f8cf0b33de4c730c4a1720bf664025c934366d51e7b900e14b23e27bc8
+28K     bea5859f6c94111fd762fadbe0619cd82f45f8dea8623f3ad9c65713fe2e52ff
+284K    bf990be2d799a8790ff2c8133636ee3088a6a4de7d11addfc1c6722cc93804d2
+13M     c1951d09345931076bfb9b81babe1d4ce2cd2b74c33d842fa4ea1bef0b165f54
+14M     c251629ff8996f0dfc3cf85b4526b8972130320486c0c6dfc9892d4e2f5184d2
+20K     c2542de4cbf0665d76e7bc36c07affe7cfc4a7c3c34a5e56de1048c3d6217e16
+5.3M    c2683771843f72abfd3c41e6eccc055b433957a6687fe439166672f109a945c1
+24K     c3a152be084e54762698b9fdc07bcc5bc8436d638f607b28dd25c2ff678cf8f5
+28K     c3df2ac5a7e5839ccee5912ba2d200e70944fb610a5502667eac948e3ca6e71e
+7.4M    c7f2e29ed509a9f510d0c60a5d770fc77b461fae1e20d26d07e59184cc5c0ac6
+384K    c876e10ae745db418dae4f15359cbb2dbb4136918e43d1c9e6432a323716ef2c
+4.1M    cab17e019487258a86d2a2f7943ac4093ba48edb631da5829dac9bfe8c586135
+24K     cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5
+40K     cd183c9eb124ff2a7fbd5804951eff2f4de9528deadf14d78b3468aaf6c582c5-init
+38M     cd7273c6f0b9519cefd2790194af83a95246ac22ad9faa1dbe214467c52d45dc
+130M    d0ad1459e51d63b47d3f920bb299f9e930824a8869c46ec1a0c94b560abc81ce
+24K     d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b
+40K     d383e1d0c4976d24243ec03726c7e5d2ec568ef7be1dde59289c1ab8bc27595b-init
+24K     d53165c64018240843ced18f245e797c25f31d1cce13188237dc73d8fa3a7a84
+392K    dbad4e6e1e6240d20c21c9dd0b2ef0c43d938f84d61a7d1eff28d2655ee64112
+88M     df458af536628ca08141f3165c5e75ab4ac8d9720cb6f267ab5aa4152abf0cce
+28K     e167ac4738dd48d2465c570b57e1e6829c649c699c200114fa8669ba3ed9fc08
+44K     e1806ae2f0c805ea24d5e250fda52ab115caf2587b5d8f69f37527593ea02de5
+133M    e2b819db1d055df98c4d4839d7571ea626bd14f94b971aec892f4add83ff2e26
+40K     e53b51d0dd26dfecee51946cae3c9572336435be707926b74f88867ac3358cdb
+36K     e6d18a77f83f0297cf7b0191a447152ddc4e475300953c8e4e7c3a02919a5e52
+15M     e86e063becd0b8764662d7163711ddf0f11043167c707fb49eda30cbc2b7a82f
+679M    e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df
+40K     e94763cbcbd97d81bff15f7fd2b1b26e7dbbe1002105a048b0a68e1fb873a8df-init
+11M     e9b0d4b6a70ea298095b4281d43750389e360003cb0572815e3da6c1e422dd84
+97M     ea67f5cd44cca561d81f5b8337fed93249c4c4c12073181613bacd1642004483
+4.1M    ed00e6fcac923260c784bebea6dc17662e71b831d52030f3d3a129de34b2c41b
+32M     ef0d8e98172be5ce705d320ce62b1f7bbc5fa1db2896534979084fe27230064b
+28K     efd382fea6b31c78839b809e2ec9f5793dddef82ebd9e65034dd8aa70cef106f
+36K     f1d6c1030201f7440cb7d953c385398d57445038fce1ad33390669312c50c774
+84M     f1f63cbf30599485a6d65b7d69232b95225ae89c35519f9a94352e999475c14a
+28K     f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad
+40K     f6d2fd6bcf5ee12f05fe6c4a02fd13483a8c3e5121ea967190979ada1b28a4ad-init
+20K     f8bfc92e3d409953a03b043592ce68e0b716fb32ce25d278449eb3dc4648c66f
+14M     f8c67ce278ee91207075b2d7fb062b992a883bac26b6ba37cb1636e083e74e6c
+100K    f8d81cf43d6a22534b07dd144a419ed336c0ed683c6626820443c3c18c868669
+36K     faa397d57baab20812f9bc9905adfb6ca4dac7adcdf097859c65a73cefdd357f
+24K     fb339e419499411bd2eb868668098be45079df0c38a80ac9458a3dd8f67692bc
+1.2M    fc12a06a2526542d31ab419c23ef1f202d93551d379a46cc9317a0ef37909ef3
+60K     fc534ccf657250b11b1710c6dd427a396b45349366c9a8fff38c0220640e58a2
+44K     fc83ece39b8a6425ed3ef61380c68fc4d591f8d79a6fdbb1fe9a6b0cfc32a71c
+44K     fc87866967c7ae808a13bef4d2b614da2b4870bedf9e75f1cd1bd3f62abc14e6
+36K     fccebdd1082f4bde87eda8d3ec7b9cb0735134291c95b190e0ddd389b85aff63
+392K    fe8c515b058617beb1b8e77bf0902fb49c4c0169216cbe42e60e0ed63fc62bb2
+856K    l
+root@nilesh:/var/lib/docker/overlay2# 
+
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          25        8         5.642GB   4.236GB (75%)
+Containers      17        1         2.778MB   2.74MB (98%)
+Local Volumes   17        4         143.7MB   106.5MB (74%)
+Build Cache     0         0         0B        0B
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# docker system df -v
+Images space usage:
+
+REPOSITORY                              TAG        IMAGE ID       CREATED         SIZE      SHARED SIZE   UNIQUE SIZE   CONTAINERS
+result-app                              latest     c8e51d2eeffe   7 hours ago     160MB     134.3MB       25.68MB       2
+worker-app                              latest     8d6dd60a6782   8 hours ago     192.8MB   189.8MB       2.971MB       3
+<none>                                  <none>     8c4623fac31e   8 hours ago     749.7MB   710.6MB       39.13MB       0
+voting-app                              latest     fc76a8f54541   8 hours ago     144.6MB   124.7MB       19.92MB       5
+iamnikaa/my_app                         latest     6c3c02ef1c9c   12 hours ago    469.4MB   469.4MB       0B            0
+<none>                                  <none>     e725fdf8d5d7   12 hours ago    469.4MB   469.4MB       0B            0
+tomcat                                  9.0        bce48a218e94   47 hours ago    680MB     0B            680MB         1
+python                                  3.9-slim   2de9c79b2c75   2 days ago      124.7MB   124.7MB       0B            0
+postgres                                latest     5b21e2e86aab   2 days ago      376.1MB   80.41MB       295.7MB       0
+mcr.microsoft.com/dotnet/core/sdk       3.1        6dac2916209e   2 days ago      710.6MB   710.6MB       0B            0
+mcr.microsoft.com/dotnet/core/runtime   3.1        b3bbe16bb594   2 days ago      189.8MB   189.8MB       0B            0
+jenkins/jenkins                         latest     011729edd836   3 days ago      460MB     0B            460MB         0
+redis                                   latest     1ca2c2a1b554   2 weeks ago     116.8MB   0B            116.8MB       2
+mysql                                   latest     76152be68449   2 weeks ago     524MB     0B            524MB         0
+ubuntu                                  latest     d2e4e1f51132   4 weeks ago     77.81MB   77.81MB       0B            0
+hello-world                             latest     feb5d9fea6a5   8 months ago    13.26kB   0B            13.26kB       0
+node                                    10-slim    6fbcbbb5c603   13 months ago   134.3MB   134.3MB       0B            0
+redis                                   4.0        191c4017dcdd   2 years ago     89.3MB    0B            89.3MB        0
+postgres                                9.4        ed5a45034282   2 years ago     250.7MB   0B            250.7MB       2
+kodekloud/simple-prompt-docker          latest     c0848fde57d1   2 years ago     4.413MB   4.413MB       95B           0
+kodekloud/simple-webapp                 latest     c6e3cd9aae36   3 years ago     84.85MB   4.413MB       80.44MB       0
+kodekloud/webapp                        latest     1a45ba829f10   4 years ago     432.4MB   0B            432.4MB       0
+eesprit/voting-app-vote                 latest     1c71ecb231a4   5 years ago     83.91MB   0B            83.91MB       1
+eesprit/voting-app-result               latest     6f98b7114bf5   5 years ago     226.1MB   0B            226.1MB       1
+eesprit/voting-app-worker               latest     3b8592893450   5 years ago     682.1MB   0B            682.1MB       0
+
+Containers space usage:
+
+CONTAINER ID   IMAGE                       COMMAND                  LOCAL VOLUMES   SIZE      CREATED          STATUS                     NAMES
+9f7a78fade40   tomcat:9.0                  "catalina.sh run"        0               37.9kB    35 minutes ago   Up 35 minutes              elegant_khayyam
+fa0a3ccdf65c   postgres:9.4                "docker-entrypoint.s…"   1               0B        2 hours ago      Exited (0) 2 hours ago     example-voting-app_db_1
+9fa2107b06e6   voting-app                  "gunicorn app:app -b…"   0               502kB     2 hours ago      Exited (0) 2 hours ago     example-voting-app_vote_1
+757476e8f0d0   redis                       "docker-entrypoint.s…"   1               0B        2 hours ago      Exited (0) 2 hours ago     example-voting-app_redis_1
+dcdc480dbea9   worker-app                  "dotnet Worker.dll"      0               0B        2 hours ago      Exited (143) 2 hours ago   example-voting-app_worker_1
+2e988d50b54d   result-app                  "docker-entrypoint.s…"   0               0B        2 hours ago      Exited (143) 2 hours ago   example-voting-app_result_1
+13c975506191   voting-app                  "gunicorn app:app -b…"   0               500kB     7 hours ago      Exited (0) 7 hours ago     competent_jones
+799fa55dbdd5   voting-app                  "gunicorn app:app -b…"   0               500kB     7 hours ago      Exited (0) 7 hours ago     vigilant_shockley
+6853bbd5a4aa   worker-app                  "dotnet Worker.dll"      0               0B        7 hours ago      Exited (143) 7 hours ago   worker
+0d9667a531e3   result-app                  "docker-entrypoint.s…"   0               0B        7 hours ago      Exited (130) 7 hours ago   quirky_tesla
+58df853f69ee   worker-app                  "dotnet Worker.dll"      0               0B        7 hours ago      Exited (130) 7 hours ago   vigorous_haslett
+ba6c1e821c61   postgres:9.4                "docker-entrypoint.s…"   1               0B        8 hours ago      Exited (0) 7 hours ago     db
+58b48953c9aa   voting-app                  "gunicorn app:app -b…"   0               500kB     8 hours ago      Exited (0) 8 hours ago     boring_joliot
+a50a0f13eb3a   redis                       "docker-entrypoint.s…"   1               0B        8 hours ago      Exited (0) 7 hours ago     redis
+dd03ac5454fb   voting-app                  "gunicorn app:app -b…"   0               500kB     8 hours ago      Exited (0) 8 hours ago     blissful_taussig
+649aa250e1c6   eesprit/voting-app-result   "node server.js"         0               0B        11 hours ago     Created                    result
+b901665e0cc9   eesprit/voting-app-vote     "gunicorn app:app -b…"   0               239kB     11 hours ago     Exited (137) 9 hours ago   vote
+
+Local Volumes space usage:
+
+VOLUME NAME                                                        LINKS     SIZE
+74d4f626ca3006832b9e61e2c94ee84792a7444af29a815bae7c4a2047b22e4d   1         0B
+0521869cf8ef0859b4f62b9dfc44cb522ba5058c13c158f0b28cb2172dfd071d   0         93B
+7e16eed8231b48199de2e222c6b6d024070132fe24861ae12ae5ec338947ff94   0         88B
+46f50a32afee79a629187e8b66d1d6170fbb1c619188f7b098675bd7215088e4   0         0B
+29025c7e37650b11cb591d09ed9d5b8c2e15a4c7c8fc26e8bc18d07ac20ec7c6   0         88B
+5353e137113b89f4661403d5f9813524cf0ce989ab0cf6b8a0be9d88f3c6d9ce   0         0B
+dab4ae18a6de2fdff75e87a59dbc30e65c49558e3862d838ad3612b26a74ebe0   0         0B
+43d844be28c8d33234d8b8efb8eb37a0f09b80a285fac6e1f79cd9ca30aa152f   1         88B
+7978cfe73d99e6d685eacab9204c763f43ccff5ee48b851df634e7e6b058a009   0         0B
+baa7139e516c5d05ff8ce36f5c9a92996df091f8ea49365e53a02989549a2265   0         88B
+fbfa62758089ae0b4d799bda4a49f96c846d4802d55da0c5edc9079034635a20   0         0B
+570e384bacbd41d2477e99b8e3c8c74c8fd55d78988b225682ae6c3826dbe300   0         0B
+3dc31643f13ca9aa6c0e7fe8da207bc0cb12ebc7861a385677605dba2d93c2f8   1         88B
+ba0629bf57b42fa0415b8d1916f3eece3eeedcf9312b4e82c2fdbfe1d58fb7cb   1         37.16MB
+a1988569368955401c6cbb75a3e00e5834578965171c389f20364c4eb4d65e20   0         88B
+d65d81861e12a3338dccd4f13feb9aa35b28aac599ac3d4d80c4ea71045f1842   0         93B
+f693f74f20e5f074eb93e012dc950b8e93eb189388afb2b9358c305f72348fd4   0         106.5MB
+
+Build cache usage: 0B
+
+CACHE ID   CACHE TYPE   SIZE      CREATED   LAST USED   USAGE     SHARED
+root@nilesh:/home/nilesh/Desktop/Docker/my_app# 
