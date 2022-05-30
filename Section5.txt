@@ -1673,3 +1673,192 @@ Traceback (most recent call last):
 TypeError: a bytes-like object is required, not 'str'
 root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# 
 
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# docker-compose up
+Creating network "example-voting-app_default" with the default driver
+Recreating example-voting-app_result_1 ... done
+Recreating example-voting-app_redis_1  ... done
+Recreating example-voting-app_vote_1   ... done
+Recreating example-voting-app_worker_1 ... done
+Recreating example-voting-app_db_1     ... done
+Attaching to example-voting-app_db_1, example-voting-app_worker_1, example-voting-app_result_1, example-voting-app_redis_1, example-voting-app_vote_1
+db_1      | Error: Database is uninitialized and superuser password is not specified.
+db_1      |        You must specify POSTGRES_PASSWORD for the superuser. Use
+db_1      |        "-e POSTGRES_PASSWORD=password" to set it in "docker run".
+db_1      | 
+db_1      |        You may also use POSTGRES_HOST_AUTH_METHOD=trust to allow all connections
+db_1      |        without a password. This is *not* recommended. See PostgreSQL
+db_1      |        documentation about "trust":
+db_1      |        https://www.postgresql.org/docs/current/auth-trust.html
+redis_1   | 1:C 30 May 2022 19:10:31.370 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis_1   | 1:C 30 May 2022 19:10:31.371 # Redis version=7.0.0, bits=64, commit=00000000, modified=0, pid=1, just started
+redis_1   | 1:C 30 May 2022 19:10:31.371 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+result_1  | Mon, 30 May 2022 19:10:31 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at server.js:73:9
+result_1  | Mon, 30 May 2022 19:10:31 GMT body-parser deprecated undefined extended: provide extended option at ../node_modules/body-parser/index.js:105:29
+redis_1   | 1:M 30 May 2022 19:10:31.371 * monotonic clock: POSIX clock_gettime
+example-voting-app_db_1 exited with code 1
+result_1  | App running on port 80
+redis_1   | 1:M 30 May 2022 19:10:31.372 * Running mode=standalone, port=6379.
+redis_1   | 1:M 30 May 2022 19:10:31.372 # Server initialized
+redis_1   | 1:M 30 May 2022 19:10:31.372 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+result_1  | Waiting for db
+worker_1  | Waiting for db
+redis_1   | 1:M 30 May 2022 19:10:31.372 * The AOF directory appendonlydir doesn't exist
+redis_1   | 1:M 30 May 2022 19:10:31.372 * Loading RDB produced by version 7.0.0
+redis_1   | 1:M 30 May 2022 19:10:31.372 * RDB age 1 seconds
+redis_1   | 1:M 30 May 2022 19:10:31.372 * RDB memory usage when created 0.82 Mb
+redis_1   | 1:M 30 May 2022 19:10:31.372 * Done loading RDB, keys loaded: 0, keys expired: 0.
+redis_1   | 1:M 30 May 2022 19:10:31.372 * DB loaded from disk: 0.000 seconds
+redis_1   | 1:M 30 May 2022 19:10:31.372 * Ready to accept connections
+vote_1    | [2022-05-30 19:10:31 +0000] [1] [INFO] Starting gunicorn 20.1.0
+vote_1    | [2022-05-30 19:10:31 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+vote_1    | [2022-05-30 19:10:31 +0000] [1] [INFO] Using worker: sync
+vote_1    | [2022-05-30 19:10:31 +0000] [7] [INFO] Booting worker with pid: 7
+vote_1    | [2022-05-30 19:10:31 +0000] [8] [INFO] Booting worker with pid: 8
+vote_1    | [2022-05-30 19:10:31 +0000] [9] [INFO] Booting worker with pid: 9
+vote_1    | [2022-05-30 19:10:31 +0000] [10] [INFO] Booting worker with pid: 10
+worker_1  | Waiting for db
+result_1  | Waiting for db
+worker_1  | Waiting for db
+result_1  | Waiting for db
+worker_1  | Waiting for db
+result_1  | Waiting for db
+worker_1  | Waiting for db
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping example-voting-app_vote_1     ... done
+Stopping example-voting-app_redis_1    ... done
+Stopping example-voting-app_worker_1   ... done
+Stopping example-voting-app_result_1   ... done
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# docker-compose up
+Starting example-voting-app_redis_1  ... done
+Starting example-voting-app_vote_1   ... done
+Starting example-voting-app_worker_1 ... done
+Recreating example-voting-app_db_1   ... done
+Starting example-voting-app_result_1 ... done
+Attaching to example-voting-app_vote_1, example-voting-app_redis_1, example-voting-app_db_1, example-voting-app_worker_1, example-voting-app_result_1
+db_1      | The files belonging to this database system will be owned by user "postgres".
+db_1      | This user must also own the server process.
+db_1      | 
+redis_1   | 1:C 30 May 2022 19:12:55.980 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis_1   | 1:C 30 May 2022 19:12:55.981 # Redis version=7.0.0, bits=64, commit=00000000, modified=0, pid=1, just started
+redis_1   | 1:C 30 May 2022 19:12:55.981 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+db_1      | The database cluster will be initialized with locale "en_US.utf8".
+db_1      | The default database encoding has accordingly been set to "UTF8".
+db_1      | The default text search configuration will be set to "english".
+db_1      | 
+db_1      | Data page checksums are disabled.
+db_1      | 
+redis_1   | 1:M 30 May 2022 19:12:55.981 * monotonic clock: POSIX clock_gettime
+redis_1   | 1:M 30 May 2022 19:12:55.983 * Running mode=standalone, port=6379.
+db_1      | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+vote_1    | [2022-05-30 19:12:56 +0000] [1] [INFO] Starting gunicorn 20.1.0
+vote_1    | [2022-05-30 19:12:56 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+redis_1   | 1:M 30 May 2022 19:12:55.983 # Server initialized
+vote_1    | [2022-05-30 19:12:56 +0000] [1] [INFO] Using worker: sync
+redis_1   | 1:M 30 May 2022 19:12:55.983 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+vote_1    | [2022-05-30 19:12:56 +0000] [7] [INFO] Booting worker with pid: 7
+redis_1   | 1:M 30 May 2022 19:12:55.984 * The AOF directory appendonlydir doesn't exist
+db_1      | creating subdirectories ... ok
+redis_1   | 1:M 30 May 2022 19:12:55.984 * Loading RDB produced by version 7.0.0
+vote_1    | [2022-05-30 19:12:56 +0000] [8] [INFO] Booting worker with pid: 8
+redis_1   | 1:M 30 May 2022 19:12:55.984 * RDB age 90 seconds
+redis_1   | 1:M 30 May 2022 19:12:55.984 * RDB memory usage when created 0.82 Mb
+vote_1    | [2022-05-30 19:12:56 +0000] [9] [INFO] Booting worker with pid: 9
+redis_1   | 1:M 30 May 2022 19:12:55.984 * Done loading RDB, keys loaded: 0, keys expired: 0.
+redis_1   | 1:M 30 May 2022 19:12:55.984 * DB loaded from disk: 0.000 seconds
+redis_1   | 1:M 30 May 2022 19:12:55.984 * Ready to accept connections
+db_1      | selecting default max_connections ... 100
+db_1      | selecting default shared_buffers ... 128MB
+vote_1    | [2022-05-30 19:12:56 +0000] [10] [INFO] Booting worker with pid: 10
+db_1      | selecting default timezone ... Etc/UTC
+db_1      | selecting dynamic shared memory implementation ... posix
+db_1      | creating configuration files ... ok
+result_1  | Mon, 30 May 2022 19:12:56 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at server.js:73:9
+result_1  | Mon, 30 May 2022 19:12:56 GMT body-parser deprecated undefined extended: provide extended option at ../node_modules/body-parser/index.js:105:29
+result_1  | App running on port 80
+result_1  | Waiting for db
+worker_1  | Waiting for db
+db_1      | creating template1 database in /var/lib/postgresql/data/base/1 ... ok
+db_1      | initializing pg_authid ... ok
+db_1      | setting password ... ok
+db_1      | initializing dependencies ... ok
+db_1      | creating system views ... ok
+db_1      | loading system objects' descriptions ... ok
+db_1      | creating collations ... ok
+db_1      | creating conversions ... ok
+db_1      | creating dictionaries ... ok
+db_1      | setting privileges on built-in objects ... ok
+db_1      | creating information schema ... ok
+db_1      | loading PL/pgSQL server-side language ... ok
+db_1      | vacuuming database template1 ... ok
+db_1      | copying template1 to template0 ... ok
+db_1      | copying template1 to postgres ... ok
+db_1      | syncing data to disk ... ok
+db_1      | 
+db_1      | Success. You can now start the database server using:
+db_1      | 
+db_1      |     postgres -D /var/lib/postgresql/data
+db_1      | or
+db_1      |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1      | 
+db_1      | 
+db_1      | WARNING: enabling "trust" authentication for local connections
+db_1      | You can change this by editing pg_hba.conf or using the option -A, or
+db_1      | --auth-local and --auth-host, the next time you run initdb.
+db_1      | waiting for server to start....LOG:  database system was shut down at 2022-05-30 19:12:57 UTC
+db_1      | LOG:  MultiXact member wraparound protections are now enabled
+db_1      | LOG:  autovacuum launcher started
+db_1      | LOG:  database system is ready to accept connections
+result_1  | Waiting for db
+worker_1  | Waiting for db
+db_1      |  done
+db_1      | server started
+db_1      | 
+db_1      | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1      | 
+db_1      | LOG:  received fast shutdown request
+db_1      | waiting for server to shut down...LOG:  aborting any active transactions
+db_1      | .LOG:  autovacuum launcher shutting down
+db_1      | LOG:  shutting down
+db_1      | LOG:  database system is shut down
+result_1  | Waiting for db
+worker_1  | Waiting for db
+db_1      |  done
+db_1      | server stopped
+db_1      | 
+db_1      | PostgreSQL init process complete; ready for start up.
+db_1      | 
+db_1      | LOG:  database system was shut down at 2022-05-30 19:12:58 UTC
+db_1      | LOG:  MultiXact member wraparound protections are now enabled
+db_1      | LOG:  autovacuum launcher started
+db_1      | LOG:  database system is ready to accept connections
+result_1  | Connected to db
+db_1      | ERROR:  relation "votes" does not exist at character 38
+db_1      | STATEMENT:  SELECT vote, COUNT(id) AS count FROM votes GROUP BY vote
+result_1  | Error performing query: error: relation "votes" does not exist
+worker_1  | Connected to db
+worker_1  | Connecting to redis
+worker_1  | Found redis at 172.18.0.2
+vote_1    | 172.18.0.1 - - [30/May/2022:19:13:44 +0000] "GET / HTTP/1.1" 200 1285 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+vote_1    | 172.18.0.1 - - [30/May/2022:19:13:44 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+vote_1    | 172.18.0.1 - - [30/May/2022:19:13:45 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+vote_1    | [2022-05-30 19:13:49,434] INFO in app: Received vote for a
+vote_1    | [2022-05-30 19:13:49 +0000] [9] [INFO] Received vote for a
+vote_1    | 172.18.0.1 - - [30/May/2022:19:13:49 +0000] "POST / HTTP/1.1" 200 1688 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+vote_1    | 172.18.0.1 - - [30/May/2022:19:13:49 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+worker_1  | Processing vote for 'a' by '6f5846099379939'
+vote_1    | [2022-05-30 19:14:02,086] INFO in app: Received vote for b
+vote_1    | [2022-05-30 19:14:02 +0000] [9] [INFO] Received vote for b
+vote_1    | 172.18.0.1 - - [30/May/2022:19:14:02 +0000] "POST / HTTP/1.1" 200 1688 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+worker_1  | Processing vote for 'b' by '6f5846099379939'
+vote_1    | 172.18.0.1 - - [30/May/2022:19:14:02 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+db_1      | ERROR:  duplicate key value violates unique constraint "votes_id_key"
+db_1      | DETAIL:  Key (id)=(6f5846099379939) already exists.
+db_1      | STATEMENT:  INSERT INTO votes (id, vote) VALUES ($1, $2)
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping example-voting-app_db_1     ... done
+Stopping example-voting-app_vote_1   ... done
+Stopping example-voting-app_redis_1  ... done
+Stopping example-voting-app_worker_1 ... done
+Stopping example-voting-app_result_1 ... done
+root@nilesh:/home/nilesh/Desktop/Docker/example-voting-app# 
+
